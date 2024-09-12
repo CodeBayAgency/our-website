@@ -1,7 +1,26 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Default font for the whole page */
+    /*font-size: 16px; Optional: Set a default font size */
+    /*color: #333;  Optional: Set a default text color */
     margin: 0;
     padding: 0;
+}
+.caption {
+    background-color: #f1f1f100;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    margin: 50px auto;
+    transition: font-size 0.4s ease; /* Transition for smooth font size change */
+    display: inline-block; /* Or 'block', depending on your layout */
+    height: 70px;
+    line-height: 35px;
+    overflow: hidden;
+}
+
+
+.caption:hover {
+    font-size: 115%; /* Increases font size by 15% */
 }
 
 #main-nav {
@@ -63,7 +82,7 @@ form {
 }
 
 input, textarea {
-    margin-bottom: 1em;
+    margin-bottom: 0.3em;
 }
 
 .contact-info {
@@ -162,7 +181,7 @@ input, textarea {
 }
 
 .form-group textarea {
-    height: 100px;
+    height: 50px;
     resize: vertical;
 }
 
@@ -247,6 +266,16 @@ h1 {
     line-height: 52px;
     font-weight: 400;
 }
+h4 {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+    color: #151515;
+    margin-bottom: 20px;
+    max-width: unset;
+    margin-left: 0;
+    padding-left: 0;
+}
 
 .submit-btn {
     background-color: black;
@@ -309,7 +338,7 @@ h1 {
 }
 
 .prefix-input input, .phone-input input {
-    width: 100%;
+    width: 105%;
     padding: 10px 0;
     border: none;
     border-bottom: 1px solid #ccc;
@@ -350,4 +379,18 @@ h1 {
 /* Usunięcie zielonego podkreślenia dla pola phone number przed fokusem */
 .phone-input input:not(:focus) {
     border-bottom-color: #ccc;
+}
+
+#contact-form {
+    background-color: #f0f0f0; /* Light grey color */
+    padding: 35px 40px 30px 20px; /* Increased padding, especially on the right */
+    border-radius: 10px; /* Optional: rounds the corners */
+    width: 100%; /* Makes the form wider than its container */
+    box-sizing: border-box; /* Ensures padding is included in the width */
+    margin-right: -10%; /* Shifts the extra width to the right */
+}
+
+/* You might need to adjust the container of the form as well */
+.contact-options {
+    overflow: hidden; /* Contains the wider form */
 }
