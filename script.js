@@ -43,3 +43,20 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     }
 });
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.team-carousel');
+    const leftArrow = document.querySelector('.left-arrow');
+    const rightArrow = document.querySelector('.right-arrow');
+
+    function moveLeft() {
+        carousel.appendChild(carousel.firstElementChild);
+    }
+
+    function moveRight() {
+        carousel.prepend(carousel.lastElementChild);
+    }
+
+    leftArrow.addEventListener('click', moveLeft);
+    rightArrow.addEventListener('click', moveRight);
+});

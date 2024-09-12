@@ -6,21 +6,21 @@ body {
     padding: 0;
 }
 .caption {
+    font-size: 20px;
     background-color: #f1f1f100;
     padding: 20px;
     text-align: center;
     width: 300px;
     margin: 50px auto;
-    transition: font-size 0.4s ease; /* Transition for smooth font size change */
+    transition: font-size 0.15s ease; /* Transition for smooth font size change */
     display: inline-block; /* Or 'block', depending on your layout */
     height: 70px;
-    line-height: 35px;
     overflow: hidden;
 }
 
 
 .caption:hover {
-    font-size: 115%; /* Increases font size by 15% */
+    font-size: 135%; /* Increases font size by 15% */
 }
 
 #main-nav {
@@ -69,10 +69,24 @@ main {
     text-align: center;
 }
 
-.team-member img {
+.img-container {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.team-member img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 form {
@@ -394,3 +408,79 @@ h4 {
 .contact-options {
     overflow: hidden; /* Contains the wider form */
 }
+
+/* Our Team section (start) */
+.team-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%; /* Zmniejsza szerokość całego kontenera o 20% */
+    margin: 0 auto; /* Wyśrodkowuje kontener */
+}
+
+.team-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Zajmuje pełną szerokość zmniejszonego kontenera */
+    overflow: hidden;
+}
+
+.team-member {
+    flex: 0 0 33.333%;
+    transition: all 0.3s ease;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.team-member:nth-child(2) {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.team-member:nth-child(1),
+.team-member:nth-child(3) {
+    transform: scale(0.8);
+    opacity: 0.6;
+}
+
+.arrow {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.img-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dodajemy specjalne style dla środkowego elementu, aby zapobiec ucinaniu zdjęcia */
+.team-member:nth-child(2) .img-container {
+    width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
+    height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
+    margin-top: 15px; /* Przesuwamy kontener nieco w górę */
+    margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+}
+
+/* Dostosowujemy marginesy dla tekstu pod zdjęciem środkowego elementu */
+.team-member:nth-child(2) h3,
+.team-member:nth-child(2) p {
+    margin-top: 5px;
+}
+.team-member p {
+    padding-left: 60px ;
+    padding-right: 60px ;
+}
+/* Our Team section (end) */
