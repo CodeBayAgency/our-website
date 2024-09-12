@@ -1,0 +1,353 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#main-nav {
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+#main-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#main-nav ul li {
+    margin: 0 1em;
+}
+
+#main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+    display: block;
+}
+
+main {
+    padding-top: 60px; /* Adjust based on your nav height */
+}
+
+.content {
+    padding: 2em;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1800px;
+}
+
+.team-member {
+    display: inline-block;
+    margin: 1em;
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+}
+
+input, textarea {
+    margin-bottom: 1em;
+}
+
+.contact-info {
+    margin-top: 2em;
+}
+
+.social-icons {
+    margin-top: 1em;
+}
+
+.icon-link {
+    font-size: 2em;
+    margin-right: 0.5em;
+    transition: opacity 0.3s ease;
+    text-decoration: none;
+}
+
+.icon-link:hover {
+    opacity: 0.8;
+}
+
+.fa-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fa-linkedin {
+    color: #0077b5;
+}
+
+.fa-envelope {
+    background: linear-gradient(to bottom right, #D44638 0%, #D44638 65%, #B23121 66%, #B23121 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 4rem;
+}
+
+#contact-form {
+    flex: 1;
+    max-width: 500px;
+    margin-right: 2em;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background-color: transparent;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: #999;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group input:valid,
+.form-group textarea:valid {
+    border-bottom-color: #4CAF50;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label,
+.form-group input:valid + label,
+.form-group textarea:valid + label {
+    top: -20px;
+    font-size: 12px;
+    color: #4CAF50;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.contact-info {
+    flex: 1;
+    max-width: 300px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: start;
+    margin-top: 1em;
+}
+
+.icon-link {
+    font-size: 2em;
+    margin-right: 0.5em;
+    transition: opacity 0.3s ease;
+    text-decoration: none;
+}
+
+.icon-link:hover {
+    opacity: 0.8;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    #contact-form,
+    .contact-info {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .contact-info {
+        margin-top: 2em;
+    }
+}
+
+.contact-headers {
+    flex: 1;
+}
+
+.contact-options {
+    flex: 1;
+    /*background-color: #f0f0f0; /* Light grey background */
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+h3 {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #151515;
+    margin-bottom: 24px;
+    max-width: unset;
+}
+h1 {
+    font-size: 45px;
+    line-height: 52px;
+    font-weight: 400;
+}
+
+.submit-btn {
+    background-color: black;
+    color: white;
+}
+/* Specific styles for the phone input */
+.form-group input[type="tel"] ~ label {
+    top: 10px;
+    font-size: 16px;
+    color: #999;
+}
+
+.form-group input[type="tel"]:focus ~ label,
+.form-group input[type="tel"]:not(:placeholder-shown) ~ label {
+    top: -20px;
+    left: 0;
+    font-size: 12px;
+    color: #333;
+}
+.social-icons .icon-link {
+    margin-right: 40px; /* Adjust this value for desired spacing */
+    transform: scale(1.2); /* Adjust this value to scale icons up or down */
+}
+
+.social-icons .icon-link:last-child {
+    margin-right: 0; /* Remove margin from the last icon */
+}
+#contact-form {
+    background-color: #f0f0f0; /* Light grey color */
+    padding: 20px; /* Add some padding for better appearance */
+    border-radius: 5px; /* Optional: rounds the corners */
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    border-bottom-color: black;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label {
+    color: black;
+}
+
+
+.phone-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.prefix-input, .phone-input {
+    position: relative;
+}
+
+.prefix-input {
+    flex: 0 0 70px; /* Dostosuj szerokość według potrzeb */
+}
+
+.phone-input {
+    flex: 1;
+}
+
+.prefix-input input, .phone-input input {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    background-color: transparent;
+}
+
+.prefix-input label, .phone-input label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #999;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+/* Styl dla pola prefix */
+.prefix-input input:focus + label,
+.prefix-input input:valid + label {
+    top: -20px;
+    font-size: 12px;
+    color: #333;
+}
+
+/* Styl dla pola phone number */
+.phone-input input:focus + label,
+.phone-input input:not(:placeholder-shown) + label {
+    top: -20px;
+    font-size: 12px;
+    color: #333;
+}
+
+.prefix-input input:focus,
+.phone-input input:focus {
+    border-bottom-color: #333;
+}
+
+/* Usunięcie zielonego podkreślenia dla pola phone number przed fokusem */
+.phone-input input:not(:focus) {
+    border-bottom-color: #ccc;
+}
