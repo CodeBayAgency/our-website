@@ -409,6 +409,79 @@ h4 {
     overflow: hidden; /* Contains the wider form */
 }
 
+/* Our Services section (start) */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Reduced from 20px */
+}
+
+.service-card {
+    width: 220px; /* Increased from 200px */
+    height: 275px; /* Increased from 250px */
+    perspective: 1000px;
+    margin: 5px; /* Reduced from 10px */
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.service-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+.card-front {
+    background-color: #f0f0f0;
+}
+
+.card-back {
+    background-color: #3fb154;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.card-front i {
+    font-size: 3.5em; /* Increased from 3em */
+    margin-bottom: 15px; /* Increased from 10px */
+}
+
+/* Adjust text sizes for larger cards */
+.card-front h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.card-back p {
+    font-size: 1em;
+    line-height: 1.4;
+}
+/* Our Services section (end) */
+
 /* Our Team section (start) */
 .team-container {
     display: flex;
@@ -470,17 +543,80 @@ h4 {
 .team-member:nth-child(2) .img-container {
     width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
     height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
-    margin-top: 15px; /* Przesuwamy kontener nieco w górę */
+    margin-top: 20px; /* Przesuwamy kontener nieco w górę */
     margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
 }
 
 /* Dostosowujemy marginesy dla tekstu pod zdjęciem środkowego elementu */
 .team-member:nth-child(2) h3,
 .team-member:nth-child(2) p {
-    margin-top: 5px;
+    margin-top: 0;
 }
 .team-member p {
     padding-left: 60px ;
     padding-right: 60px ;
 }
 /* Our Team section (end) */
+
+/* Responsive design (start)*/
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+main {
+    height: calc(100vh - 60px); /* Adjust 60px to match your nav height */
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+
+.content {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+}
+
+.contact-container {
+    max-width: 1200px; /* or any other suitable max-width */
+    width: 100%;
+}
+
+.team-container {
+    width: 100%;
+    max-width: 1200px; /* or any other suitable max-width */
+}
+
+/* Add responsive styles */
+
+@media (max-width: 1800px) {
+    .content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-container,
+    .team-container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .contact-headers,
+    .contact-options,
+    #contact-form {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .team-member {
+        flex: 0 0 100%;
+    }
+}
+/* Responsive design (end)*/

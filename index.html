@@ -14,17 +14,63 @@
 <body>
     <nav id="main-nav">
         <ul>
+            <li class="caption"><a href="#home"><i class="fas fa-home"></i></a></li>
             <li class="caption"><a href="#about">About Us</a></li>
+            <li class="caption"><a href="#services">Our Services</a></li>
             <li class="caption"><a href="#team">Our Team</a></li>
             <li class="caption"><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <main>
-        <section id="about" class="content"  style="background-image: linear-gradient(to left, #3fb154, #4f79bd9b);">
+        <section id="home" class="content" style="background-image: linear-gradient(to right, #3fb154, #4f79bd);">
+            <h1>Welcome to CodeBay</h1>
+            <p>Your trusted partner for software solutions</p>
+        </section>
+
+        <section id="about" class="content"  style="background-image: linear-gradient(to right, #3fb154, #4f79bd);">
             <h1>About Us</h1>
             <p>Welcome to our company! We are dedicated to providing excellent services to our clients. Our team of experts works tirelessly to ensure customer satisfaction and deliver top-notch results.</p>
+        </section>
 
+        <section id="services" class="content">
+            <h1>Our Services</h1>
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <i class="fas fa-code"></i>
+                            <h3>Web Development</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Custom web solutions tailored to your business needs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <i class="fas fa-code"></i>
+                            <h3>Application Testing</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Complex application testing including backend and frontend testing, database and performance tests.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <i class="fas fa-code"></i>
+                            <h3>Cloud-native applications</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Creating complex cloud-native applications on AWS.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat for other services -->
+            </div>
         </section>
         
         <section id="team" class="content" style="background-image: linear-gradient(to right, #3fb154, #4f79bd);">
@@ -45,7 +91,7 @@
                         <div class="img-container">
                             <img src="https://via.placeholder.com/150" alt="Team Member 2">
                         </div>
-                        <h3>Jane Smith</h3>
+                        <h3>Mateusz Grygalon</h3>
                         <p>CTO</p>
                     </div>
                     <div class="team-member">

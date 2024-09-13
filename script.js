@@ -57,6 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
         carousel.prepend(carousel.lastElementChild);
     }
 
-    leftArrow.addEventListener('click', moveLeft);
-    rightArrow.addEventListener('click', moveRight);
+    leftArrow.addEventListener('click', moveRight);
+    rightArrow.addEventListener('click', moveLeft);
 });
