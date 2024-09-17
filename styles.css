@@ -1,10 +1,69 @@
-body {
-    font-family: 'Roboto', sans-serif; /* Default font for the whole page */
-    /*font-size: 16px; Optional: Set a default font size */
-    /*color: #333;  Optional: Set a default text color */
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif; /* Default font for the whole page */
 }
+
+/* Responsive design (start)*/
+main {
+    height: calc(100vh - 60px); /* Adjust 60px to match your nav height */
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    padding-top: 60px; /* Adjust based on your nav height */
+}
+
+.content {
+    padding: 2em;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    width: 1900px;
+}
+
+.contact-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 4rem;
+}
+
+/* Add responsive styles */
+
+@media (max-width: 1800px) {
+    .content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-container,
+    .team-container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .contact-headers,
+    .contact-options,
+    #contact-form {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .team-member {
+        flex: 0 0 100%;
+    }
+}
+/* Responsive design (end)*/
+
 .caption {
     font-size: 20px;
     background-color: #f1f1f100;
@@ -50,33 +109,6 @@ body {
     display: block;
 }
 
-main {
-    padding-top: 60px; /* Adjust based on your nav height */
-}
-
-.content {
-    padding: 2em;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 1800px;
-}
-
-.team-member {
-    display: inline-block;
-    margin: 1em;
-    text-align: center;
-}
-
-.img-container {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-}
 
 .team-member img {
     display: inline;
@@ -97,14 +129,6 @@ form {
 
 input, textarea {
     margin-bottom: 0.3em;
-}
-
-.contact-info {
-    margin-top: 2em;
-}
-
-.social-icons {
-    margin-top: 1em;
 }
 
 .icon-link {
@@ -134,16 +158,6 @@ input, textarea {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-.contact-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1000px;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    gap: 4rem;
 }
 
 #contact-form {
@@ -200,7 +214,7 @@ input, textarea {
 }
 
 .submit-btn {
-    background-color: #4CAF50;
+    background-color: black;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -217,6 +231,7 @@ input, textarea {
 .contact-info {
     flex: 1;
     max-width: 300px;
+    margin-top: 2em;
 }
 
 .social-icons {
@@ -291,10 +306,6 @@ h4 {
     padding-left: 0;
 }
 
-.submit-btn {
-    background-color: black;
-    color: white;
-}
 /* Specific styles for the phone input */
 .form-group input[type="tel"] ~ label {
     top: 10px;
@@ -487,8 +498,9 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80%; /* Zmniejsza szerokość całego kontenera o 20% */
+    width: 100%; /* Zmniejsza szerokość całego kontenera o 20% */
     margin: 0 auto; /* Wyśrodkowuje kontener */
+    max-width: 1200px; /* or any other suitable max-width */
 }
 
 .team-carousel {
@@ -503,6 +515,9 @@ h4 {
     flex: 0 0 33.333%;
     transition: all 0.3s ease;
     padding: 0 10px;
+    text-align: center;
+    display: inline-block;
+    margin: 1em;
     text-align: center;
 }
 
@@ -531,6 +546,8 @@ h4 {
     overflow: hidden;
     border-radius: 50%;
     margin: 0 auto;
+    position: relative;
+    text-align: center;
 }
 
 .img-container img {
@@ -547,7 +564,7 @@ h4 {
     margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
 }
 
-/* Dostosowujemy marginesy dla tekstu pod zdjęciem środkowego elementu */
+/* Margins for text under a middle element */
 .team-member:nth-child(2) h3,
 .team-member:nth-child(2) p {
     margin-top: 0;
@@ -557,66 +574,3 @@ h4 {
     padding-right: 60px ;
 }
 /* Our Team section (end) */
-
-/* Responsive design (start)*/
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-main {
-    height: calc(100vh - 60px); /* Adjust 60px to match your nav height */
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
-}
-
-.content {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2em;
-    box-sizing: border-box;
-    scroll-snap-align: start;
-}
-
-.contact-container {
-    max-width: 1200px; /* or any other suitable max-width */
-    width: 100%;
-}
-
-.team-container {
-    width: 100%;
-    max-width: 1200px; /* or any other suitable max-width */
-}
-
-/* Add responsive styles */
-
-@media (max-width: 1800px) {
-    .content {
-        width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    .contact-container,
-    .team-container {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .contact-headers,
-    .contact-options,
-    #contact-form {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .team-member {
-        flex: 0 0 100%;
-    }
-}
-/* Responsive design (end)*/
