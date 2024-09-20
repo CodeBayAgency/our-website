@@ -10,13 +10,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Initialize EmailJS
+    emailjs.init("jkLAd8X0aWHM4emed");
+
     // Form submission
     document.getElementById('contact-form').addEventListener('submit', function(e) {
         e.preventDefault();
-        alert('Thank you for your message. We will get back to you soon!');
-        this.reset();
+
+        // Collect the form data
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const prefix = document.getElementById('prefix').value;
+        const phone = document.getElementById('phone').value;
+        const message = document.getElementById('message').value;
+
+        // Set up the email parameters
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            prefix: prefix,
+            phone: phone,
+            message: message
+        };
+
+        // Debugging: Log the parameters
+        console.log("Sending email with parameters:", templateParams);
+
+        // Send the email using EmailJS
+        emailjs.send('service_8etewic', 'template_4aychwg', templateParams)
+            .then(function(response) {
+                console.log('Email sent successfully!', response);
+                alert('Thank you for your message. We will get back to you soon!');
+                
+                // Reset the form fields
+                document.getElementById('contact-form').reset();
+            }, function(error) {
+                console.error('EmailJS failed:', error);  // Pokaż pełny błąd w konsoli
+                alert('There was an error sending your message. Please try again later.');
+            });
     });
 });
+
+
 document.getElementById('prefix').addEventListener('input', function(e) {
     // Remove any non-digit characters
     let value = this.value.replace(/\D/g, '');
@@ -60,3 +95,29 @@ document.addEventListener('DOMContentLoaded', function() {
     leftArrow.addEventListener('click', moveRight);
     rightArrow.addEventListener('click', moveLeft);
 });
+
+// Fading greetings (start)
+const greetings = ["Welcome to CodeBay!", "Bienvenido a CodeBay!", "Bienvenue a CodeBay!", "Benvenuto a CodeBay!", "Willkommen bei CodeBay!", "Witaj w CodeBay!", "Bem-vindo a CodeBay!"];
+let currentIndex = 0;
+
+function changeGreeting() {
+    const greetingElement = document.getElementById('greeting');
+    
+    // Fade out
+    greetingElement.style.opacity = '0';
+
+    // Wait for fade out, then change text and fade in
+    setTimeout(() => {
+        currentIndex = (currentIndex + 1) % greetings.length;
+        greetingElement.textContent = greetings[currentIndex];
+        greetingElement.style.opacity = '1';
+
+        // Schedule next change
+        setTimeout(changeGreeting, 1000);
+    }, 2000);
+}
+
+// Start the cycle
+changeGreeting();
+
+// Fading greetings (end)

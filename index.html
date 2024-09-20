@@ -24,26 +24,35 @@
 
     <main>
         <section id="home" class="content" style="background-image: linear-gradient(to right, #3fb154, #4f79bd);">
-            <h1>Welcome to CodeBay</h1>
-            <p>Your trusted partner for software solutions</p>
+            <h1 id="greeting" class="greetings">Welcome to CodeBay!</h1>
+            <!-- YouTube video -->
+            <div style="margin: 0; text-align: center;">
+                <iframe width="70%" height="450" 
+                    src="https://www.youtube.com/embed/1WEAJ-DFkHE" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
         </section>
+        
 
         <section id="about" class="content"  style="background-image: linear-gradient(to right, #3fb154, #4f79bd);">
-            <h1>About Us</h1>
-            <p>Welcome to our company! We are dedicated to providing excellent services to our clients. Our team of experts works tirelessly to ensure customer satisfaction and deliver top-notch results.</p>
+            <h1 id="left-padding">About Us</h1>
+            <p class="about-us">At CodeBay, we specialize in delivering high-quality software solutions tailored to meet your business needs. Our services range from building modern, responsive websites to conducting thorough testing of web and mobile applications, with a focus on bug fixing and optimization. We also excel in AWS application development and help businesses seamlessly migrate their applications and databases from on-premises infrastructure to the cloud. With a commitment to innovation and precision, we ensure that your technology works flawlessly.</p>
         </section>
 
         <section id="services" class="content">
-            <h1>Our Services</h1>
+            <h1 id="left-padding">Our Services</h1>
             <div class="services-container">
                 <div class="service-card">
                     <div class="card-inner">
                         <div class="card-front">
                             <i class="fas fa-code"></i>
-                            <h3>Web Development</h3>
+                            <h3>Website Building</h3>
                         </div>
                         <div class="card-back">
-                            <p>Custom web solutions tailored to your business needs.</p>
+                            <p>Transform your vision into a responsive, high-performance website that engages users and drives results.</p>
                         </div>
                     </div>
                 </div>
@@ -51,10 +60,10 @@
                     <div class="card-inner">
                         <div class="card-front">
                             <i class="fas fa-code"></i>
-                            <h3>Application Testing</h3>
+                            <h3>Website & Application Testing</h3>
                         </div>
                         <div class="card-back">
-                            <p>Complex application testing including backend and frontend testing, database and performance tests.</p>
+                            <p>Ensure flawless performance with our comprehensive application, database, and performance testing. We catch issues before your users do.</p>
                         </div>
                     </div>
                 </div>
@@ -62,10 +71,32 @@
                     <div class="card-inner">
                         <div class="card-front">
                             <i class="fas fa-code"></i>
-                            <h3>Cloud-native applications</h3>
+                            <h3>Testing with Bug Fixing</h3>
                         </div>
                         <div class="card-back">
-                            <p>Creating complex cloud-native applications on AWS.</p>
+                            <p>Go beyond basic testing - let us identify, troubleshoot, and fix any bugs, delivering a fully optimized, problem-free solution.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <i class="fas fa-code"></i>
+                            <h3>AWS Application Development</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Harness the power of Amazon Web Services with our tailored cloud solutions, built for scalability, efficiency, and innovation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <i class="fas fa-code"></i>
+                            <h3>On-Premises to AWS Migration</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Seamlessly migrate your applications and databases to AWS, ensuring cost efficiency, minimal downtime and maximum performance.</p>
                         </div>
                     </div>
                 </div>
@@ -75,7 +106,7 @@
         
         <section id="team" class="content" style="background-image: linear-gradient(to right, #3fb154, #4f79bd);">
             <div>
-                <h1 style="font-family: 'Roboto Flex', sans-serif; font-size: 36px; font-weight: bold;">Our Team</h1>
+                <h1 id="left-padding">Our Team</h1>
             </div>
             <div class="team-container">
                 <button class="arrow left-arrow">&lt;</button>
@@ -115,10 +146,10 @@
                     <h4>codebay.agency@gmail.com</h4>
                     <div class="contact-info">
                         <div class="social-icons">
-                            <a href="mailto:info@ourcompany.com" class="icon-link">
+                            <a href="mailto:codebay.agency@gmail.com" class="icon-link">
                                 <i class="fas fa-envelope"></i>
                             </a>
-                            <a href="https://www.instagram.com/ourcompany" target="_blank" class="icon-link">
+                            <a href="https://www.instagram.com/codebay.agency" target="_blank" class="icon-link">
                                 <i class="fab fa-instagram"></i>
                             </a>
                             <a href="https://www.linkedin.com/company/ourcompany" target="_blank" class="icon-link">
@@ -128,37 +159,48 @@
                     </div>
                 </div>
                 <div class="contact-options">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <input type="text" name="name" id="name" required>
-                            <label for="name">YOUR NAME</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" id="email" required>
-                            <label for="email">YOUR EMAIL</label>
-                        </div>
-                        <div class="form-group phone-group">
-                            <div class="prefix-input">
-                                <input type="text" name="prefix" id="prefix" required>
-                                <label for="prefix">PREFIX</label>
+                    <div class="contact-options">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <input type="text" name="name" id="name" required>
+                                <label for="name">YOUR NAME</label>
                             </div>
-                            <div class="phone-input">
-                                <input type="tel" name="phone" id="phone" placeholder=" ">
-                                <label for="phone">YOUR PHONE (OPTIONAL)</label>
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" required>
+                                <label for="email">YOUR EMAIL</label>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" id="message" required></textarea>
-                            <label for="message">YOUR MESSAGE</label>
-                        </div>
-                        <button type="submit" class="submit-btn">SEND MESSAGE</button>
-                    </form>
-                </div>
+                            <div class="form-group phone-group">
+                                <div class="prefix-input">
+                                    <input type="text" name="prefix" id="prefix" required>
+                                    <label for="prefix">PREFIX</label>
+                                </div>
+                                <div class="phone-input">
+                                    <input type="tel" name="phone" id="phone" placeholder=" ">
+                                    <label for="phone">YOUR PHONE (OPTIONAL)</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" id="message" required></textarea>
+                                <label for="message">YOUR MESSAGE</label>
+                            </div>
+                            <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                        </form>
+                    </div>
             </div>
         </section>
 
     </main>
 
     <script src="script.js"></script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init({
+    publicKey: "jkLAd8X0aWHM4emed",
+  });
+})();
+</script>
 </body>
 </html>
