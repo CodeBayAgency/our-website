@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Fading greetings (start)
-const greetings = ["Welcome to CodeBay!", "Bienvenido a CodeBay!", "Bienvenue a CodeBay!", "Benvenuto a CodeBay!", "Willkommen bei CodeBay!", "Witaj w CodeBay!", "Bem-vindo a CodeBay!"];
+const greetings = ["Welcome to CodeBay!", "Bienvenido a CodeBay!", "Willkommen bei CodeBay!", "Bienvenue a CodeBay!", "Witaj w CodeBay!", "Benvenuto a CodeBay!", "Bem-vindo a CodeBay!"];
 let currentIndex = 0;
 
 function changeGreeting() {
@@ -119,5 +119,60 @@ function changeGreeting() {
 
 // Start the cycle
 changeGreeting();
-
 // Fading greetings (end)
+
+// Hamburger menu (start)
+document.addEventListener('DOMContentLoaded', (event) => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links li a');
+
+    function isMobileView() {
+        return window.innerWidth <= 768;
+    }
+
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    }
+
+    function closeMenu() {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+    }
+
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
+    });
+
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (isMobileView()) {
+                closeMenu();
+            }
+            const targetId = item.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (isMobileView() && navLinks.classList.contains('active')) {
+            if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                closeMenu();
+            }
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (!isMobileView()) {
+            closeMenu();
+        }
+    });
+});
+
+// Hamburger menu (end)
