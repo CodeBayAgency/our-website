@@ -10,16 +10,19 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+    overflow-y: scroll; /* Allow vertical scrolling for all screen sizes */
 }
 
 main {
     height: 100%;
-    overflow-y: auto; /* Allow vertical scrolling for all screen sizes */
 }
 
 .greetings {
     transition: opacity 2s;
-    text-align: center;
+    color: #22262e; /* Green color */
+    text-align: center; /* Center text */
+    text-shadow: 0 0 7px #3c6d62, 0 0 15px #5b7058, 0 0 20px #48c78a65, 0 0 30px #8acd936d;
+    animation: glow 1.5s ease-in-out infinite alternate; /* Add animation for continuous glow */
 }
 
 .content {
@@ -31,9 +34,20 @@ main {
     box-sizing: border-box;
 }
 
+.logo-placeholder {
+    position: absolute; /* Keeping it relative */
+    top: 120px; /* Distance from the top of its container */
+    left: 0px; /* Distance from the left of its container */
+    width: 200px; /* Width of the logo placeholder */
+    height: 200px; /* Height of the logo placeholder */
+    
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensure no overflow from the corners */
+}
+
 #main-nav {
     background-color: #333;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -99,6 +113,9 @@ main {
     .service-card {
         width: 90%;
         margin: 10px auto;
+    }
+    .arrow {
+        display: none;
     }
 }
 
@@ -178,6 +195,9 @@ main {
     .hamburger.active span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+    .arrow {
+        display: none;
+    }
 }
 
 /* Tablet */
@@ -203,10 +223,16 @@ main {
         width: 45%;
         margin: 10px;
     }   
+    .arrow {
+        display: none;
+    }
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
+    body {
+        overflow-y: auto;
+    }
     .greetings {
         font-size: 3.5rem;
     }
@@ -232,11 +258,12 @@ main {
 
 /* Large Desktop */
 @media (min-width: 1200px) {
-    main {
-        height: calc(100vh - 100px); /* Adjust 60px to match your nav height */
+    body {
         overflow-y: auto;
-        scroll-snap-type: y mandatory;
-        margin-top: 110px; /* Adjust based on your nav height */
+    }
+    main {
+        height: 100vh;
+        margin-top: 0;
     }
     
     .greetings{
@@ -255,8 +282,15 @@ main {
     }
     
     #left-padding {
-        padding-left: 130px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        margin-bottom: 40px;
+        text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
+        opacity: 0.8;
     }
+    
     
     .about-section {
         padding: 0;
@@ -264,8 +298,8 @@ main {
     
     .about-us {
         font-size: 22px;
-        padding-right: 900px;
-        padding-left: 130px;
+        padding-right: 600px;
+        padding-left: 220px;
     }
     
     .contact-container {
@@ -282,12 +316,20 @@ main {
         background-color: #f1f1f100;
         padding: 20px;
         text-align: center;
-        width: 300px;
-        margin: 50px auto;
+        width: 300px; /* Adjust as needed */
+        margin: 20px auto; /* Margin for spacing */
         transition: font-size 0.15s ease; /* Transition for smooth font size change */
-        display: inline-block; /* Or 'block', depending on your layout */
-        height: 70px;
-        overflow: hidden;
+        display: inline-block; /* Allow captions to line up horizontally */
+        height: 70px; /* Fixed height */
+        overflow: hidden; /* Hide overflow content */
+    
+        /* Adding text border effect */
+        color: #48c758; /* Text color */
+        text-shadow: 
+            -2px -2px 0 #20202098,  
+             2px -2px 0 #202020be, 
+            -2px  2px 0 #202020be, 
+             2px  2px 0 #202020be; /* Black text-shadow to create a border effect */
     }
     
     
@@ -297,7 +339,7 @@ main {
     
     #main-nav {
         background-color: #333;
-        position: fixed;
+        position: sticky;
         top: 0;
         width: 100%;
         z-index: 1000;

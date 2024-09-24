@@ -113,7 +113,7 @@ function changeGreeting() {
         greetingElement.style.opacity = '1';
 
         // Schedule next change
-        setTimeout(changeGreeting, 1000);
+        setTimeout(changeGreeting, 3000);
     }, 2000);
 }
 
