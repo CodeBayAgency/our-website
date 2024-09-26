@@ -174,5 +174,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 });
-
 // Hamburger menu (end)

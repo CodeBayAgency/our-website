@@ -10,11 +10,11 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+    overflow-y: scroll; /* Allow vertical scrolling for all screen sizes */
 }
 
 main {
     height: 100%;
-    overflow-y: auto; /* Allow vertical scrolling for all screen sizes */
 }
 
 .greetings {
@@ -33,7 +33,7 @@ main {
 
 #main-nav {
     background-color: #333;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -100,6 +100,10 @@ main {
         width: 90%;
         margin: 10px auto;
     }
+    .arrow {
+        display: none;
+    }
+    
 }
 
 /* Mobile (landscape) */
@@ -178,6 +182,9 @@ main {
     .hamburger.active span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+    .arrow {
+        display: none;
+    }
 }
 
 /* Tablet */
@@ -203,10 +210,16 @@ main {
         width: 45%;
         margin: 10px;
     }   
+    .arrow {
+        display: none;
+    }
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
+    body {
+        overflow-y: auto;
+    }
     .greetings {
         font-size: 3.5rem;
     }
@@ -232,11 +245,12 @@ main {
 
 /* Large Desktop */
 @media (min-width: 1200px) {
-    main {
-        height: calc(100vh - 100px); /* Adjust 60px to match your nav height */
+    body {
         overflow-y: auto;
-        scroll-snap-type: y mandatory;
-        margin-top: 110px; /* Adjust based on your nav height */
+    }
+    main {
+        height: 100vh;
+        margin-top: 0;
     }
     
     .greetings{
@@ -297,7 +311,7 @@ main {
     
     #main-nav {
         background-color: #333;
-        position: fixed;
+        position: sticky;
         top: 0;
         width: 100%;
         z-index: 1000;
@@ -762,7 +776,7 @@ main {
     /* Our Team section (end) */
 }
 
-@media (max-width: 1800px) {
+@media (max-width: 2800px) {
     .content {
         width: 100%;
     }
