@@ -11,11 +11,13 @@ body {
     display: flex;
     flex-direction: column;
     overflow-y: scroll; /* Allow vertical scrolling for all screen sizes */
+    background-color: #ddeadf;
 }
 
 main {
     height: 100%;
 }
+
 
 .greetings {
     transition: opacity 2s;
@@ -26,7 +28,7 @@ main {
 }
 
 .content {
-    min-height: 100vh;
+    min-height: 10vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -50,7 +52,8 @@ main {
     position: sticky;
     top: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 1;
+    
 }
 
 #main-nav ul {
@@ -100,6 +103,7 @@ main {
     .about-us {
         font-size: 16px;
         padding: 0 20px;
+        top: -100px;
     }
 
     .team-member {
@@ -209,6 +213,7 @@ main {
     .about-us {
         font-size: 18px;
         padding: 0 40px;
+        top: -100px;
     }
 
     .team-member {
@@ -240,6 +245,7 @@ main {
     .about-us {
         font-size: 20px;
         padding: 0 60px;
+        top: -100px;
     }
 
     .team-member {
@@ -271,35 +277,68 @@ main {
     }
     
     .content {
-        min-height: 90vh;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        box-sizing: border-box;
-        scroll-snap-align: start;
-        width: 1900px;
+        width: 100%; /* Full width */
+        display: relative; /* Use flexbox */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Center children vertically */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+        scroll-snap-align: start; /* Align for scroll snapping */
+        margin-bottom: 250px; /* Add 50px space below each section */
     }
-    
+
+    #about {
+        position: relative; /* Allow absolute positioning within this section */
+        margin: 0; /* Remove default margin */
+        padding-bottom: 50px;
+    }
+    #services {
+        position: relative; /* Allow absolute positioning within this section */
+        margin: 0; /* Remove default margin */
+        padding-top: 50px;
+    }
     #left-padding {
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 0;
-        margin-bottom: 40px;
+        margin-bottom: 0;           /* Remove margin-bottom from here to avoid extra space */
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
         opacity: 0.8;
+        color: rgb(235, 67, 67);              /* Change text color to white for contrast */
     }
-    
-    
+    .black-square-about {
+        background-color: black;   /* Background color of the square */
+        padding: 20px;             /* Padding inside the square */
+        display: inline-block;      /* Allow the square to fit the content */
+        border-radius: 5px;        /* Optional: rounded corners */
+        margin-bottom: 20px;       /* Space below the black square */
+        width: 250px;              /* Width of the black square */
+        position: absolute;         /* Position it absolutely */
+        right: 200px;              /* 200px from the right side */
+        top: -170px;                 /* Adjust as needed to position vertically */
+    }
+    .black-square-services {
+        background-color: black;   /* Background color of the square */
+        padding: 20px;             /* Padding inside the square */
+        display: inline-block;      /* Allow the square to fit the content */
+        border-radius: 5px;        /* Optional: rounded corners */
+        margin-bottom: 20px;       /* Space below the black square */
+        width: 350px;              /* Width of the black square */
+        position: absolute;         /* Position it absolutely */
+        left: 150px;              /* 200px from the left side */
+        top: -80px;                 /* Adjust as needed to position vertically */
+    }
     .about-section {
         padding: 0;
     }
     
     .about-us {
-        font-size: 22px;
-        padding-right: 600px;
-        padding-left: 220px;
+        font-size: 19px;               /* Set font size */
+        padding-right: 600px;          /* Right padding */
+        padding-left: 220px;           /* Left padding */
+        margin-top: -50px;             /* Use negative margin to pull it upwards */
+        position: relative;             /* Allow positioning within the normal flow */
+        z-index: 1;                    /* Ensure it stays on top if overlapping */
     }
     
     .contact-container {
@@ -312,24 +351,30 @@ main {
     }
     
     .caption {
-        font-size: 20px;
-        background-color: #f1f1f100;
-        padding: 20px;
+        font-size: 20px; /* Original font size */
+        background-color: #f1f1f100; /* Original background color */
+        padding: 20px; /* Original padding */
         text-align: center;
         width: 300px; /* Adjust as needed */
         margin: 20px auto; /* Margin for spacing */
-        transition: font-size 0.15s ease; /* Transition for smooth font size change */
+        transition: font-size 0.15s ease, padding 0.15s ease; /* Added transition for padding */
         display: inline-block; /* Allow captions to line up horizontally */
-        height: 70px; /* Fixed height */
+        height: 50px; /* Fixed height */
         overflow: hidden; /* Hide overflow content */
-    
+        
         /* Adding text border effect */
-        color: #48c758; /* Text color */
+        /*color: #48c758;  Text color */
         text-shadow: 
             -2px -2px 0 #20202098,  
              2px -2px 0 #202020be, 
             -2px  2px 0 #202020be, 
              2px  2px 0 #202020be; /* Black text-shadow to create a border effect */
+    }
+    
+    .caption.shrink {
+        padding: 10px; /* Reduce padding when scrolled */
+        font-size: 16px; /* Adjust font size when scrolled, if needed */
+        transition: padding 0.3s ease, font-size 0.3s ease; /* Smooth transition */
     }
     
     
@@ -362,6 +407,7 @@ main {
         text-decoration: none;
         padding: 1em;
         display: block;
+        margin-top: -10px;
     }
     
     
@@ -656,9 +702,9 @@ main {
     }
     
     .service-card {
-        width: 220px; /* Increased from 200px */
-        height: 275px; /* Increased from 250px */
-        perspective: 1000px;
+        width: 120px; /* Increased from 200px */
+        height: 175px; /* Increased from 250px */
+        perspective: 500px;
         margin: 5px; /* Reduced from 10px */
     }
     

@@ -49,6 +49,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('There was an error sending your message. Please try again later.');
             });
     });
+
+    // New scroll event to adjust caption padding
+    document.addEventListener('scroll', function() {
+        const captions = document.querySelectorAll('.caption');
+
+        if (window.scrollY > 10) {
+            captions.forEach(caption => {
+                caption.classList.add('shrink');
+            });
+        } else {
+            captions.forEach(caption => {
+                caption.classList.remove('shrink');
+            });
+        }
+    });
+
+    // scroll event end
 });
 
 
@@ -173,5 +190,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             closeMenu();
         }
     });
+    
 });
+
+
 // Hamburger menu (end)
+
