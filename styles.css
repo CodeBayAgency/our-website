@@ -92,6 +92,42 @@ main {
     display: block;
 }
 
+#main-nav {
+    position: sticky;
+    background-color: #1E3A8A;
+    top: 0;
+    padding: 30px 0;
+    width: 100%;
+    z-index: 1000;
+    font-weight: 600;
+}
+
+#main-nav .nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#main-nav .nav-links li {
+    margin: 0 2em;
+}
+
+#main-nav .nav-links li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    display: block;
+    color: white;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+#main-nav .nav-links li a:hover,
+#main-nav .nav-links li a.active {
+    background: #3B82F6;
+}
+
 /* Hamburger menu styles */
 .hamburger {
     display: none;
@@ -368,8 +404,7 @@ main {
         text-decoration: none;
         display: block;
     }
-    
-    
+
     .team-member img {
         display: inline;
         margin: 0 auto;

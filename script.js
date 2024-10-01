@@ -1,12 +1,49 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+    const navLinks = document.querySelectorAll('.nav-links li a');
+    const sections = document.querySelectorAll('section');
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+    // Intersection Observer setup
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                setActiveNavLink(id);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    function setActiveNavLink(id) {
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Set Home as default active link
+    navLinks[0].classList.add('active');
+
+    // Smooth scrolling
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 
@@ -65,38 +102,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // scroll event end
-});
+    // Prefix input handling
+    document.getElementById('prefix').addEventListener('input', function(e) {
+        // Remove any non-digit characters
+        let value = this.value.replace(/\D/g, '');
+        
+        // Ensure it starts with a '+'
+        if (value) {
+            value = '+' + value;
+        }
+        
+        // Limit to 3 digits (plus the '+' sign)
+        if (value.length > 4) {
+            value = value.slice(0, 4);
+        }
+        
+        this.value = value;
+    });
 
+    // Form validation for prefix and phone
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        var phoneInput = document.getElementById('phone');
+        var prefixInput = document.getElementById('prefix');
+        
+        if ((phoneInput.value && !prefixInput.value) || (!phoneInput.value && prefixInput.value)) {
+            e.preventDefault();
+            alert('Please enter both prefix and phone number, or leave both empty.');
+        }
+    });
 
-document.getElementById('prefix').addEventListener('input', function(e) {
-    // Remove any non-digit characters
-    let value = this.value.replace(/\D/g, '');
-    
-    // Ensure it starts with a '+'
-    if (value) {
-        value = '+' + value;
-    }
-    
-    // Limit to 3 digits (plus the '+' sign)
-    if (value.length > 4) {
-        value = value.slice(0, 4);
-    }
-    
-    this.value = value;
-});
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    var phoneInput = document.getElementById('phone');
-    var prefixInput = document.getElementById('prefix');
-    
-    if ((phoneInput.value && !prefixInput.value) || (!phoneInput.value && prefixInput.value)) {
-        e.preventDefault();
-        alert('Please enter both prefix and phone number, or leave both empty.');
-    }
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
+    // Team carousel
     const carousel = document.querySelector('.team-carousel');
     const leftArrow = document.querySelector('.left-arrow');
     const rightArrow = document.querySelector('.right-arrow');
@@ -111,38 +146,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
     leftArrow.addEventListener('click', moveRight);
     rightArrow.addEventListener('click', moveLeft);
-});
 
-// Fading greetings (start)
-const greetings = ["Welcome to CodeBay!", "Bienvenido a CodeBay!", "Willkommen bei CodeBay!", "Bienvenue a CodeBay!", "Witaj w CodeBay!", "Benvenuto a CodeBay!", "Bem-vindo a CodeBay!"];
-let currentIndex = 0;
+    // Fading greetings
+    const greetings = ["Welcome to CodeBay!", "Bienvenido a CodeBay!", "Willkommen bei CodeBay!", "Bienvenue a CodeBay!", "Witaj w CodeBay!", "Benvenuto a CodeBay!", "Bem-vindo a CodeBay!"];
+    let currentIndex = 0;
 
-function changeGreeting() {
-    const greetingElement = document.getElementById('greeting');
-    
-    // Fade out
-    greetingElement.style.opacity = '0';
+    function changeGreeting() {
+        const greetingElement = document.getElementById('greeting');
+        
+        // Fade out
+        greetingElement.style.opacity = '0';
 
-    // Wait for fade out, then change text and fade in
-    setTimeout(() => {
-        currentIndex = (currentIndex + 1) % greetings.length;
-        greetingElement.textContent = greetings[currentIndex];
-        greetingElement.style.opacity = '1';
+        // Wait for fade out, then change text and fade in
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % greetings.length;
+            greetingElement.textContent = greetings[currentIndex];
+            greetingElement.style.opacity = '1';
 
-        // Schedule next change
-        setTimeout(changeGreeting, 3000);
-    }, 2000);
-}
+            // Schedule next change
+            setTimeout(changeGreeting, 3000);
+        }, 2000);
+    }
 
-// Start the cycle
-changeGreeting();
-// Fading greetings (end)
+    // Start the greeting cycle
+    changeGreeting();
 
-// Hamburger menu (start)
-document.addEventListener('DOMContentLoaded', (event) => {
+    // Hamburger menu
     const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    const navItems = document.querySelectorAll('.nav-links li a');
+    const navLinksContainer = document.querySelector('.nav-links');
 
     function isMobileView() {
         return window.innerWidth <= 768;
@@ -150,12 +181,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     function toggleMenu() {
         hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
+        navLinksContainer.classList.toggle('active');
     }
 
     function closeMenu() {
         hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
+        navLinksContainer.classList.remove('active');
     }
 
     hamburger.addEventListener('click', (e) => {
@@ -163,23 +194,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
         toggleMenu();
     });
 
-    navItems.forEach(item => {
+    navLinks.forEach(item => {
         item.addEventListener('click', (e) => {
-            e.preventDefault();
             if (isMobileView()) {
                 closeMenu();
-            }
-            const targetId = item.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
 
     document.addEventListener('click', (e) => {
-        if (isMobileView() && navLinks.classList.contains('active')) {
-            if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+        if (isMobileView() && navLinksContainer.classList.contains('active')) {
+            if (!navLinksContainer.contains(e.target) && !hamburger.contains(e.target)) {
                 closeMenu();
             }
         }
@@ -190,9 +215,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
             closeMenu();
         }
     });
-    
 });
-
-
-// Hamburger menu (end)
-
