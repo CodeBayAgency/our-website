@@ -3,15 +3,17 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
     overflow-x: hidden;
+    color: #1E3A8A;
 }
 
 body {
     display: flex;
     flex-direction: column;
     overflow-y: scroll; /* Allow vertical scrolling for all screen sizes */
-    background-color: #ddeadf;
+    background-color: #F3F4F6;
 }
 
 main {
@@ -21,14 +23,20 @@ main {
 
 .greetings {
     transition: opacity 2s;
-    color: #22262e; /* Green color */
+    color: #1E3A8A;
     text-align: center; /* Center text */
-    text-shadow: 0 0 7px #3c6d62, 0 0 15px #5b7058, 0 0 20px #48c78a65, 0 0 30px #8acd936d;
     animation: glow 1.5s ease-in-out infinite alternate; /* Add animation for continuous glow */
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.home-video {
+    margin: 0; 
+    text-align: center;
 }
 
 .content {
-    min-height: 10vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -38,22 +46,24 @@ main {
 
 .logo-placeholder {
     position: absolute; /* Keeping it relative */
-    top: 120px; /* Distance from the top of its container */
     left: 0px; /* Distance from the left of its container */
     width: 200px; /* Width of the logo placeholder */
     height: 200px; /* Height of the logo placeholder */
-    
-    border-radius: 8px; /* Rounded corners */
-    overflow: hidden; /* Ensure no overflow from the corners */
+} 
+.logo-placeholder img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain;
 }
 
 #main-nav {
-    background-color: #333;
     position: sticky;
+    background-color: #1E3A8A;
     top: 0;
+    padding: 30px 0;
     width: 100%;
     z-index: 1;
-    
+    font-weight: 600;
 }
 
 #main-nav ul {
@@ -65,13 +75,12 @@ main {
 }
 
 #main-nav ul li {
-    margin: 0 1em;
+    margin: 0 2em;
 }
 
 #main-nav ul li a {
-    color: white;
     text-decoration: none;
-    padding: 1em;
+    padding: 6px 15px;
     display: block;
 }
 
@@ -103,7 +112,7 @@ main {
     .about-us {
         font-size: 16px;
         padding: 0 20px;
-        top: -100px;
+        top: 100px;
     }
 
     .team-member {
@@ -165,17 +174,13 @@ main {
     }
     .nav-links {
         position: fixed;
-        left: -250px; /* Start off-screen to the left */
         top: 0;
         flex-direction: column;
-        background-color: #333;
         width: 200px; /* Set a fixed width */
         height: 100vh;
         text-align: left; /* Align text to the left */
-        transition: 0.3s;
         padding-top: 60px;
         box-shadow: 2px 0 5px rgba(0,0,0,0.2); /* Add shadow for depth */
-        transition: left 0.3s ease;
     }
 
     .nav-links.active {
@@ -183,8 +188,7 @@ main {
     }
 
     .nav-links li {
-        margin: 15px 0;
-        padding-left: 20px; /* Add some padding to the left */
+        margin: 0;
     }
 
     /* Hamburger animation */
@@ -283,60 +287,32 @@ main {
         justify-content: center; /* Center children vertically */
         box-sizing: border-box; /* Include padding and border in element's total width and height */
         scroll-snap-align: start; /* Align for scroll snapping */
-        margin-bottom: 250px; /* Add 50px space below each section */
+        margin-bottom: 50px; /* Add 50px space below each section */
     }
 
-    #about {
+    #about, #services, #team, #contact {
         position: relative; /* Allow absolute positioning within this section */
         margin: 0; /* Remove default margin */
-        padding-bottom: 50px;
+        padding-bottom: 100px;
     }
-    #services {
-        position: relative; /* Allow absolute positioning within this section */
-        margin: 0; /* Remove default margin */
-        padding-top: 50px;
-    }
-    #left-padding {
+    #headings {
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 0;
-        margin-bottom: 0;           /* Remove margin-bottom from here to avoid extra space */
+        margin-bottom: 30px;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
         opacity: 0.8;
-        color: rgb(235, 67, 67);              /* Change text color to white for contrast */
-    }
-    .black-square-about {
-        background-color: black;   /* Background color of the square */
-        padding: 20px;             /* Padding inside the square */
-        display: inline-block;      /* Allow the square to fit the content */
-        border-radius: 5px;        /* Optional: rounded corners */
-        margin-bottom: 20px;       /* Space below the black square */
-        width: 250px;              /* Width of the black square */
-        position: absolute;         /* Position it absolutely */
-        right: 200px;              /* 200px from the right side */
-        top: -170px;                 /* Adjust as needed to position vertically */
-    }
-    .black-square-services {
-        background-color: black;   /* Background color of the square */
-        padding: 20px;             /* Padding inside the square */
-        display: inline-block;      /* Allow the square to fit the content */
-        border-radius: 5px;        /* Optional: rounded corners */
-        margin-bottom: 20px;       /* Space below the black square */
-        width: 350px;              /* Width of the black square */
-        position: absolute;         /* Position it absolutely */
-        left: 150px;              /* 200px from the left side */
-        top: -80px;                 /* Adjust as needed to position vertically */
     }
     .about-section {
         padding: 0;
     }
     
     .about-us {
-        font-size: 19px;               /* Set font size */
-        padding-right: 600px;          /* Right padding */
-        padding-left: 220px;           /* Left padding */
-        margin-top: -50px;             /* Use negative margin to pull it upwards */
+        font-size: 21px;               /* Set font size */
+        margin-left: 450px;
+        margin-right: 450px;
+        margin-top: 120px;
         position: relative;             /* Allow positioning within the normal flow */
         z-index: 1;                    /* Ensure it stays on top if overlapping */
     }
@@ -351,39 +327,20 @@ main {
     }
     
     .caption {
-        font-size: 20px; /* Original font size */
-        background-color: #f1f1f100; /* Original background color */
-        padding: 20px; /* Original padding */
+        font-size: 21px; /* Original font size */
         text-align: center;
-        width: 300px; /* Adjust as needed */
-        margin: 20px auto; /* Margin for spacing */
-        transition: font-size 0.15s ease, padding 0.15s ease; /* Added transition for padding */
         display: inline-block; /* Allow captions to line up horizontally */
-        height: 50px; /* Fixed height */
         overflow: hidden; /* Hide overflow content */
-        
-        /* Adding text border effect */
-        /*color: #48c758;  Text color */
-        text-shadow: 
-            -2px -2px 0 #20202098,  
-             2px -2px 0 #202020be, 
-            -2px  2px 0 #202020be, 
-             2px  2px 0 #202020be; /* Black text-shadow to create a border effect */
-    }
-    
-    .caption.shrink {
-        padding: 10px; /* Reduce padding when scrolled */
-        font-size: 16px; /* Adjust font size when scrolled, if needed */
-        transition: padding 0.3s ease, font-size 0.3s ease; /* Smooth transition */
     }
     
     
-    .caption:hover {
-        font-size: 135%; /* Increases font size by 15% */
+    .caption a:hover {
+        background: #3B82F6;
+        border-radius: 20px;
+        color: black;
     }
     
     #main-nav {
-        background-color: #333;
         position: sticky;
         top: 0;
         width: 100%;
@@ -398,16 +355,10 @@ main {
         justify-content: center;
     }
     
-    #main-nav ul li {
-        margin: 0 1em;
-    }
-    
     #main-nav ul li a {
         color: white;
         text-decoration: none;
-        padding: 1em;
         display: block;
-        margin-top: -10px;
     }
     
     
@@ -515,7 +466,7 @@ main {
     }
     
     .submit-btn {
-        background-color: black;
+        background-color: #3B82F6;
         color: white;
         padding: 12px 20px;
         border: none;
@@ -526,7 +477,7 @@ main {
     }
     
     .submit-btn:hover {
-        background-color: #45a049;
+        background-color: #1E3A8A;
     }
     
     .contact-info {
@@ -558,7 +509,6 @@ main {
     
     .contact-options {
         flex: 1;
-        /*background-color: #f0f0f0; /* Light grey background */
     }
     
     h3 {
@@ -572,7 +522,9 @@ main {
     h1 {
         font-size: 45px;
         line-height: 52px;
+        font-family: "Permanent Marker", cursive;
         font-weight: 400;
+        font-style: normal;
     }
     h4 {
         font-size: 16px;
@@ -693,8 +645,8 @@ main {
         overflow: hidden; /* Contains the wider form */
     }
     
-    /* Our Services section (start) */
-    .services-container {
+     /* Our Services section (start) */
+     .services-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -702,9 +654,9 @@ main {
     }
     
     .service-card {
-        width: 120px; /* Increased from 200px */
-        height: 175px; /* Increased from 250px */
-        perspective: 500px;
+        width: 220px; /* Increased from 200px */
+        height: 275px; /* Increased from 250px */
+        perspective: 1000px;
         margin: 5px; /* Reduced from 10px */
     }
     
@@ -730,7 +682,6 @@ main {
         backface-visibility: hidden;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         text-align: center;
         padding: 20px;
@@ -741,22 +692,23 @@ main {
     
     .card-front {
         background-color: #f0f0f0;
+        padding-top: 55px;
     }
     
     .card-back {
-        background-color: #3fb154;
+        background-color: #3B82F6;
         color: white;
         transform: rotateY(180deg);
     }
     
     .card-front i {
-        font-size: 3.5em; /* Increased from 3em */
+        font-size: 2.5em;
         margin-bottom: 15px; /* Increased from 10px */
     }
     
     /* Adjust text sizes for larger cards */
     .card-front h3 {
-        font-size: 1.2em;
+        font-size: 1em;
         margin-bottom: 10px;
     }
     
@@ -772,7 +724,7 @@ main {
         align-items: center;
         justify-content: center;
         width: 100%; /* Zmniejsza szerokość całego kontenera o 20% */
-        margin: 0 auto; /* Wyśrodkowuje kontener */
+        margin: 20px auto; /* Wyśrodkowuje kontener */
         max-width: 1200px; /* or any other suitable max-width */
     }
     
@@ -810,7 +762,7 @@ main {
         font-weight: bold;
         background: none;
         border: none;
-        color: white;
+        color: #1E3A8A;
         cursor: pointer;
     }
     
@@ -846,6 +798,7 @@ main {
     .team-member p {
         padding-left: 60px ;
         padding-right: 60px ;
+        color: #111827;
     }
     /* Our Team section (end) */
 }
