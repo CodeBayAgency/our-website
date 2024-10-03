@@ -742,7 +742,7 @@ main {
     }
     
     .card-front {
-        background-color: #f0f0f0;
+        background-color: rgb(226, 226, 226);
         padding-top: 55px;
     }
     
@@ -750,6 +750,7 @@ main {
         background-color: #3B82F6;
         color: white;
         transform: rotateY(180deg);
+        justify-content: center;
     }
     
     .card-front i {
@@ -785,6 +786,7 @@ main {
         justify-content: center;
         width: 100%; /* Zajmuje pełną szerokość zmniejszonego kontenera */
         overflow: hidden;
+        transition: transform 0.5s ease-in-out;
     }
     
     .team-member {
@@ -795,6 +797,7 @@ main {
         display: inline-block;
         margin: 1em;
         text-align: center;
+        cursor: pointer;
     }
     
     .team-member:nth-child(2) {

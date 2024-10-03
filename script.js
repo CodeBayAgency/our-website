@@ -135,6 +135,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const carousel = document.querySelector('.team-carousel');
     const leftArrow = document.querySelector('.left-arrow');
     const rightArrow = document.querySelector('.right-arrow');
+    const teamMembers = document.querySelectorAll('.team-member');
+
+    // Funkcja przesuwająca członka zespołu na początek karuzeli
+    function moveToFront(member) {
+        while (carousel.firstElementChild !== member) {
+            carousel.appendChild(carousel.firstElementChild);
+        }
+    }
+
+    // Funkcja przesuwająca członka zespołu na środek karuzeli
+    function moveToMiddle(member) {
+        // Najpierw ustawiamy go na początek
+        moveToFront(member);
+
+        // Następnie przesuwamy karuzelę w lewo dwa razy, aby dany członek był w środku
+        moveLeft();
+        moveLeft();
+    }
 
     function moveLeft() {
         carousel.appendChild(carousel.firstElementChild);
@@ -146,6 +164,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     leftArrow.addEventListener('click', moveRight);
     rightArrow.addEventListener('click', moveLeft);
+
+    // Dodaj event listener do każdego członka zespołu
+    teamMembers.forEach(member => {
+        member.addEventListener('click', () => {
+            moveToMiddle(member);
+        });
+    });
+
 
     // Fading greetings
     const greetings = ["Welcome to CodeBay!", "Bienvenido a CodeBay!", "Willkommen bei CodeBay!", "Bienvenue a CodeBay!", "Witaj w CodeBay!", "Benvenuto a CodeBay!", "Bem-vindo a CodeBay!"];
