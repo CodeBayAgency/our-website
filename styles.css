@@ -562,6 +562,14 @@ main {
         margin-bottom: 24px;
         max-width: unset;
     }
+    .team-member h3 {
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: 600;
+        color: #151515;
+        margin-bottom: 14px;
+        max-width: unset;
+    }
     h1 {
         font-size: 45px;
         line-height: 52px;
@@ -801,17 +809,21 @@ main {
     }
     
     .arrow {
-        font-size: 30px;
+        font-size: 45px;
         font-weight: bold;
         background: none;
         border: none;
         color: #1E3A8A;
         cursor: pointer;
     }
+
+    .arrow:hover {
+        color: #3B82F6;
+    }
     
     .img-container {
-        width: 200px;
-        height: 200px;
+        width: 220px;
+        height: 220px;
         overflow: hidden;
         border-radius: 50%;
         margin: 0 auto;
@@ -842,6 +854,7 @@ main {
         padding-left: 60px ;
         padding-right: 60px ;
         color: #111827;
+        font-size: 14px;
     }
     /* Our Team section (end) */
 }
