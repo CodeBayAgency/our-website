@@ -32,9 +32,24 @@ main {
 }
 
 .home-video {
-    margin: 0; 
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 5px solid #1E3A8A; /* Kolor przycisków z Twojej strony */
+    margin: 20px auto;
+    width: fit-content;
 }
+
+.home-video iframe {
+    border-radius: 10px;
+    width: 900px; /* Pozostawia pełny rozmiar ustawiony w HTML */
+    height: 500px; /* Utrzymuje stałą wysokość */
+}
+
+
+
 
 .content {
     width: 100%;
@@ -742,7 +757,7 @@ main {
     }
     
     .card-front {
-        background-color: rgb(226, 226, 226);
+        background-color: white;
         padding-top: 55px;
     }
     
@@ -767,6 +782,24 @@ main {
     .card-back p {
         font-size: 1em;
         line-height: 1.4;
+    }
+
+    .services-p {
+        font-family: "Permanent Marker", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 22px;
+        margin-left: 240px;
+        margin-bottom: -30px;
+    }
+    .services-arrow {
+        font-family: "Permanent Marker", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 55px;
+        margin-left: 350px;
+        margin-bottom: -55px;
+        margin-top: -15px;
     }
     /* Our Services section (end) */
     
