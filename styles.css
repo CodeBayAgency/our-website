@@ -876,19 +876,19 @@ main {
     /* Dodajemy specjalne style dla środkowego elementu, aby zapobiec ucinaniu zdjęcia */
     .team-member:nth-child(2) .img-container {
         width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 200px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
         margin-top: 20px; /* Przesuwamy kontener nieco w górę */
         margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
     }
     .team-member:nth-child(1) .img-container {
         width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 200px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
         margin-top: 20px; /* Przesuwamy kontener nieco w górę */
         margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
     }
     .team-member:nth-child(3) .img-container {
         width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 200px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
         margin-top: 20px; /* Przesuwamy kontener nieco w górę */
         margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
     }
