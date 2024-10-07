@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.9
+        threshold: 0.7
     };
 
     const observer = new IntersectionObserver((entries) => {
