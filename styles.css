@@ -87,8 +87,9 @@ main {
     top: 0;
     padding: 30px 0;
     width: 100%;
-    z-index: 1;
+    z-index: 1000;
     font-weight: 600;
+    transition: padding 0.3s ease; /* Add smooth transition */
 }
 
 #main-nav ul {
@@ -109,14 +110,10 @@ main {
     display: block;
 }
 
-#main-nav {
-    position: sticky;
-    background-color: #1E3A8A;
-    top: 0;
-    padding: 30px 0;
-    width: 100%;
-    z-index: 1000;
-    font-weight: 600;
+#main-nav.shrink {
+    padding: 15px 0; /* Reduced padding when scrolled */
+    height: 60px;
+    opacity: 0.8;
 }
 
 #main-nav .nav-links {
@@ -802,6 +799,42 @@ main {
         margin-left: 350px;
         margin-bottom: -55px;
         margin-top: -15px;
+    }
+    .home-arrow {
+        font-family: "Permanent Marker", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 55px;
+        margin-left: 360px;
+        margin-bottom: 430px;
+        margin-top: -400px;
+    }   
+    .home-p {
+        font-family: "Permanent Marker", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 22px;
+        margin-left: 180px;
+        margin-bottom: 400px;
+        margin-top: -500px;
+    }
+    .home-arrow-2 {
+        font-family: "Permanent Marker", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 55px;
+        margin-left: 1480px;
+        margin-bottom: 430px;
+        margin-top: -580px;
+    }   
+    .home-p-2 {
+        font-family: "Permanent Marker", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 22px;
+        margin-left: 1510px;
+        margin-bottom: 350px;
+        margin-top: -450px;
     }
     /* Our Services section (end) */
     
