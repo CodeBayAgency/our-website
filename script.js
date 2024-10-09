@@ -54,6 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('contact-form').addEventListener('submit', function(e) {
         e.preventDefault();
 
+        // Show spinner
+        document.getElementById('spinner').style.display = 'flex';
+
         // Collect the form data
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
@@ -77,14 +80,37 @@ document.addEventListener('DOMContentLoaded', function() {
         emailjs.send('service_8etewic', 'template_4aychwg', templateParams)
             .then(function(response) {
                 console.log('Email sent successfully!', response);
-                alert('Thank you for your message. We will get back to you soon!');
+                
+                // Hide spinner
+                document.getElementById('spinner').style.display = 'none';
+
+                // Show custom modal
+                document.getElementById('modal-message').textContent = 'Your message has been sent. We will get back to you soon!';
+                document.getElementById('thank-you-modal').style.display = 'block';
                 
                 // Reset the form fields
                 document.getElementById('contact-form').reset();
             }, function(error) {
-                console.error('EmailJS failed:', error);  // Pokaż pełny błąd w konsoli
-                alert('There was an error sending your message. Please try again later.');
+                console.error('EmailJS failed:', error);
+                
+                // Hide spinner
+                document.getElementById('spinner').style.display = 'none';
+
+                // Show error in custom modal
+                document.getElementById('modal-message').textContent = 'There was an error sending your message. Please try again later.';
+                document.getElementById('thank-you-modal').style.display = 'block';
             });
+    });
+        // Close modal when clicking the close button
+    document.getElementById('modal-close').addEventListener('click', function() {
+        document.getElementById('thank-you-modal').style.display = 'none';
+    });
+
+    // Close modal when clicking outside of it
+    window.addEventListener('click', function(event) {
+        if (event.target == document.getElementById('thank-you-modal')) {
+            document.getElementById('thank-you-modal').style.display = 'none';
+        }
     });
 
     // New scroll event to adjust caption padding
