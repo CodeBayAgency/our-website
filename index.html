@@ -30,8 +30,11 @@
             <li class="caption"><a href="#contact">Contact</a></li>
         </ul>
         <div class="logo-placeholder">
-            <img src=".\images\white_on_trans.png"alt="Logo">
+            <span class="logo1"><img src=".\images\white_on_trans.png"alt="Logo"></span>
+            <span class="logo2"><img src=".\images\black_on_trans.png"alt="Logo"></span>
         </div> <!-- Logo placeholder -->
+            
+
     </nav>
 
     <main>
@@ -106,14 +109,15 @@
                             <h3>On-Premises to AWS Migration</h3>
                         </div>
                         <div class="card-back">
-                            <p">Seamlessly migrate your applications and databases to AWS, ensuring cost efficiency, minimal downtime and maximum performance.</p>
+                            <p>Seamlessly migrate your applications and databases to AWS, ensuring cost efficiency, minimal downtime and maximum performance.</p>
                         </div>
                     </div>
                 </div>
                 <!-- Repeat for other services -->
             </div>
             <span class="services-arrow">&#10548;</span>
-            <p class="services-p">Hover over the cards!</p>
+            <p class="services-p" id="hint-desktop">Hover over the cards!</p>
+            <p class="services-p" id="hint-mobile">Click on the cards!</p>
         </section>
         
         <section id="team" class="content">
@@ -155,7 +159,7 @@
                     <h1>Let's talk!</h1>
                     <h3>Want to discuss your projects or learn more about our services?</h3>
                     <h3>Contact us via the form, e-mail or send us a message on social media!</h3>
-                    <h4>codebay.agency@gmail.com</h4>
+                    <h4 class="our-email">codebay.agency@gmail.com</h4>
                     <div class="contact-info">
                         <div class="social-icons">
                             <a href="mailto:codebay.agency@gmail.com" class="icon-link">
@@ -202,6 +206,16 @@
         </section>
 
     </main>
+    <div id="thank-you-modal" class="modal">
+        <div class="modal-content">
+            <h2>THANK YOU!</h2>
+            <p id="modal-message"></p>
+            <button id="modal-close">Close</button>
+        </div>
+    </div>
+    <div id="spinner" class="spinner-overlay">
+        <div class="spinner"></div>
+    </div>
 
     <script src="script.js"></script>
     <script type="text/javascript"
