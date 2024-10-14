@@ -67,8 +67,8 @@ main {
 .logo-placeholder {
     position: absolute;           /* Absolute positioning */
     left: 0px;                    /* Keep it 0px from the left */
-    width: 80px;                 /* Set width of the logo container */
-    height: 80px;                /* Set height of the logo container */
+    width: 100px;                 /* Set width of the logo container */
+    height: 100px;                /* Set height of the logo container */
     z-index: 1;                   /* Ensure it's visible above other elements */
     top: 10px;                    /* Position it slightly from the top */
     display: flex;                /* Flexbox for centering the image */
@@ -145,7 +145,7 @@ main {
     width: 25px;
     height: 3px;
     margin: 5px auto;
-    background-color: white;
+    background-color: #1E3A8A;
     transition: all 0.3s ease-in-out;
 }
 
@@ -339,86 +339,14 @@ main {
     }
 }
 
-/* Mobile (landscape) */
-@media (max-width: 768px) {
-    .contact-container,
-    .team-container {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .contact-headers,
-    .contact-options,
-    #contact-form {
-        background-color: #f0f0f0; /* Light grey color */
-        border-radius: 10px; /* Optional: rounds the corners */
-        box-sizing: border-box; /* Ensures padding is included in the width */
-    }
-
-    .team-member {
-        flex: 0 0 100%;
-    }
-
-    .contact-container {
-        flex-direction: column;
-    }
-
-    #contact-form,
-    .contact-info {
-        max-width: 100%;
-        margin-right: 0;
-    }
-
-    .contact-info {
-        margin-top: 2em;
-    }
-    .hamburger {
-        display: block;
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        z-index: 1001;
-    }
-    .nav-links {
-        position: fixed;
-        top: 0;
-        flex-direction: column;
-        width: 200px; /* Set a fixed width */
-        height: 100vh;
-        text-align: left; /* Align text to the left */
-        padding-top: 60px;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.2); /* Add shadow for depth */
-    }
-
-    .nav-links.active {
-        left: 0;
-    }
-
-    .nav-links li {
-        margin: 0;
-    }
-
-    /* Hamburger animation */
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-    .arrow {
-        display: none;
-    }
-}
 
 /* Tablet */
 @media (max-width: 1024px) {
     .greetings{
         font-size: 3rem;
+    }
+    .logo2 {
+        display: none;
     }
     
     .content {
@@ -1001,11 +929,121 @@ main {
     /* Contact section (end) */
 }
 
+/* Mobile (landscape) */
+@media (max-width: 768px) {
+    .logo1 {
+        display: none;
+    }
+    .logo2 {
+        display: block;
+    }
+    .contact-container,
+    .team-container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .contact-headers,
+    .contact-options,
+    #contact-form {
+        background-color: #f0f0f0; /* Light grey color */
+        border-radius: 10px; /* Optional: rounds the corners */
+        box-sizing: border-box; /* Ensures padding is included in the width */
+    }
+
+    .team-member {
+        flex: 0 0 100%;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    #contact-form,
+    .contact-info {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .contact-info {
+        margin-top: 2em;
+    }
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 1001;
+    }
+    #main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px; /* Adjust this value to match your hamburger icon's height */
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: transparent; /* Make the nav background transparent */
+    }
+    .logo-placeholder {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+    }
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: -200px; /* Start off-screen */
+        flex-direction: column;
+        width: 200px;
+        height: 100vh;
+        text-align: left;
+        padding-top: 60px;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+        background-color: #1E3A8A;
+        transition: left 0.3s ease-in-out; /* Add smooth transition */
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    /* Hamburger animation */
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+        background-color: white;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: white;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: white;
+    }
+    .arrow {
+        display: none;
+    }
+}
+
+
 /* Small desktop */
 @media (min-width: 1025px) {
     main {
         height: 100vh;
         margin-top: 0;
+    }
+    .logo2 {
+        display: none;
     }
     
     .greetings{

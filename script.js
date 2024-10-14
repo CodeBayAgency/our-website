@@ -234,6 +234,22 @@ document.addEventListener('DOMContentLoaded', function() {
     function toggleMenu() {
         hamburger.classList.toggle('active');
         navLinksContainer.classList.toggle('active');
+        
+        // Prevent scrolling when menu is open
+        if (navLinksContainer.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
+
+    function initializeMenuState() {
+        if (isMobileView()) {
+            closeMenu();
+        } else {
+            navLinksContainer.classList.remove('active');
+            navLinksContainer.style.left = '';
+        }
     }
 
     function closeMenu() {
@@ -266,5 +282,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!isMobileView()) {
             closeMenu();
         }
+    });
+
+    initializeMenuState();
+
+    window.addEventListener('resize', () => {
+        initializeMenuState();
     });
 });
