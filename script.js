@@ -1,6 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-links li a');
     const sections = document.querySelectorAll('section');
+    const navbarSelector = 'nav#main-nav';
+    const navbar = document.querySelector(navbarSelector);
+
+    function addStyles(selector) {
+        const styles = `
+        ${selector} {
+            transition: height 0.5s ease-in-out, padding 0.5s ease-in-out
+        }
+        ${selector}.shrink {
+            padding: 15px
+            height: 20px
+        }
+        `
+        const styleTag = document.createElement('style');
+        styleTag.innerHTML = styles;
+        document.head.appendChild(styleTag);
+    }
+    addStyles(navbarSelector)
+
+    window.addEventListener('scroll', () => {
+        console.scrollY > 10
+            ? navbar.classList.add('shrink')
+            : navbar.classList.remove('shrink')
+    })
 
     // Intersection Observer setup
     const observerOptions = {
@@ -115,16 +139,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // New scroll event to adjust caption padding
     document.addEventListener('scroll', function() {
-        const captions = document.querySelectorAll('.caption');
-
+        const mainNav = document.getElementById('main-nav');
+    
         if (window.scrollY > 10) {
-            captions.forEach(caption => {
-                caption.classList.add('shrink');
-            });
+            mainNav.classList.add('shrink');
         } else {
-            captions.forEach(caption => {
-                caption.classList.remove('shrink');
-            });
+            mainNav.classList.remove('shrink');
         }
     });
 
@@ -170,16 +190,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function moveToBack(member) {
+        while (carousel.lastElementChild !== member) {
+            carousel.appendChild(carousel.firstElementChild);
+        }
+    }
+
     // Funkcja przesuwająca członka zespołu na środek karuzeli
-    function moveToMiddle(member) {
+    function moveToFrontRight(member) {
         // Najpierw ustawiamy go na początek
         moveToFront(member);
 
-        // Następnie przesuwamy karuzelę w lewo dwa razy, aby dany członek był w środku
-        moveLeft();
-        moveLeft();
+        // Następnie przesuwamy karuzelę w prawo, aby dany członek był w środku
+        moveRight()
+        
     }
+    function moveToBackLeft(member) {
+        // Najpierw ustawiamy go na początek
+        moveToBack(member);
 
+        // Następnie przesuwamy karuzelę w prawo, aby dany członek był w środku
+
+        moveLeft()
+        
+    }
     function moveLeft() {
         carousel.appendChild(carousel.firstElementChild);
     }
@@ -194,7 +228,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Dodaj event listener do każdego członka zespołu
     teamMembers.forEach(member => {
         member.addEventListener('click', () => {
-            moveToMiddle(member);
+            if (member === carousel.firstElementChild) {
+                moveToFrontRight(member);
+            } else if (member === carousel.lastElementChild) {
+                moveToBackLeft(member);
+            } 
         });
     });
 
