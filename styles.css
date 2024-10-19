@@ -940,6 +940,8 @@ main {
     }
     .logo2 {
         display: block;
+        margin-left: 20px;
+        margin-top: -42px;
     }
     .greetings{
         font-size: 2rem;
@@ -979,24 +981,58 @@ main {
         font-weight: 400;
         font-style: normal;
     }
+    #headings {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        margin-bottom: -10px;
+        text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
+        opacity: 0.8;
+    }
     .contact-container,
     .team-container {
         width: 100%;
         flex-direction: column;
     }
-
+    .contact-container h1, .contact-container h3, .contact-container h4 {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-left: 20px;
+    }
+    
     .contact-headers,
     .contact-options,
     #contact-form {
         background-color: #f0f0f0; /* Light grey color */
         border-radius: 10px; /* Optional: rounds the corners */
         box-sizing: border-box; /* Ensures padding is included in the width */
+        width: 90%; 
     }
 
     .team-member {
         flex: 0 0 100%;
     }
-
+    .team-member p {
+        padding-left: 20px ;
+        padding-right: 20px ;
+        color: #151515;
+        font-size: 18px;
+        padding-bottom: 20px; /* Prevents text from being cropped */
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    .team-member:nth-child(2) {
+        transform: scale(0.7);
+        opacity: 1;
+    }
+    
+    .team-member:nth-child(1),
+    .team-member:nth-child(3) {
+        transform: scale(0.5);
+        opacity: 0.6;
+    }
+    
     .contact-container {
         flex-direction: column;
     }
@@ -1234,6 +1270,8 @@ main {
         display: flex;
         justify-content: start;
         margin-top: 1em;
+        margin-left: 40px;
+        margin-bottom: 20px;
     }
     
     .icon-link {
@@ -1426,7 +1464,24 @@ main {
         background-color: white;
     }
     .arrow {
-        display: none;
+        font-size: 29px;
+        font-weight: bold;
+        background: none;
+        border: none;
+        color: #1E3A8A;
+        cursor: pointer;
+        position: absolute;
+    }
+
+    .left-arrow {
+        left: 60px; /* Position the left arrow to the left */
+    }
+    
+    .right-arrow {
+        right: 60px; /* Position the right arrow to the right */
+    }
+    .arrow:hover {
+        color: #3B82F6;
     }
 }
 
