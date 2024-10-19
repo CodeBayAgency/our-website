@@ -190,16 +190,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function moveToBack(member) {
+        while (carousel.lastElementChild !== member) {
+            carousel.appendChild(carousel.firstElementChild);
+        }
+    }
+
     // Funkcja przesuwająca członka zespołu na środek karuzeli
-    function moveToMiddle(member) {
+    function moveToFrontRight(member) {
         // Najpierw ustawiamy go na początek
         moveToFront(member);
 
-        // Następnie przesuwamy karuzelę w lewo dwa razy, aby dany członek był w środku
-        moveLeft();
-        moveLeft();
+        // Następnie przesuwamy karuzelę w prawo, aby dany członek był w środku
+        moveRight()
+        
     }
+    function moveToBackLeft(member) {
+        // Najpierw ustawiamy go na początek
+        moveToBack(member);
 
+        // Następnie przesuwamy karuzelę w prawo, aby dany członek był w środku
+
+        moveLeft()
+        
+    }
     function moveLeft() {
         carousel.appendChild(carousel.firstElementChild);
     }
@@ -214,7 +228,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Dodaj event listener do każdego członka zespołu
     teamMembers.forEach(member => {
         member.addEventListener('click', () => {
-            moveToMiddle(member);
+            if (member === carousel.firstElementChild) {
+                moveToFrontRight(member);
+            } else if (member === carousel.lastElementChild) {
+                moveToBackLeft(member);
+            } 
         });
     });
 

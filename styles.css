@@ -1112,6 +1112,9 @@ main {
         flex: 1; /* Allows paragraph to take all the available space */
         font-size: 18px;
         margin: 0;
+        background-color: #F3F4F6; /* Adds a 2px solid white border */
+        padding: 20px; /* Adds some space between the text and the border */
+        border-radius: 10px;
     }
     .home-video {
         flex: 1;
@@ -2299,6 +2302,29 @@ main {
         padding-right: 60px ;
         color: #151515;
         font-size: 14px;
+    }
+
+    .background-logo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: transparent; /* Make the nav background transparent */
+        z-index: -1;
+        opacity: 50%;
+    }
+
+    .background-logo img {
+        width: 1000px;  /* Adjust this value to make the image smaller */
+        height: 1000px;  /* This maintains the aspect ratio */
+        align-items: center;
+        margin-bottom: -55px;
+        margin-top: 1000px;
     }
 }
     /* Our Team section (end) */
