@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('spinner').style.display = 'none';
 
                 // Show custom modal
-                document.getElementById('modal-message').textContent = 'Your message has been sent. We will get back to you soon!';
+                document.getElementById('modal-message').textContent = 'Twoja wiadomość została wysłana. Wkrótce się z Tobą skontaktujemy!';
                 document.getElementById('thank-you-modal').style.display = 'block';
                 
                 // Reset the form fields
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('spinner').style.display = 'none';
 
                 // Show error in custom modal
-                document.getElementById('modal-message').textContent = 'There was an error sending your message. Please try again later.';
+                document.getElementById('modal-message').textContent = 'Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.';
                 document.getElementById('thank-you-modal').style.display = 'block';
             });
     });
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // Fading greetings
-    const greetings = ["Welcome to CodeBay!", "Bienvenido a CodeBay!", "Willkommen bei CodeBay!", "Bienvenue a CodeBay!", "Witamy w CodeBay!", "Benvenuto a CodeBay!", "Bem-vindo a CodeBay!"];
+    const greetings = [ "Witamy w CodeBay!", "Welcome to CodeBay!", "Bienvenido a CodeBay!", "Willkommen bei CodeBay!", "Bienvenue a CodeBay!", "Benvenuto a CodeBay!", "Bem-vindo a CodeBay!"];
     let currentIndex = 0;
 
     function changeGreeting() {

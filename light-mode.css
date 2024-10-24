@@ -19,6 +19,110 @@ body {
 main {
     height: 100%;
 }
+
+.language-switcher {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.lang-link {
+    text-decoration: none;
+    color: white; /* Adjust color to match your design */
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.lang-link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.lang-link.active {
+    background-color: #007bff; /* Highlight color for active language */
+    color: white;
+}
+
+/* Theme switcher (start)*/
+.theme-switcher {
+    position: absolute;
+    top: 50%;
+    right: 170px;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;  /* Increased width */
+    height: 22px; /* Increased height */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 22px; /* Adjusted for the new size */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;  /* Increased height */
+    width: 18px;   /* Increased width */
+    left: 2px;     /* Adjusted position */
+    bottom: 2px;   /* Adjusted position */
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #3B82F6; /* Change to desired color */
+}
+
+input:checked + .slider:before {
+    transform: translateX(18px); /* Adjusted for the new size */
+}
+  
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.theme-switcher p {
+    font-size: 12px;
+    margin: 0;
+    color: white;
+}
+/* Theme switcher (end) */
+
 .content {
     width: 100%;
 }
@@ -49,6 +153,7 @@ main {
     width: 100%;
     height: auto;
     border-radius: 10px;
+    border-right: 20px #3B82F6;
     margin: 0; /* Usuń marginesy */
     display: block; /* Usuń domyślną przestrzeń inline */
     height: 100%;
@@ -274,6 +379,7 @@ main {
     align-items: center;
     text-align: center;
     padding: 20px;
+    border-bottom: 10px solid #3B82F6;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     box-sizing: border-box;
@@ -2231,6 +2337,14 @@ main {
         margin-top: -50px;
         width: 70px;
     }
+
+    .language-switcher {
+        position: static;
+        margin-top: 10px;
+        justify-content: center;
+        transform: none;
+    }
+
     .greetings{
         font-size: 2rem;
     }
