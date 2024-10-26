@@ -27,6 +27,9 @@ body {
 main {
     height: 100%;
 }
+#incentive {
+    font-weight: bold;
+}
 
 .language-switcher {
     position: absolute;
