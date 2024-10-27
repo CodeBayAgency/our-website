@@ -21,6 +21,7 @@ main {
 }
 #incentive {
     font-weight: bold;
+    margin-top: 20px;
 }
 
 .language-switcher {
@@ -150,6 +151,8 @@ input:focus + .slider {
     max-width: 800px;
     height: 480px ;
     padding: 0; /* Usuń padding */
+    margin-right: 10%;
+    margin-top: 20px;
 }
 
 .home-video iframe {
@@ -505,20 +508,30 @@ input:focus + .slider {
     
     .about-us-container {
         display: flex;
+        flex-direction: column;
         align-items: flex-start;
         gap: 20px;
         max-width: 1300px; /* Ustaw maksymalną szerokość kontenera */
         margin: 0 auto; /* Wyśrodkuj cały kontener */
         padding: 20px; /* Dodaj trochę odstępu od krawędzi */
+        flex: 1;
     }
-    
+
+    .about-us-container p {
+        margin-left: 30%; /* Adjust this value as needed */
+    }
+
     .about-us {
-        flex: 1; /* Umożliwia paragrafowi zajęcie dostępnej przestrzeni */
+        width: 65%;
         font-size: 21px;
         margin: 0; /* Usuń nadmiarowe marginesy */
     }
 
-    
+    .video-container {
+        margin-left: 1000px;
+        margin-right: 20%;
+    }
+
     .contact-container {
         width: 100%;
         display: flex;
@@ -1121,8 +1134,16 @@ input:focus + .slider {
     }
     .content {
         width: 100%; /* Full width */
-        display: relative; /* Use flexbox */
+        display: flex; /* Use flexbox */
         flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Center children vertically */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+        scroll-snap-align: start; /* Align for scroll snapping */
+    }
+    .content-home {
+        width: 100%; /* Full width */
+        display: flex; /* Use flexbox */
+        flex-direction: row; /* Stack children vertically */
         justify-content: center; /* Center children vertically */
         box-sizing: border-box; /* Include padding and border in element's total width and height */
         scroll-snap-align: start; /* Align for scroll snapping */
@@ -1176,7 +1197,15 @@ input:focus + .slider {
         background-color: #F3F4F6; /* Adds a 2px solid white border */
         padding: 20px; /* Adds some space between the text and the border */
         border-radius: 10px;
+        min-width: 580px;
+        align-self: stretch;
     }
+
+    .text-spacing {
+        margin-left: 30px;
+        padding-right: 30px;
+    }
+    
     .home-video {
         flex: 1;
         background-color: #fff;
