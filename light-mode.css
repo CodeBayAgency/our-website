@@ -1,3 +1,8 @@
+/* Variables */
+:root {
+    --darkblue: #1E3A8A;
+}
+
 /* Base styles (for all devices) */
 html, body {
     height: 100%;
@@ -19,9 +24,16 @@ body {
 main {
     height: 100%;
 }
+
 #incentive {
     font-weight: bold;
-    margin-top: 20px;
+    flex: 1; /* Allows paragraph to take all the available space */
+    font-size: 24.5px;
+    margin: 0;
+    background-color: white;
+    padding: 17px; /* Adds some space between the text and the border */
+    border-radius: 10px;
+    align-self: stretch;
 }
 
 .language-switcher {
@@ -146,12 +158,10 @@ input:focus + .slider {
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 5px solid #1E3A8A;
+    border: 5px solid var(--darkblue);
     width: 100%;
-    max-width: 800px;
     height: 480px ;
     padding: 0; /* Usuń padding */
-    margin-right: 10%;
     margin-top: 20px;
 }
 
@@ -510,28 +520,15 @@ input:focus + .slider {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 20px;
         max-width: 1300px; /* Ustaw maksymalną szerokość kontenera */
         margin: 0 auto; /* Wyśrodkuj cały kontener */
-        padding: 20px; /* Dodaj trochę odstępu od krawędzi */
+        padding-top: 20px;
         flex: 1;
+        height: 420px;
     }
-
-    .about-us-container p {
-        margin-left: 30%; /* Adjust this value as needed */
-    }
-
     .about-us {
-        width: 65%;
-        font-size: 21px;
         margin: 0; /* Usuń nadmiarowe marginesy */
     }
-
-    .video-container {
-        margin-left: 1000px;
-        margin-right: 20%;
-    }
-
     .contact-container {
         width: 100%;
         display: flex;
@@ -1146,7 +1143,9 @@ input:focus + .slider {
         flex-direction: row; /* Stack children vertically */
         justify-content: center; /* Center children vertically */
         box-sizing: border-box; /* Include padding and border in element's total width and height */
-        scroll-snap-align: start; /* Align for scroll snapping */
+        gap: 30px;
+        padding-left: 200px;
+        padding-right: 200px;
     }
 
     #about, #services, #team, #contact {
@@ -1186,13 +1185,11 @@ input:focus + .slider {
         gap: 20px;
         max-width: 1300px; /* Set maximum container width */
         margin: 0 auto; /* Center entire container */
-        padding-left: 50px;
-        padding-right: 50px;
     }
     
     .about-us {
         flex: 1; /* Allows paragraph to take all the available space */
-        font-size: 18px;
+        font-size: 20px;
         margin: 0;
         background-color: #F3F4F6; /* Adds a 2px solid white border */
         padding: 20px; /* Adds some space between the text and the border */
