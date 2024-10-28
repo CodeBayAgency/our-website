@@ -236,31 +236,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-
-    // Fading greetings
-    const greetings = ["Welcome to CodeBay!", "Bienvenido a CodeBay!", "Willkommen bei CodeBay!", "Bienvenue a CodeBay!", "Witamy w CodeBay!", "Benvenuto a CodeBay!", "Bem-vindo a CodeBay!"];
-    let currentIndex = 0;
-
-    function changeGreeting() {
-        const greetingElement = document.getElementById('greeting');
-        
-        // Fade out
-        greetingElement.style.opacity = '0';
-
-        // Wait for fade out, then change text and fade in
-        setTimeout(() => {
-            currentIndex = (currentIndex + 1) % greetings.length;
-            greetingElement.textContent = greetings[currentIndex];
-            greetingElement.style.opacity = '1';
-
-            // Schedule next change
-            setTimeout(changeGreeting, 3000);
-        }, 2000);
-    }
-
-    // Start the greeting cycle
-    changeGreeting();
-
     // Hamburger menu
     const hamburger = document.querySelector('.hamburger');
     const navLinksContainer = document.querySelector('.nav-links');
