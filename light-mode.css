@@ -407,7 +407,12 @@ input:focus + .slider {
 
 .card-front {
     background-color: white;
-    padding-top: 55px;
+}
+
+.card-front img {
+    width: 130px;
+    height: auto;
+    margin-top: 0
 }
 
 .card-back {
@@ -938,7 +943,6 @@ input:focus + .slider {
     
     .card-front {
         background-color: white;
-        padding-top: 55px;
     }
     
     .card-back {
@@ -1382,7 +1386,6 @@ input:focus + .slider {
     
     .card-front {
         background-color: white;
-        padding-top: 45px;
     }
     
     .card-back {
