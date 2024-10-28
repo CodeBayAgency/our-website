@@ -30,7 +30,14 @@ main {
 }
 #incentive {
     font-weight: bold;
-    margin-top: 20px;
+    flex: 1; /* Allows paragraph to take all the available space */
+    font-size: 24.5px;
+    margin: 0;
+    background-color: white;
+    padding: 17px; /* Adds some space between the text and the border */
+    border-radius: 10px;
+    color: var(--lightpink);
+    align-self: stretch;
 }
 
 .language-switcher {
@@ -60,11 +67,10 @@ main {
     background-color: var(--lightblue); /* Highlight color for active language */
     color: white;
 }
-
 #english-button {
     background-color: var(--lightblue); /* Highlight color for active language */
+    color: white;
 }
-
 /* Theme switcher (start)*/
 .theme-switcher {
     position: absolute;
@@ -403,7 +409,12 @@ input:focus + .slider {
 
 .card-front {
     background-color: white;
-    padding-top: 55px;
+}
+
+.card-front img {
+    width: 130px;
+    height: auto;
+    margin-top: 0
 }
 
 .card-back {
@@ -931,7 +942,6 @@ input:focus + .slider {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         box-sizing: border-box;
@@ -939,7 +949,6 @@ input:focus + .slider {
     
     .card-front {
         background-color: white;
-        padding-top: 55px;
     }
     
     .card-back {
@@ -1192,20 +1201,16 @@ input:focus + .slider {
     
     .about-us {
         flex: 1; /* Allows paragraph to take all the available space */
-        font-size: 18px;
+        font-size: 20px;
         margin: 0;
         background-color: white;
         padding: 17px; /* Adds some space between the text and the border */
         border-radius: 10px;
         color: var(--darkblue);
+        min-width: 580px;
         align-self: stretch;
-        
     }
 
-    .text-spacing {
-        margin-left: 30px;
-        padding-right: 30px;
-    }
     .home-video {
         flex: 1;
         background-color: #fff;
@@ -1378,7 +1383,6 @@ input:focus + .slider {
     
     .card-front {
         background-color: white;
-        padding-top: 45px;
     }
     
     .card-back {

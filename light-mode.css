@@ -28,7 +28,13 @@ main {
 
 #incentive {
     font-weight: bold;
-    margin-top: 20px;
+    flex: 1; /* Allows paragraph to take all the available space */
+    font-size: 24.5px;
+    margin: 0;
+    background-color: white;
+    padding: 17px; /* Adds some space between the text and the border */
+    border-radius: 10px;
+    align-self: stretch;
 }
 
 .language-switcher {
@@ -58,11 +64,10 @@ main {
     background-color: #007bff; /* Highlight color for active language */
     color: white;
 }
-
 #english-button {
     background-color: var(--lightblue); /* Highlight color for active language */
+    color: white;
 }
-
 /* Theme switcher (start)*/
 .theme-switcher {
     position: absolute;
@@ -1188,11 +1193,12 @@ input:focus + .slider {
     
     .about-us {
         flex: 1; /* Allows paragraph to take all the available space */
-        font-size: 18px;
+        font-size: 20px;
         margin: 0;
         background-color: #F3F4F6; /* Adds a 2px solid white border */
         padding: 20px; /* Adds some space between the text and the border */
         border-radius: 10px;
+        min-width: 580px;
         align-self: stretch;
     }
 
@@ -1200,7 +1206,7 @@ input:focus + .slider {
         margin-left: 30px;
         padding-right: 30px;
     }
-
+    
     .home-video {
         flex: 1;
         background-color: #fff;
