@@ -1,6 +1,7 @@
 /* Variables */
 :root {
     --darkblue: #1E3A8A;
+    --lightblue: #3B82F6;
 }
 
 /* Base styles (for all devices) */
@@ -56,6 +57,10 @@ main {
 .lang-link.active {
     background-color: #007bff; /* Highlight color for active language */
     color: white;
+}
+
+#english-button {
+    background-color: var(--lightblue); /* Highlight color for active language */
 }
 
 /* Theme switcher (start)*/

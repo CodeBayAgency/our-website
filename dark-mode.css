@@ -60,6 +60,11 @@ main {
     background-color: var(--lightblue); /* Highlight color for active language */
     color: white;
 }
+
+#english-button {
+    background-color: var(--lightblue); /* Highlight color for active language */
+}
+
 /* Theme switcher (start)*/
 .theme-switcher {
     position: absolute;
