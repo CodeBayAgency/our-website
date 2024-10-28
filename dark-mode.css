@@ -30,6 +30,7 @@ main {
 #incentive {
     font-weight: bold;
     margin-top: 20px;
+    font-size: 13px;
 }
 
 .language-switcher {
@@ -1197,20 +1198,21 @@ input:focus + .slider {
     
     .about-us {
         flex: 1; /* Allows paragraph to take all the available space */
-        font-size: 18px;
+        font-size: 15px;
         margin: 0;
         background-color: white;
         border: solid 5px var(--lightblue);
         padding: 17px; /* Adds some space between the text and the border */
         border-radius: 10px;
         color: var(--darkblue);
-        min-width: 580px;
         align-self: stretch;
+        
     }
 
     .text-spacing {
         margin-left: 30px;
         padding-right: 30px;
+        
     }
     .home-video {
         flex: 1;
