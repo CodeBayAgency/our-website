@@ -3,6 +3,31 @@
     --darkblue: #1E3A8A;
     --lightblue: #3B82F6;
 }
+/* Scrollbar */
+/* For Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 20px; /* Adjust width as needed */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #8A8A8A; /* Thumb color */
+    border-radius: 20px; /* Rounds the top and bottom */
+    border: 3px solid #F3F4F6; /* Adds space around the thumb to make the track appear thicker */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #F3F4F6; /* Track color */
+  }
+  
+  ::-webkit-scrollbar-button {
+    display: none; /* Hides buttons at the top and bottom */
+  }
+  
+  /* For Firefox */
+  * {
+    scrollbar-width:thin; /* Makes the scrollbar thin but keeps track width slightly thicker */
+    scrollbar-color: #8A8A8A #F3F4F6; /* Thumb color followed by track color */
+  }
 
 /* Base styles (for all devices) */
 html, body {
