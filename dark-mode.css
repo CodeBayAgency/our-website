@@ -64,7 +64,8 @@ h1 {
 h2 {
     font-weight: 700;
     font-style: normal;
-    color: var(--lightblue)
+    color: var(--lightblue);
+    text-align: center;
 }
 #incentive {
     font-weight: bold;
@@ -504,6 +505,126 @@ input:focus + .slider {
 /* Responsive design (start)*/
 /* Large Desktop */
 @media (min-width: 1600px) {
+    body {
+        overflow-y: auto;
+    }
+    main {
+        height: 100vh;
+        margin-top: 0;
+    }
+    
+    .greetings{
+        font-size: 4rem;
+    }
+    .team-member img {
+        display: inline;
+        margin: 0 auto;
+        height: 100%;
+        width: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .team-carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%; /* Zajmuje pełną szerokość zmniejszonego kontenera */
+        overflow: hidden;
+        transition: transform 0.5s ease-in-out;
+    }
+    .team-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%; /* Zmniejsza szerokość całego kontenera o 20% */
+        margin: 20px auto; /* Wyśrodkowuje kontener */
+        max-width: 1400px; /* or any other suitable max-width */
+    }
+    
+    .team-member {
+        flex: 0 0 33.333%;
+        transition: all 0.3s ease;
+        padding: 0 10px;
+        text-align: center;
+        display: inline-block;
+        margin: 1em;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    .team-member:nth-child(2) {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    
+    .team-member:nth-child(1),
+    .team-member:nth-child(3) {
+        transform: scale(0.8);
+        opacity: 0.6;
+    }
+    
+    .img-container {
+        width: 220px;
+        height: 220px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+    }
+    
+    .img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Dodajemy specjalne style dla środkowego elementu, aby zapobiec ucinaniu zdjęcia */
+    .team-member:nth-child(2) .img-container {
+        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+    .team-member:nth-child(1) .img-container {
+        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+    .team-member:nth-child(3) .img-container {
+        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+    
+    /* Margins for text under a middle element */
+    .team-member:nth-child(2) h3,
+    .team-member:nth-child(2) p {
+        margin-top: 0;
+    }
+    .team-member p {
+        padding-left: 60px ;
+        padding-right: 60px ;
+        color: white;
+        font-size: 14px;
+    }
+
+    .arrow {
+        font-size: 37px;
+        font-weight: bold;
+        background: none;
+        border: none;
+        color: #1E3A8A;
+        cursor: pointer;
+    }
+
+    .arrow:hover {
+        color: #3B82F6;
+    }
     .services-p {
         font-family:  "Inter", sans-serif;
         font-weight: 400;
@@ -535,6 +656,42 @@ input:focus + .slider {
         justify-content: center; /* Center children vertically */
         box-sizing: border-box; /* Include padding and border in element's total width and height */
         gap: 30px;
+    }
+    .content {
+        width: 100%; /* Full width */
+        display: relative; /* Use flexbox */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Center children vertically */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+        scroll-snap-align: start; /* Align for scroll snapping */
+    }
+
+    #about, #services, #team, #contact {
+        position: relative; /* Allow absolute positioning within this section */
+        margin: 0; /* Remove default margin */
+    }
+    #about {
+        padding-bottom: -150px;
+    }
+    #services {
+        padding-top: 130px;
+    }
+    #team {
+        padding-top: 150px;
+    }
+    #contact {
+        padding-top: 100px;
+        padding-bottom: 75px;
+    }
+
+    #headings {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        margin-bottom: 25px;
+        text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
+        opacity: 0.8;
     }
     
     .about-us-container {
@@ -575,6 +732,210 @@ input:focus + .slider {
         margin: 0;
         display: block; /* Deleting default inline space */
         height: 100%;
+    }
+
+    h1 {
+        font-size: 45px;
+        line-height: 52px;
+    }
+    h2 {
+        font-size: 45px;
+        line-height: 52px;
+    }
+    .our-email {
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 600;
+        color: var(--lightblue);
+        margin-bottom: 20px;
+        max-width: unset;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .form-group {
+        position: relative;
+        margin-bottom: 30px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        background-color: transparent;
+        outline: none;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+    /* Specific styles for the phone input */
+    .form-group input[type="tel"] ~ label {
+        top: 10px;
+        font-size: 16px;
+        color: #999;
+    }
+    
+    .form-group input[type="tel"]:focus ~ label,
+    .form-group input[type="tel"]:not(:placeholder-shown) ~ label {
+        top: -20px;
+        left: 0;
+        font-size: 12px;
+        color: #333;
+    }
+    .social-icons .icon-link {
+        margin-right: 40px; /* Adjust this value for desired spacing */
+        transform: scale(1.2); /* Adjust this value to scale icons up or down */
+    }
+    
+    .social-icons .icon-link:last-child {
+        margin-right: 0; /* Remove margin from the last icon */
+    }
+    #contact-form {
+        background-color: #f0f0f0; /* Light grey color */
+        padding: 35px 40px 30px 20px; /* Increased padding, especially on the right */
+        border-radius: 10px; /* Optional: rounds the corners */
+        width: 100%; /* Makes the form wider than its container */
+        box-sizing: border-box; /* Ensures padding is included in the width */
+        margin-right: -10%; /* Shifts the extra width to the right */
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-bottom-color: black;
+    }
+    
+    .form-group input:focus + label,
+    .form-group textarea:focus + label {
+        color: black;
+    }
+    
+    
+    .phone-group {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .prefix-input, .phone-input {
+        position: relative;
+    }
+    
+    .prefix-input {
+        flex: 0 0 70px; /* Dostosuj szerokość według potrzeb */
+    }
+    
+    .phone-input {
+        flex: 1;
+    }
+    
+    .prefix-input input, .phone-input input {
+        width: 105%;
+        padding: 10px 0;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        outline: none;
+        background-color: transparent;
+    }
+    
+    .prefix-input label, .phone-input label {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        color: #999;
+        transition: 0.3s;
+        pointer-events: none;
+    }
+    
+    /* Styl dla pola prefix */
+    .prefix-input input:focus + label,
+    .prefix-input input:valid + label {
+        top: -20px;
+        font-size: 12px;
+        color: #333;
+    }
+    
+    /* Styl dla pola phone number */
+    .phone-input input:focus + label,
+    .phone-input input:not(:placeholder-shown) + label {
+        top: -20px;
+        font-size: 12px;
+        color: #333;
+    }
+    
+    .prefix-input input:focus,
+    .phone-input input:focus {
+        border-bottom-color: #333;
+    }
+    
+    /* Usunięcie zielonego podkreślenia dla pola phone number przed fokusem */
+    .phone-input input:not(:focus) {
+        border-bottom-color: #ccc;
+    }
+    .service-card {
+        perspective: 1000px;
+        margin: 5px; /* Reduced from 10px */
+    }
+    
+    .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        cursor: pointer;
+    }
+    
+    .service-card:hover .card-inner {
+        transform: rotateY(180deg);
+    }
+    
+    .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-sizing: border-box;
+    }
+    
+    .card-front {
+        background-color: white;
+    }
+    
+    .card-back {
+        background-color: #3B82F6;
+        color: white;
+        transform: rotateY(180deg);
+        justify-content: center;
+    }
+    
+    .card-front i {
+        font-size: 2.5em;
+        margin-bottom: 15px; /* Increased from 10px */
+    }
+    
+    /* Adjust text sizes for larger cards */
+    .card-front h3 {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+    
+    .card-back p {
+        font-size: 1em;
+        line-height: 1.4;
+    }
+    .contact-headers {
+        flex: 1;
+    }
+    
+    .contact-options {
+        flex: 1;
     }
 }
 
@@ -627,7 +988,7 @@ input:focus + .slider {
         justify-content: center;
         align-items: center;
         margin: 0;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
         opacity: 0.8;
     }
