@@ -39,7 +39,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 400;
     overflow-x: hidden;
     color: white;
@@ -54,6 +54,17 @@ body {
 
 main {
     height: 100%;
+}
+h1 {
+    font-weight: 800;
+    font-style: normal;
+    color: #E5E7EB;
+    text-align: center;
+}
+h2 {
+    font-weight: 700;
+    font-style: normal;
+    color: var(--lightblue)
 }
 #incentive {
     font-weight: bold;
@@ -181,10 +192,6 @@ input:focus + .slider {
     transition: opacity 2s;
     color: var(--lightblue);
     text-align: center; /* Center text */
-    animation: glow 1.5s ease-in-out infinite alternate; /* Add animation for continuous glow */
-    font-family: "Permanent Marker", cursive;
-    font-weight: 400;
-    font-style: normal;
 }
 
 .home-video {
@@ -388,7 +395,7 @@ input:focus + .slider {
 }
 
 .services-p {
-    font-family: "Permanent Marker", cursive;
+    font-family: "Inter", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 22px;
@@ -397,10 +404,10 @@ input:focus + .slider {
     color: var(--lightblue);
 }
 .service-card {
-    width: 220px; /* Increased from 200px */
-    height: 275px; /* Increased from 250px */
+    width: 220px;
+    height: 290px;
     perspective: 1000px;
-    margin: 5px; /* Reduced from 10px */
+    margin: 5px;
 }
     
 .card-inner {
@@ -439,7 +446,7 @@ input:focus + .slider {
 }
 
 .card-front img {
-    width: 130px;
+    width: 180px;
     height: auto;
     margin-top: 0
 }
@@ -469,7 +476,7 @@ input:focus + .slider {
     line-height: 1.4;
 }
 .services-arrow {
-    font-family: "Permanent Marker", cursive;
+    font-family:  "Inter", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 55px;
@@ -498,7 +505,7 @@ input:focus + .slider {
 /* Large Desktop */
 @media (min-width: 1600px) {
     .services-p {
-        font-family: "Permanent Marker", cursive;
+        font-family:  "Inter", sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: 22px;
@@ -509,7 +516,7 @@ input:focus + .slider {
         display: none;
     }
     .services-arrow {
-        font-family: "Permanent Marker", cursive;
+        font-family:  "Inter", sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: 55px;
@@ -517,16 +524,71 @@ input:focus + .slider {
         margin-bottom: -55px;
         margin-top: -15px;
     }
+    .logo2 {
+        display: none;
+    }
+
+    .content-home {
+        width: 100%; /* Full width */
+        display: flex; /* Use flexbox */
+        flex-direction: row; /* Stack children vertically */
+        justify-content: center; /* Center children vertically */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+        gap: 30px;
+    }
+    
+    .about-us-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        max-width: 600px; /* Set maximum container width */
+        width: 100%;
+    }
+    
+    .about-us {
+        flex: 1; /* Allows paragraph to take all the available space */
+        font-size: 17px;
+        margin: 0;
+        background-color: white;
+        padding: 17px; /* Adds some space between the text and the border */
+        border-radius: 10px;
+        color: var(--darkblue);
+        align-self: stretch;
+    }
+
+    .home-video {
+        flex: 1;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+        height: 420px;
+        padding: 0;
+    }
+    
+    .home-video iframe {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin: 0;
+        display: block; /* Deleting default inline space */
+        height: 100%;
+    }
 }
 
 /* Desktop */
-@media (min-width: 1210px) {
+@media (max-width: 1599px) {
     body {
         overflow-y: auto;
     }
     main {
         height: 100vh;
         margin-top: 0;
+    }
+    .logo2 {
+        display: none;
     }
     
     .greetings{
@@ -572,19 +634,53 @@ input:focus + .slider {
     .about-section {
         padding: 0;
     }
+    .content-home {
+        width: 100%; /* Full width */
+        display: flex; /* Use flexbox */
+        flex-direction: row; /* Stack children vertically */
+        justify-content: center; /* Center children vertically */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+        gap: 30px;
+    }
     
     .about-us-container {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        max-width: 1300px; /* Ustaw maksymalną szerokość kontenera */
-        margin: 0 auto; /* Wyśrodkuj cały kontener */
-        padding-top: 20px;
-        flex: 1;
-        height: 420px;
+        gap: 20px;
+        max-width: 600px; /* Set maximum container width */
+        width: 100%;
     }
+    
     .about-us {
-        margin: 0; /* Usuń nadmiarowe marginesy */
+        flex: 1; /* Allows paragraph to take all the available space */
+        font-size: 17px;
+        margin: 0;
+        background-color: white;
+        padding: 17px; /* Adds some space between the text and the border */
+        border-radius: 10px;
+        color: var(--darkblue);
+        align-self: stretch;
+    }
+
+    .home-video {
+        flex: 1;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+        height: 420px;
+        padding: 0;
+    }
+    
+    .home-video iframe {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin: 0;
+        display: block; /* Deleting default inline space */
+        height: 100%;
     }
 
     .contact-container {
@@ -787,17 +883,10 @@ input:focus + .slider {
     h1 {
         font-size: 45px;
         line-height: 52px;
-        font-family: "Permanent Marker", cursive;
-        font-weight: 400;
-        font-style: normal;
     }
     h2 {
         font-size: 45px;
         line-height: 52px;
-        font-family: "Permanent Marker", cursive;
-        font-weight: 400;
-        font-style: normal;
-        color: var(--lightblue)
     }
     .our-email {
         font-size: 16px;
@@ -927,7 +1016,7 @@ input:focus + .slider {
     }
     
     .services-p {
-        font-family: "Permanent Marker", cursive;
+        font-family:  "Inter", sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: 22px;
@@ -939,8 +1028,6 @@ input:focus + .slider {
     }
 
     .service-card {
-        width: 220px; /* Increased from 200px */
-        height: 275px; /* Increased from 250px */
         perspective: 1000px;
         margin: 5px; /* Reduced from 10px */
     }
@@ -1002,7 +1089,7 @@ input:focus + .slider {
     }
 
     .services-arrow {
-        font-family: "Permanent Marker", cursive;
+        font-family:  "Inter", sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: 55px;
@@ -1011,7 +1098,7 @@ input:focus + .slider {
         margin-top: -15px;
     }
     .home-arrow {
-        font-family: "Permanent Marker", cursive;
+        font-family:  "Inter", sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: 55px;
@@ -1020,7 +1107,7 @@ input:focus + .slider {
         margin-top: -400px;
     }   
     .home-p {
-        font-family: "Permanent Marker", cursive;
+        font-family:  "Inter", sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: 22px;
@@ -1029,7 +1116,7 @@ input:focus + .slider {
         margin-top: -500px;
     }
     .home-arrow-2 {
-        font-family: "Permanent Marker", cursive;
+        font-family:  "Inter", sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: 55px;
@@ -1038,7 +1125,7 @@ input:focus + .slider {
         margin-top: -580px;
     }   
     .home-p-2 {
-        font-family: "Permanent Marker", cursive;
+        font-family:  "Inter", sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: 22px;
@@ -1152,7 +1239,7 @@ input:focus + .slider {
 }
     /* Our Team section (end) */
 /* Small desktop */
-@media (min-width: 1025px) {
+@media (max-width: 1209px) {
     main {
         height: 100vh;
         margin-top: 0;
@@ -1331,16 +1418,10 @@ input:focus + .slider {
     h1 {
         font-size: 42px;
         line-height: 52px;
-        font-family: "Permanent Marker", cursive;
-        font-weight: 400;
-        font-style: normal;
     }
     h2 {
         font-size: 42px;
         line-height: 52px;
-        font-family: "Permanent Marker", cursive;
-        font-weight: 400;
-        font-style: normal;
     }
     .our-email {
         font-size: 16px;
@@ -1361,7 +1442,7 @@ input:focus + .slider {
     }
     
     .services-p {
-        font-family: "Permanent Marker", cursive;
+        font-family:  "Inter", sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: 20px;
@@ -1373,8 +1454,6 @@ input:focus + .slider {
     }
 
     .service-card {
-        width: 175px;
-        height: 240px;
         perspective: 1000px;
     }
     
@@ -1435,7 +1514,7 @@ input:focus + .slider {
     }
 
     .services-arrow {
-        font-family: "Permanent Marker", cursive;
+        font-family:  "Inter", sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: 50px;
@@ -1897,16 +1976,10 @@ input:focus + .slider {
     h1 {
         font-size: 42px;
         line-height: 52px;
-        font-family: "Permanent Marker", cursive;
-        font-weight: 400;
-        font-style: normal;
     }
     h2 {
         font-size: 42px;
         line-height: 52px;
-        font-family: "Permanent Marker", cursive;
-        font-weight: 400;
-        font-style: normal;
     }
     
     /* Our Services section (start) */
@@ -1920,7 +1993,7 @@ input:focus + .slider {
     }
     
     .services-p {
-        font-family: "Permanent Marker", cursive;
+        font-family:  "Inter", sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: 20px;
@@ -1934,7 +2007,7 @@ input:focus + .slider {
     }
     
     .services-arrow {
-        font-family: "Permanent Marker", cursive;
+        font-family:  "Inter", sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: 50px;
@@ -2427,16 +2500,10 @@ input:focus + .slider {
     h1 {
         font-size: 2rem;
         line-height: 52px;
-        font-family: "Permanent Marker", cursive;
-        font-weight: 400;
-        font-style: normal;
     }
     h2 {
         font-size: 2rem;
         line-height: 52px;
-        font-family: "Permanent Marker", cursive;
-        font-weight: 400;
-        font-style: normal;
     }
     #headings {
         display: flex;
@@ -2529,7 +2596,7 @@ input:focus + .slider {
     }
 
     .services-p {
-        font-family: "Permanent Marker", cursive;
+        font-family:  "Inter", sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: 20px;
@@ -2543,7 +2610,7 @@ input:focus + .slider {
     }
     
     .services-arrow {
-        font-family: "Permanent Marker", cursive;
+        font-family:  "Inter", sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: 50px;
@@ -3000,16 +3067,10 @@ input:focus + .slider {
     h1 {
         font-size: 2rem;
         line-height: 52px;
-        font-family: "Permanent Marker", cursive;
-        font-weight: 400;
-        font-style: normal;
     }
     h2 {
         font-size: 2rem;
         line-height: 52px;
-        font-family: "Permanent Marker", cursive;
-        font-weight: 400;
-        font-style: normal;
     }
     #headings {
         display: flex;
@@ -3102,7 +3163,7 @@ input:focus + .slider {
     }
 
     .services-p {
-        font-family: "Permanent Marker", cursive;
+        font-family:  "Inter", sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: 20px;
@@ -3116,7 +3177,7 @@ input:focus + .slider {
     }
     
     .services-arrow {
-        font-family: "Permanent Marker", cursive;
+        font-family: "Inter", sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: 50px;
