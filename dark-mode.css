@@ -39,7 +39,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif; /* Optionally: "Montserrat" */
     font-weight: 400;
     overflow-x: hidden;
     color: white;
@@ -58,14 +58,12 @@ main {
 h1 {
     font-weight: 800;
     font-style: normal;
-    color: #E5E7EB;
+    color: #D1D5DB;
     text-align: center;
 }
 h2 {
     font-weight: 700;
     font-style: normal;
-    color: var(--lightblue);
-    text-align: center;
 }
 #incentive {
     font-weight: bold;
@@ -396,9 +394,6 @@ input:focus + .slider {
 }
 
 .services-p {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-style: normal;
     font-size: 22px;
     margin-left: 150px;
     margin-bottom: -30px;
@@ -477,9 +472,6 @@ input:focus + .slider {
     line-height: 1.4;
 }
 .services-arrow {
-    font-family:  "Inter", sans-serif;
-    font-weight: 400;
-    font-style: normal;
     font-size: 55px;
     margin-left: 230px;
     margin-top: -15px;
@@ -626,9 +618,6 @@ input:focus + .slider {
         color: #3B82F6;
     }
     .services-p {
-        font-family:  "Inter", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         font-size: 22px;
         margin-left: 240px;
         margin-bottom: -30px;
@@ -637,9 +626,6 @@ input:focus + .slider {
         display: none;
     }
     .services-arrow {
-        font-family:  "Inter", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         font-size: 55px;
         margin-left: 350px;
         margin-bottom: -55px;
@@ -1377,9 +1363,6 @@ input:focus + .slider {
     }
     
     .services-p {
-        font-family:  "Inter", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         font-size: 22px;
         margin-left: 150px;
         margin-bottom: -30px;
@@ -1450,45 +1433,30 @@ input:focus + .slider {
     }
 
     .services-arrow {
-        font-family:  "Inter", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         font-size: 55px;
         margin-left: 230px;
         margin-bottom: -55px;
         margin-top: -15px;
     }
     .home-arrow {
-        font-family:  "Inter", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         font-size: 55px;
         margin-left: 360px;
         margin-bottom: 430px;
         margin-top: -400px;
     }   
     .home-p {
-        font-family:  "Inter", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         font-size: 22px;
         margin-left: 180px;
         margin-bottom: 400px;
         margin-top: -500px;
     }
     .home-arrow-2 {
-        font-family:  "Inter", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         font-size: 55px;
         margin-left: 1480px;
         margin-bottom: 430px;
         margin-top: -580px;
     }   
     .home-p-2 {
-        font-family:  "Inter", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         font-size: 22px;
         margin-left: 1510px;
         margin-bottom: 350px;
@@ -1803,9 +1771,6 @@ input:focus + .slider {
     }
     
     .services-p {
-        font-family:  "Inter", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         font-size: 20px;
         margin-left: 50px;
         margin-bottom: -30px;
@@ -1875,9 +1840,6 @@ input:focus + .slider {
     }
 
     .services-arrow {
-        font-family:  "Inter", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         font-size: 50px;
         margin-left: 140px;
         margin-bottom: -55px;
@@ -2354,9 +2316,6 @@ input:focus + .slider {
     }
     
     .services-p {
-        font-family:  "Inter", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         font-size: 20px;
         margin-left: 220px;
     }
@@ -2368,9 +2327,6 @@ input:focus + .slider {
     }
     
     .services-arrow {
-        font-family:  "Inter", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         font-size: 50px;
         margin-left: 315px;
     }
@@ -2957,9 +2913,6 @@ input:focus + .slider {
     }
 
     .services-p {
-        font-family:  "Inter", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         font-size: 20px;
         margin-left: 220px;
     }
@@ -2971,9 +2924,6 @@ input:focus + .slider {
     }
     
     .services-arrow {
-        font-family:  "Inter", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         font-size: 50px;
         margin-bottom: -40px;
         margin-left: 195px;
@@ -3524,9 +3474,6 @@ input:focus + .slider {
     }
 
     .services-p {
-        font-family:  "Inter", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         font-size: 20px;
         margin-left: 220px;
     }
@@ -3538,9 +3485,6 @@ input:focus + .slider {
     }
     
     .services-arrow {
-        font-family: "Inter", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         font-size: 50px;
         margin-bottom: -40px;
         margin-left: 195px;

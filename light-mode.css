@@ -640,7 +640,7 @@ input:focus + .slider {
     #headings {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: start;
         margin: 0;
         margin-bottom: 25px;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
@@ -832,9 +832,6 @@ input:focus + .slider {
     }
 
     #headings {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         margin: 0;
         margin-bottom: 30px;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
@@ -1468,9 +1465,6 @@ input:focus + .slider {
     }
 
     #headings {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         margin: 0;
         margin-bottom: 25px;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
@@ -2076,9 +2070,6 @@ input:focus + .slider {
     }
 
     #headings {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         margin: 0;
         margin-bottom: 25px;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
@@ -2688,9 +2679,6 @@ input:focus + .slider {
         line-height: 52px;
     }
     #headings {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         margin: 0;
         margin-bottom: -10px;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
@@ -3254,9 +3242,6 @@ input:focus + .slider {
         line-height: 52px;
     }
     #headings {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         margin: 0;
         margin-bottom: -10px;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
