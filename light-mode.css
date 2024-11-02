@@ -71,6 +71,46 @@ h2 {
     align-self: stretch;
 }
 
+/* Settings */
+#cog-icon {
+    position: absolute;
+    display: flex;
+    top: 35%;
+    right: 40px;
+    font-size: 21px;
+    padding: 6px 15px; /* Aby uzyskać przestrzeń wokół ikony */
+    border-radius: 20px; /* Zaokrąglone tło */
+    transition: background-color 0.3s ease; /* Płynne przejście */
+    color: white;
+}
+#cog-icon:hover {
+    background-color: var(--lightblue);
+}
+/* Tooltip */
+#cog-icon::after {
+    content: "Settings"; /* Tekst tooltipa */
+    position: absolute;
+    top: 40px; /* Pozycja nad ikoną */
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 4px;
+    opacity: 0;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+    pointer-events: none; /* Zapobiega najechaniu na tooltip */
+}
+
+#cog-icon:hover::after {
+    opacity: 1; /* Wyświetlanie tooltipa przy najechaniu */
+}
+
+.hidden {
+    display: none;
+}
+
 .language-switcher {
     position: absolute;
     top: 50%;

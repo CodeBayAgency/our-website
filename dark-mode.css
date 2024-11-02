@@ -1,7 +1,8 @@
 /* Variables */
 :root {
     --lightblue: #3B82F6;
-    --darkblue: rgb(36, 36, 52);
+    --darkblue: #1E3A8A;
+    --bg-color: rgb(36, 36, 52);
     --lightpink: #FF66B2;
     --lighgray: #F0F0F0;
     --darkpink: #E0559E;
@@ -49,7 +50,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow-y: scroll; /* Allow vertical scrolling for all screen sizes */
-    background-color: var(--darkblue);
+    background-color: var(--bg-color);
 }
 
 main {
@@ -58,12 +59,17 @@ main {
 h1 {
     font-weight: 800;
     font-style: normal;
-    color: #D1D5DB;
     text-align: center;
 }
 h2 {
     font-weight: 700;
     font-style: normal;
+}
+#headings {
+    color: white;
+}
+#contact h2 {
+    color: var(--lightblue);
 }
 #incentive {
     font-weight: bold;
@@ -73,14 +79,53 @@ h2 {
     background-color: white;
     padding: 17px; /* Adds some space between the text and the border */
     border-radius: 10px;
-    color: var(--lightpink);
+    color: var(--lightblue);
     align-self: stretch;
+}
+
+/* Settings */
+#cog-icon {
+    position: absolute;
+    display: flex;
+    top: 35%;
+    right: 40px;
+    font-size: 21px;
+    padding: 6px 15px; /* Aby uzyskać przestrzeń wokół ikony */
+    border-radius: 20px; /* Zaokrąglone tło */
+    transition: background-color 0.3s ease; /* Płynne przejście */
+}
+#cog-icon:hover {
+    background-color: var(--lightblue);
+}
+/* Tooltip */
+#cog-icon::after {
+    content: "Settings"; /* Tekst tooltipa */
+    position: absolute;
+    top: 40px; /* Pozycja nad ikoną */
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 4px;
+    opacity: 0;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+    pointer-events: none; /* Zapobiega najechaniu na tooltip */
+}
+
+#cog-icon:hover::after {
+    opacity: 1; /* Wyświetlanie tooltipa przy najechaniu */
+}
+
+.hidden {
+    display: none;
 }
 
 .language-switcher {
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: 90px;
     transform: translateY(-50%);
     display: flex;
     gap: 10px;
@@ -102,17 +147,16 @@ h2 {
 
 .lang-link.active {
     background-color: var(--lightblue); /* Highlight color for active language */
-    color: white;
 }
 #english-button {
     background-color: var(--lightblue); /* Highlight color for active language */
-    color: white;
 }
+
 /* Theme switcher (start)*/
 .theme-switcher {
     position: absolute;
     top: 50%;
-    right: 170px;
+    right: 240px;
     transform: translateY(-50%);
     display: flex;
     gap: 10px;
@@ -179,18 +223,11 @@ input:focus + .slider {
 .theme-switcher p {
     font-size: 12px;
     margin: 0;
-    color: white;
 }
 /* Theme switcher (end) */
 
 .content {
     width: 100%;
-}
-
-.greetings {
-    transition: opacity 2s;
-    color: var(--lightblue);
-    text-align: center; /* Center text */
 }
 
 .home-video {
@@ -480,7 +517,7 @@ input:focus + .slider {
 /* Our Services section (end) */
 
 .submit-btn {
-    background-color: var(--lightpink);
+    background-color: var(--lightblue);
     color: white;
     padding: 12px 20px;
     border: none;
@@ -491,7 +528,7 @@ input:focus + .slider {
 }
 
 .submit-btn:hover {
-    background-color: var(--darkpink);
+    background-color: var(--darkblue);
 }
 
 /* Responsive design (start)*/
@@ -669,6 +706,15 @@ input:focus + .slider {
         padding-top: 100px;
         padding-bottom: 75px;
     }
+    .contact-container {
+        display: flex;
+        max-width: 1300px;
+        width: 100%;
+        margin: 0 auto; /* Wyśrodkowanie kontenera */
+        gap: 60px; /* Odstęp między elementami */
+        align-items: flex-start; /* Wyrównanie do góry */
+        justify-content: center; /* Centruje w poziomie */
+    }
 
     #headings {
         display: flex;
@@ -696,7 +742,6 @@ input:focus + .slider {
         background-color: white;
         padding: 17px; /* Adds some space between the text and the border */
         border-radius: 10px;
-        color: var(--darkblue);
         align-self: stretch;
     }
 
@@ -728,16 +773,41 @@ input:focus + .slider {
         font-size: 45px;
         line-height: 52px;
     }
-    .our-email {
-        font-size: 16px;
-        line-height: 22px;
-        font-weight: 600;
-        color: var(--lightblue);
-        margin-bottom: 20px;
-        max-width: unset;
-        margin-left: 0;
-        padding-left: 0;
+    /* Contact section (start) */
+    form {
+        display: flex;
+        flex-direction: column;
+        max-width: 300px;
     }
+    
+    input, textarea {
+        margin-bottom: 0.2em;
+    }
+    
+    .fa-instagram {
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .fa-linkedin {
+        color: #0077b5;
+    }
+    
+    .fa-envelope {
+        background: linear-gradient(to bottom right, #D44638 0%, #D44638 65%, #B23121 66%, #B23121 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    #contact-form {
+        flex: 1;
+        max-width: 500px;
+        margin-right: 2em;
+    }
+    
     .form-group {
         position: relative;
         margin-bottom: 30px;
@@ -751,8 +821,79 @@ input:focus + .slider {
         border-bottom: 1px solid #ccc;
         background-color: transparent;
         outline: none;
-        font-size: 16px;
+        font-size: 15px;
         transition: all 0.3s ease;
+    }
+    
+    .form-group label {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        color: #999;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group input:valid,
+    .form-group textarea:valid {
+        border-bottom-color: #4CAF50;
+    }
+    
+    .form-group input:focus + label,
+    .form-group textarea:focus + label,
+    .form-group input:valid + label,
+    .form-group textarea:valid + label {
+        top: -20px;
+        font-size: 12px;
+        color: #4CAF50;
+    }
+    
+    .form-group textarea {
+        height: 50px;
+        resize: vertical;
+    }
+    
+    .submit-btn {
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 15px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .contact-info {
+        flex: 1;
+        max-width: 300px;
+        margin-top: 2em;
+    }
+    
+    .social-icons {
+        display: flex;
+        justify-content: start;
+        margin-top: 1em;
+    }
+    
+    .icon-link {
+        font-size: 1.8em;
+        margin-right: 0.5em;
+        transition: opacity 0.3s ease;
+        text-decoration: none;
+    }
+
+    .icon-link:hover {
+        opacity: 0.8;
+    }
+    
+    .contact-headers {
+        flex: 1;
+    }
+    
+    .contact-options {
+        flex: 1;
     }
     /* Specific styles for the phone input */
     .form-group input[type="tel"] ~ label {
@@ -856,73 +997,12 @@ input:focus + .slider {
     .phone-input input:not(:focus) {
         border-bottom-color: #ccc;
     }
-    .service-card {
-        perspective: 1000px;
-        margin: 5px; /* Reduced from 10px */
-    }
     
-    .card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-        cursor: pointer;
-    }
-    
-    .service-card:hover .card-inner {
-        transform: rotateY(180deg);
-    }
-    
-    .card-front, .card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        box-sizing: border-box;
-    }
-    
-    .card-front {
-        background-color: white;
-    }
-    
-    .card-back {
-        background-color: #3B82F6;
-        color: white;
-        transform: rotateY(180deg);
-        justify-content: center;
-    }
-    
-    .card-front i {
-        font-size: 2.5em;
-        margin-bottom: 15px; /* Increased from 10px */
-    }
-    
-    /* Adjust text sizes for larger cards */
-    .card-front h3 {
-        font-size: 1em;
-        margin-bottom: 10px;
-    }
-    
-    .card-back p {
-        font-size: 1em;
-        line-height: 1.4;
-    }
-    .contact-headers {
-        flex: 1;
-    }
-    
+    /* You might need to adjust the container of the form as well */
     .contact-options {
-        flex: 1;
+        overflow: hidden; /* Contains the wider form */
     }
+    /* Contact section (end) */
 }
 
 /* Desktop */
@@ -1006,7 +1086,6 @@ input:focus + .slider {
         background-color: white;
         padding: 17px; /* Adds some space between the text and the border */
         border-radius: 10px;
-        color: var(--darkblue);
         align-self: stretch;
     }
 
@@ -1649,7 +1728,6 @@ input:focus + .slider {
         background-color: white;
         padding: 17px; /* Adds some space between the text and the border */
         border-radius: 10px;
-        color: var(--darkblue);
         min-width: 580px;
         align-self: stretch;
     }
@@ -1688,7 +1766,6 @@ input:focus + .slider {
         display: inline-block; /* Allow captions to line up horizontally */
         overflow: hidden; /* Hide overflow content */
     }
-    
     
     .caption a:hover {
         background: #3B82F6;

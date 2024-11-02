@@ -32,44 +32,47 @@
             <span class="logo1"><img src=".\images\white_on_trans.png"alt="Logo"></span>
             <span class="logo2"><img src=".\images\black_on_trans.png"alt="Logo"></span>
         </div> <!-- Logo placeholder -->
-        <!-- Theme switcher-->
-         <div class="theme-switcher">
-            <p>LIGHT MODE</p>
-            <label class="switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider round"></span>
-              </label>
-         </div>
-        <!-- Language switcher -->
-        <div class="language-switcher">
-            <a href="index.html" class="lang-link" id="english-button">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="20" height="10">
-                    <clipPath id="s">
-                        <path d="M0,0 v30 h60 v-30 z"/>
-                    </clipPath>
-                    <use xlink:href="#s" fill="#012169"/>
-                    <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
-                    <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#s)" stroke="#C8102E" stroke-width="4"/>
-                    <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
-                    <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
-                </svg>
-                EN
-            </a>
-            <a href="index-pl.html" class="lang-link">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 10" width="20" height="12">
-                    <rect width="16" height="10" fill="#fff"/>
-                    <rect width="16" height="5" fill="#dc143c" y="5"/>
-                </svg>
-                PL
-            </a>
+        <div class="settings hidden">
+            <!-- Theme switcher-->
+            <div class="theme-switcher">
+                <p><span style="display: block;">LIGHT</span><span style="display: block;">THEME</span></p>
+               <label class="switch">
+                   <input type="checkbox" id="theme-toggle">
+                   <span class="slider round"></span>
+                 </label>
+            </div>
+           <!-- Language switcher -->
+           <div class="language-switcher">
+               <a href="index.html" class="lang-link" id="english-button">
+                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="20" height="10">
+                       <clipPath id="s">
+                           <path d="M0,0 v30 h60 v-30 z"/>
+                       </clipPath>
+                       <use xlink:href="#s" fill="#012169"/>
+                       <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                       <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#s)" stroke="#C8102E" stroke-width="4"/>
+                       <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                       <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+                   </svg>
+                   EN
+               </a>
+               <a href="index-pl.html" class="lang-link">
+                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 10" width="20" height="12">
+                       <rect width="16" height="10" fill="#fff"/>
+                       <rect width="16" height="5" fill="#dc143c" y="5"/>
+                   </svg>
+                   PL
+               </a>
+           </div>
         </div>
+        <i class="fa fa-cog" aria-hidden="true" id="cog-icon"></i>
     </nav>
     <main>
         <section id="home" class="content-home">
             <div class="about-us-container">
                 <h1>Welcome to CodeBay!</h1>
-                <p>Software solutions tailored your business needs</p>
-                <p>Have an idea? We can help!</p>
+                <h5>Software solutions tailored your business needs</h5>
+                <h5>Have an idea? We can help!</h5>
                 <!--<p class="about-us">At CodeBay, we specialize in delivering high-quality software solutions tailored to meet your business needs. Our services range from building modern, responsive websites to conducting thorough testing of web and mobile applications, with a focus on bug fixing and optimization. We also excel in AWS application development and help businesses seamlessly migrate their applications and databases from on-premises infrastructure to the cloud while focusing on cost optimization and improving security. With a commitment to innovation and precision, we ensure that your technology works flawlessly.</p>-->
                 <p id="incentive">Watch our introduction video to get to know us better!</p>
                 <!-- YouTube video -->
@@ -205,34 +208,32 @@
                     </div>
                 </div>
                 <div class="contact-options">
-                    <div class="contact-options">
-                        <form id="contact-form">
-                            <div class="form-group">
-                                <input type="text" name="name" id="name" required>
-                                <label for="name">YOUR NAME</label>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" id="name" required>
+                            <label for="name">YOUR NAME</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" required>
+                            <label for="email">YOUR EMAIL</label>
+                        </div>
+                        <div class="form-group phone-group">
+                            <div class="prefix-input">
+                                <input type="text" name="prefix" id="prefix" required>
+                                <label for="prefix">PREFIX</label>
                             </div>
-                            <div class="form-group">
-                                <input type="email" name="email" id="email" required>
-                                <label for="email">YOUR EMAIL</label>
+                            <div class="phone-input">
+                                <input type="tel" name="phone" id="phone" placeholder=" ">
+                                <label for="phone">PHONE NUMBER (OPTIONAL)</label>
                             </div>
-                            <div class="form-group phone-group">
-                                <div class="prefix-input">
-                                    <input type="text" name="prefix" id="prefix" required>
-                                    <label for="prefix">PREFIX</label>
-                                </div>
-                                <div class="phone-input">
-                                    <input type="tel" name="phone" id="phone" placeholder=" ">
-                                    <label for="phone">YOUR PHONE (OPTIONAL)</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <textarea name="message" id="message" required></textarea>
-                                <label for="message">YOUR MESSAGE</label>
-                            </div>
-                            <button type="submit" class="submit-btn"><i class="fa fa-paper-plane" aria-hidden="true"></i> SEND MESSAGE</button>
-                        </form>
-                    </div>
-            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" id="message" required></textarea>
+                            <label for="message">YOUR MESSAGE</label>
+                        </div>
+                        <button type="submit" class="submit-btn"><i class="fa fa-paper-plane" aria-hidden="true"></i> SEND MESSAGE</button>
+                    </form>
+                </div>
         </section>
 
     </main>

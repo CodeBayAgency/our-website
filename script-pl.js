@@ -345,3 +345,9 @@ themeToggle.addEventListener('change', () => {
         localStorage.setItem('theme', 'dark');
     }
 });
+
+// Settings reveal
+document.getElementById('cog-icon').addEventListener('click', function () {
+    const settings = document.querySelector('.settings');
+    settings.classList.toggle('hidden');
+});
