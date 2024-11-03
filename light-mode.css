@@ -1,7 +1,9 @@
 /* Variables */
 :root {
+    --bg-color: #F3F4F6;
+    --highlight: #3B82F6;
     --darkblue: #1E3A8A;
-    --lightblue: #3B82F6;
+    --lightgray: #F0F0F0; /* Contact form's color */
 }
 /* Scrollbar */
 /* For Webkit browsers (Chrome, Safari, Edge) */
@@ -44,7 +46,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow-y: scroll; /* Allow vertical scrolling for all screen sizes */
-    background-color: #F3F4F6;
+    background-color: var(--bg-color);
 }
 
 main {
