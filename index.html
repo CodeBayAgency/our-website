@@ -219,7 +219,7 @@
                         </div>
                         <div class="form-group phone-group">
                             <div class="prefix-input">
-                                <input type="text" name="prefix" id="prefix" required>
+                                <input type="tel" name="prefix" id="prefix" placeholder=" ">
                                 <label for="prefix">PREFIX</label>
                             </div>
                             <div class="phone-input">
@@ -231,6 +231,7 @@
                             <textarea name="message" id="message" required></textarea>
                             <label for="message">YOUR MESSAGE</label>
                         </div>
+                        <div id="error-message" class="error-message" style="display: none;"></div> <!-- Error message container -->
                         <button type="submit" class="submit-btn"><i class="fa fa-paper-plane" aria-hidden="true"></i> SEND MESSAGE</button>
                     </form>
                 </div>

@@ -3148,8 +3148,8 @@ input:focus + .slider {
     .hamburger {
         display: block;
         position: absolute;
-        top: 15px;
-        left: 15px;
+        bottom: -85vh;
+        right: 5%;
         z-index: 1001;
     }
     #main-nav {
@@ -3172,24 +3172,25 @@ input:focus + .slider {
     }
     .nav-links {
         position: fixed;
-        top: 0;
-        left: -200px; /* Start off-screen */
+        bottom: 0vh;
+        right: -250px; /* Start off-screen */
         flex-direction: column;
-        width: 200px;
+        width: 250px;
         height: 100vh;
         text-align: left;
         padding-top: 60px;
         box-shadow: 2px 0 5px rgba(0,0,0,0.2);
         background-color: #1E3A8A;
-        transition: left 0.3s ease-in-out; /* Add smooth transition */
+        transition: right 0.3s ease-in-out; /* Add smooth transition */
+        border-radius: 10px;
     }
 
     .nav-links.active {
-        left: 0;
+        right: 0;
     }
 
     .nav-links li {
-        margin: 0;
+        padding-bottom: 30px;
     }
 
     /* Hamburger animation */
