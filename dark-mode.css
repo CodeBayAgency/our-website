@@ -389,6 +389,18 @@ input:focus + .slider {
     background-color: rgba(0,0,0,0.4);
 }
 
+/* Validation of prefix and phone number. Error message display */
+.error-message {
+    color: #d9534f; /* Bootstrap error red */
+    font-size: 14px;
+    margin-top: -15px;
+    margin-bottom: 20px;
+}
+
+#modal-message {
+    color: var(--darkblue);
+}
+
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
@@ -994,9 +1006,13 @@ input:focus + .slider {
         pointer-events: none;
     }
     
-    /* Styl dla pola prefix */
-    .prefix-input input:focus + label,
+    /* Styl dla pola prefix 
     .prefix-input input:valid + label {
+        top: 20px;
+        font-size: 12px;
+        color: #999;
+    }
+    .prefix-input input:focus + label {
         top: -20px;
         font-size: 12px;
         color: #333;
@@ -1015,6 +1031,9 @@ input:focus + .slider {
         border-bottom-color: #333;
     }
     
+    .prefix-input input:not(:focus) {
+        border-bottom-color: #ccc;
+    }
     /* Usunięcie zielonego podkreślenia dla pola phone number przed fokusem */
     .phone-input input:not(:focus) {
         border-bottom-color: #ccc;
@@ -3314,8 +3333,8 @@ input:focus + .slider {
     .hamburger {
         display: block;
         position: absolute;
-        top: 15px;
-        left: 15px;
+        bottom: -85vh;
+        right: 5%;
         z-index: 1001;
     }
     #main-nav {
@@ -3338,24 +3357,25 @@ input:focus + .slider {
     }
     .nav-links {
         position: fixed;
-        top: 0;
-        left: -200px; /* Start off-screen */
+        bottom: 0vh;
+        right: -250px; /* Start off-screen */
         flex-direction: column;
-        width: 200px;
+        width: 250px;
         height: 100vh;
         text-align: left;
         padding-top: 60px;
         box-shadow: 2px 0 5px rgba(0,0,0,0.2);
         background-color: #1E3A8A;
-        transition: left 0.3s ease-in-out; /* Add smooth transition */
+        transition: right 0.3s ease-in-out; /* Add smooth transition */
+        border-radius: 10px;
     }
 
     .nav-links.active {
-        left: 0;
+        right: 0;
     }
 
     .nav-links li {
-        margin: 0;
+        padding-bottom: 30px;
     }
 
     /* Hamburger animation */
@@ -3836,7 +3856,8 @@ input:focus + .slider {
     
     /* Styl dla pola prefix */
     .prefix-input input:focus + label,
-    .prefix-input input:valid + label {
+    .prefix-input input:valid + label,
+    .prefix-input input:not(:placeholder-shown) + label {
         top: -20px;
         font-size: 12px;
         color: #333;
