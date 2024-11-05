@@ -36,11 +36,15 @@
             <!-- Theme switcher-->
             <div class="theme-switcher">
                 <p><span style="display: block;">LIGHT</span><span style="display: block;">THEME</span></p>
-               <label class="switch">
-                   <input type="checkbox" id="theme-toggle">
-                   <span class="slider round"></span>
-                 </label>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider round">
+                        <i class="fas fa-moon moon-icon"></i> <!-- Ikona księżyca -->
+                        <i class="fas fa-sun sun-icon"></i>   <!-- Ikona słońca -->
+                    </span>
+                </label>
             </div>
+            
            <!-- Language switcher -->
            <div class="language-switcher">
                <a href="index.html" class="lang-link" id="english-button">
@@ -70,11 +74,11 @@
     <main>
         <section id="home" class="content-home">
             <div class="about-us-container">
-                <h1>Welcome to CodeBay!</h1>
-                <h5>Software solutions tailored your business needs</h5>
-                <h5>Have an idea? We can help!</h5>
+                <h1>Unique software solutions</h1>
+                <h2>for modern businesses</h2>
+                <h2>Have an idea? We can help!</h2>
+                <button class="contact-btn">Contact us!</button>
                 <!--<p class="about-us">At CodeBay, we specialize in delivering high-quality software solutions tailored to meet your business needs. Our services range from building modern, responsive websites to conducting thorough testing of web and mobile applications, with a focus on bug fixing and optimization. We also excel in AWS application development and help businesses seamlessly migrate their applications and databases from on-premises infrastructure to the cloud while focusing on cost optimization and improving security. With a commitment to innovation and precision, we ensure that your technology works flawlessly.</p>-->
-                <p id="incentive">Watch our introduction video to get to know us better!</p>
                 <!-- YouTube video -->
             </div>
             <div class="home-video" class = "video-container">
@@ -85,6 +89,7 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen>
                 </iframe>
+                <p id="incentive">Watch this video to get to know us better!</p>
             </div>
         </section>
 
@@ -155,7 +160,7 @@
         
         <section id="team" class="content">
             <div>
-                <h2 id="headings">Meet our team members!</h2> <!-- Code symbol for future usage: &lt;/&gt; -->
+                <h2 id="headings">Our Team</h2>
             </div>
             <div class="team-container">
                 <button class="arrow left-arrow">&#11164;</button>

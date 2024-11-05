@@ -31,8 +31,6 @@
     scrollbar-color: #8A8A8A #F3F4F6; /* Thumb color followed by track color */
   }
 
-
-
 /* Base styles (for all devices) */
 html, body {
     height: 100%;
@@ -42,6 +40,8 @@ html, body {
     font-weight: 400;
     overflow-x: hidden;
     color: white;
+    letter-spacing: 0;
+    line-height: 1.4;
 }
 
 body {
@@ -57,26 +57,34 @@ main {
 h1 {
     font-weight: 800;
     font-style: normal;
-    text-align: center;
+    margin-bottom: -30px;
 }
 h2 {
     font-weight: 700;
     font-style: normal;
 }
-#headings {
-    color: white;
+.content-home h2 {
+    font-size: 30px;
+    margin: 0;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 #contact h2 {
     color: var(--highlight);
+}
+#headings {
+    letter-spacing: 1px;
+    padding: 16px;
+    padding-left: 15%;
+    /* background: linear-gradient(135deg, #2a47a6 95%, #242434, #242434 80%); */
+    background: linear-gradient(135deg, #242434, #3b82f6 150%);
 }
 #incentive {
     font-weight: bold;
     flex: 1; /* Allows paragraph to take all the available space */
     font-size: 24.5px;
     margin: 0;
-    background-color: white;
     padding: 17px; /* Adds some space between the text and the border */
-    border-radius: 10px;
     color: var(--highlight);
     align-self: stretch;
 }
@@ -248,8 +256,26 @@ input:focus + .slider {
     display: block; /* Usuń domyślną przestrzeń inline */
     height: 100%;
 }
+.about-img {
+    width: 150px;                 /* Set width of the logo container */
+    height: 150px;                /* Set height of the logo container */
+    margin: 0;
 
+}
 
+.contact-btn {
+    background-color: var(--highlight);
+    color: white;
+    padding: 18px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+.contact-btn:hover {
+    background-color: var(--darkblue);
+}
 
 .content {
     width: 100%;
@@ -504,7 +530,6 @@ input:focus + .slider {
 
 .card-back p {
     font-size: 1em;
-    line-height: 1.4;
 }
 .services-arrow {
     font-size: 55px;
@@ -551,6 +576,7 @@ input:focus + .slider {
         margin: 0 auto;
         height: 100%;
         width: auto;
+        background-color: white;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -578,6 +604,8 @@ input:focus + .slider {
         transition: all 0.3s ease;
         padding: 0 10px;
         text-align: center;
+        background-color: white;
+        color: var(--bg-color);
         display: inline-block;
         margin: 1em;
         text-align: center;
@@ -639,7 +667,7 @@ input:focus + .slider {
     .team-member p {
         padding-left: 60px ;
         padding-right: 60px ;
-        color: white;
+        color: var(--bg-color);
         font-size: 14px;
     }
 
@@ -719,19 +747,13 @@ input:focus + .slider {
 
     #headings {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        margin-bottom: 25px;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
-        opacity: 0.8;
     }
     
     .about-us-container {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 20px;
         max-width: 600px; /* Set maximum container width */
         width: 100%;
     }
@@ -767,12 +789,12 @@ input:focus + .slider {
     }
 
     h1 {
-        font-size: 45px;
-        line-height: 52px;
+        font-size: 60px;
+        line-height: 1.2;
     }
     h2 {
         font-size: 45px;
-        line-height: 52px;
+        line-height: 1.2;
     }
     /* Contact section (start) */
     form {
@@ -1051,12 +1073,9 @@ input:focus + .slider {
 
     #headings {
         display: flex;
-        justify-content: center;
-        align-items: center;
         margin: 0;
         margin-bottom: 25px;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
-        opacity: 0.8;
     }
     .about-section {
         padding: 0;
@@ -1292,31 +1311,25 @@ input:focus + .slider {
     
     h3 {
         font-size: 20px;
-        line-height: 26px;
+        line-height: 1.2;
         font-weight: 400;
-        color: white;
         margin-bottom: 24px;
         max-width: unset;
     }
     .team-member h3 {
         font-size: 18px;
-        line-height: 26px;
         font-weight: 600;
-        color: white;
         margin-bottom: 14px;
         max-width: unset;
     }
     h1 {
         font-size: 45px;
-        line-height: 52px;
     }
     h2 {
         font-size: 45px;
-        line-height: 52px;
     }
     .our-email {
         font-size: 16px;
-        line-height: 22px;
         font-weight: 600;
         color: var(--highlight);
         margin-bottom: 20px;
@@ -1507,7 +1520,6 @@ input:focus + .slider {
     
     .card-back p {
         font-size: 1em;
-        line-height: 1.4;
     }
 
     .services-arrow {
@@ -1706,7 +1718,6 @@ input:focus + .slider {
         margin: 0;
         margin-bottom: 25px;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
-        opacity: 0.8;
     }
     .about-section {
         padding: 0;
@@ -1806,31 +1817,25 @@ input:focus + .slider {
     
     h3 {
         font-size: 18px;
-        line-height: 23px;
+        line-height: 1.2;
         font-weight: 400;
-        color: white;
         margin-bottom: 21px;
         max-width: unset;
     }
     .team-member h3 {
         font-size: 18px;
-        line-height: 26px;
         font-weight: 600;
-        color: white;
         margin-bottom: 14px;
         max-width: unset;
     }
     h1 {
         font-size: 42px;
-        line-height: 52px;
     }
     h2 {
         font-size: 42px;
-        line-height: 52px;
     }
     .our-email {
         font-size: 16px;
-        line-height: 22px;
         font-weight: 600;
         margin-bottom: 20px;
         max-width: unset;
@@ -1912,7 +1917,6 @@ input:focus + .slider {
     
     .card-back p {
         font-size: 0.88em;
-        line-height: 1.2;
     }
 
     .services-arrow {
@@ -2299,7 +2303,6 @@ input:focus + .slider {
         margin: 0;
         margin-bottom: 25px;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
-        opacity: 0.8;
     }
 
     .about-us-container {
@@ -2365,19 +2368,16 @@ input:focus + .slider {
     
     h3 {
         font-size: 18px;
-        line-height: 23px;
+        line-height: 1.2;
         font-weight: 400;
-        color: white;
         margin-bottom: 21px;
     }
     
     h1 {
         font-size: 42px;
-        line-height: 52px;
     }
     h2 {
         font-size: 42px;
-        line-height: 52px;
     }
     
     /* Our Services section (start) */
@@ -2465,7 +2465,6 @@ input:focus + .slider {
     
     .card-back p {
         font-size: 0.88em;
-        line-height: 1.2;
     }
 
     /* Our Services section (end) */
@@ -2513,7 +2512,7 @@ input:focus + .slider {
     }
     .team-member h3 {
         font-size: 17px;
-        line-height: 24px;
+        line-height: 1.2;
         font-weight: 600;
         color: #151515;
         margin-bottom: 13px;
@@ -2598,7 +2597,6 @@ input:focus + .slider {
     }
     .our-email {
         font-size: 16px;
-        line-height: 22px;
         font-weight: 600;
         margin-bottom: 20px;
         max-width: unset;
@@ -2890,11 +2888,9 @@ input:focus + .slider {
     }
     h1 {
         font-size: 2rem;
-        line-height: 52px;
     }
     h2 {
         font-size: 2rem;
-        line-height: 52px;
     }
     #headings {
         display: flex;
@@ -2903,7 +2899,6 @@ input:focus + .slider {
         margin: 0;
         margin-bottom: -10px;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
-        opacity: 0.8;
     }
     .contact-container,
     .team-container {
@@ -3062,7 +3057,6 @@ input:focus + .slider {
     
     .card-back p {
         font-size: 0.88em;
-        line-height: 1.2;
     }
 
     /* Our Services section (end) */
@@ -3078,7 +3072,6 @@ input:focus + .slider {
     }
     .our-email {
         font-size: 16px;
-        line-height: 22px;
         font-weight: 600;
         margin-bottom: 20px;
         max-width: unset;
@@ -3450,11 +3443,9 @@ input:focus + .slider {
     }
     h1 {
         font-size: 2rem;
-        line-height: 52px;
     }
     h2 {
         font-size: 2rem;
-        line-height: 52px;
     }
     #headings {
         display: flex;
@@ -3463,7 +3454,6 @@ input:focus + .slider {
         margin: 0;
         margin-bottom: -10px;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
-        opacity: 0.8;
     }
     .contact-container,
     .team-container {
@@ -3622,7 +3612,6 @@ input:focus + .slider {
     
     .card-back p {
         font-size: 0.88em;
-        line-height: 1.2;
     }
 
     /* Our Services section (end) */
@@ -3638,7 +3627,6 @@ input:focus + .slider {
     }
     .our-email {
         font-size: 16px;
-        line-height: 22px;
         font-weight: 600;
         margin-bottom: 20px;
         max-width: unset;
