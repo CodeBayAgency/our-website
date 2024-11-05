@@ -74,13 +74,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize EmailJS
     emailjs.init("jkLAd8X0aWHM4emed");
 
-    // Form submission
+    // Form validation for prefix and phone
     document.getElementById('contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // Show spinner
-        document.getElementById('spinner').style.display = 'flex';
-
+        var phoneInput = document.getElementById('phone');
+        var prefixInput = document.getElementById('prefix');
+        var errorMessage = document.getElementById('error-message');
         // Collect the form data
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
@@ -97,34 +95,46 @@ document.addEventListener('DOMContentLoaded', function() {
             message: message
         };
 
-        // Debugging: Log the parameters
-        console.log("Sending email with parameters:", templateParams);
+        if ((phoneInput.value && !prefixInput.value) || (!phoneInput.value && prefixInput.value)) {
+            e.preventDefault();
+            errorMessage.textContent = 'Proszę podać numer kierunkowy oraz telefon lub zostawić oba pola puste.';
+            errorMessage.style.display = 'block';
+        } else {
+            errorMessage.style.display = 'none'; // Hide the error message if inputs are valid
+            e.preventDefault();
+            // Show spinner
+            document.getElementById('spinner').style.display = 'flex';
 
-        // Send the email using EmailJS
-        emailjs.send('service_8etewic', 'template_4aychwg', templateParams)
-            .then(function(response) {
-                console.log('Email sent successfully!', response);
-                
-                // Hide spinner
-                document.getElementById('spinner').style.display = 'none';
+            // Debugging: Log the parameters
+            console.log("Sending email with parameters:", templateParams);
 
-                // Show custom modal
-                document.getElementById('modal-message').textContent = 'Twoja wiadomość została wysłana. Wkrótce się z Tobą skontaktujemy!';
-                document.getElementById('thank-you-modal').style.display = 'block';
-                
-                // Reset the form fields
-                document.getElementById('contact-form').reset();
-            }, function(error) {
-                console.error('EmailJS failed:', error);
-                
-                // Hide spinner
-                document.getElementById('spinner').style.display = 'none';
+            // Send the email using EmailJS
+            emailjs.send('service_8etewic', 'template_4aychwg', templateParams)
+                .then(function(response) {
+                    console.log('Email sent successfully!', response);
 
-                // Show error in custom modal
-                document.getElementById('modal-message').textContent = 'Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.';
-                document.getElementById('thank-you-modal').style.display = 'block';
-            });
+                    // Hide spinner
+                    document.getElementById('spinner').style.display = 'none';
+
+                    // Show custom modal
+                    document.getElementById('modal-message').textContent = 'Wiadomość została wysłana. Wkrótce się z Tobą skontaktujemy!';
+                    document.getElementById('thank-you-modal').style.display = 'block';
+
+                    // Reset the form fields
+                    document.getElementById('contact-form').reset();
+                }, function(error) {
+                    console.error('EmailJS failed:', error);
+
+                    // Hide spinner
+                    document.getElementById('spinner').style.display = 'none';
+
+                    // Show error in custom modal
+                    document.getElementById('modal-message').textContent = 'Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.';
+                    document.getElementById('thank-you-modal').style.display = 'block';
+                });
+            }
     });
+
         // Close modal when clicking the close button
     document.getElementById('modal-close').addEventListener('click', function() {
         document.getElementById('thank-you-modal').style.display = 'none';
@@ -164,17 +174,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         this.value = value;
-    });
-
-    // Form validation for prefix and phone
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-        var phoneInput = document.getElementById('phone');
-        var prefixInput = document.getElementById('prefix');
-        
-        if ((phoneInput.value && !prefixInput.value) || (!phoneInput.value && prefixInput.value)) {
-            e.preventDefault();
-            alert('Please enter both prefix and phone number, or leave both empty.');
-        }
     });
 
     // Team carousel
