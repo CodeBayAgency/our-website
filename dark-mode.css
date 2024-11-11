@@ -232,10 +232,6 @@ input:focus + .slider {
 }
 /* Theme switcher (end) */
 
-.content {
-    width: 100%;
-}
-
 .home-video {
     flex: 1;
     background-color: #fff;
@@ -568,6 +564,52 @@ input:focus + .slider {
 .submit-btn:hover {
     background-color: var(--darkblue);
 }
+.our-email {
+    font-weight: 600;
+    color: var(--highlight);
+    margin-bottom: 20px;
+    max-width: unset;
+    margin: 0;
+    padding: 0;
+}
+
+.our-email h4 {
+    display: inline-block;
+    cursor: pointer;
+}
+
+#copy-icon {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 3px;
+}
+
+section {
+    height: 100vh; /* 100% of the viewport height */
+    margin: 0;
+    padding: 0;
+}
+.team-member:nth-child(2) {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.team-member:nth-child(1),
+.team-member:nth-child(3) {
+    transform: scale(0.8);
+    opacity: 0.6;
+}
+.arrow {
+    font-weight: bold;
+    background: none;
+    border: none;
+    color: var(--highlight);
+    cursor: pointer;
+}
+
+.arrow:hover {
+    color: #1E3A8A;
+}
 
 /* Responsive design (start)*/
 /* Large Desktop */
@@ -612,27 +654,20 @@ input:focus + .slider {
     }
     
     .team-member {
-        flex: 0 0 33.333%;
         transition: all 0.3s ease;
-        padding: 0 10px;
         text-align: center;
         background-color: white;
         color: var(--bg-color);
+        width: 400px;
+        height: 480px;
+        padding-top: 30px;
         display: inline-block;
         margin: 1em;
         text-align: center;
         cursor: pointer;
-    }
-    
-    .team-member:nth-child(2) {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    
-    .team-member:nth-child(1),
-    .team-member:nth-child(3) {
-        transform: scale(0.8);
-        opacity: 0.6;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-bottom: 10px solid var(--highlight);
     }
     
     .img-container {
@@ -677,24 +712,22 @@ input:focus + .slider {
         margin-top: 0;
     }
     .team-member p {
-        padding-left: 60px ;
-        padding-right: 60px ;
+        padding-left: 30px ;
+        padding-right: 30px ;
         color: var(--bg-color);
-        font-size: 14px;
+        font-size: 22px;
+    }
+
+    .team-member h3 {
+        font-size: 28px;
+        margin-bottom: 14px;
+        max-width: unset;
     }
 
     .arrow {
         font-size: 37px;
-        font-weight: bold;
-        background: none;
-        border: none;
-        color: #1E3A8A;
-        cursor: pointer;
     }
 
-    .arrow:hover {
-        color: #3B82F6;
-    }
     .services-p {
         font-size: 22px;
         margin-left: 240px;
@@ -722,7 +755,6 @@ input:focus + .slider {
         gap: 30px;
     }
     .content {
-        width: 100%; /* Full width */
         display: relative; /* Use flexbox */
         flex-direction: column; /* Stack children vertically */
         justify-content: center; /* Center children vertically */
@@ -733,19 +765,6 @@ input:focus + .slider {
     #about, #services, #team, #contact {
         position: relative; /* Allow absolute positioning within this section */
         margin: 0; /* Remove default margin */
-    }
-    #about {
-        padding-bottom: -150px;
-    }
-    #services {
-        padding-top: 130px;
-    }
-    #team {
-        padding-top: 150px;
-    }
-    #contact {
-        padding-top: 100px;
-        padding-bottom: 75px;
     }
     .contact-container {
         display: flex;
@@ -768,16 +787,6 @@ input:focus + .slider {
         align-items: flex-start;
         max-width: 600px; /* Set maximum container width */
         width: 100%;
-    }
-    
-    .about-us {
-        flex: 1; /* Allows paragraph to take all the available space */
-        font-size: 17px;
-        margin: 0;
-        background-color: white;
-        padding: 17px; /* Adds some space between the text and the border */
-        border-radius: 10px;
-        align-self: stretch;
     }
 
     .home-video {
@@ -1006,7 +1015,7 @@ input:focus + .slider {
         pointer-events: none;
     }
     
-    /* Styl dla pola prefix 
+    /* Styl dla pola prefix */
     .prefix-input input:valid + label {
         top: 20px;
         font-size: 12px;
@@ -1064,7 +1073,6 @@ input:focus + .slider {
     }
     
     .content {
-        width: 100%; /* Full width */
         display: relative; /* Use flexbox */
         flex-direction: column; /* Stack children vertically */
         justify-content: center; /* Center children vertically */
@@ -1076,19 +1084,6 @@ input:focus + .slider {
         position: relative; /* Allow absolute positioning within this section */
         margin: 0; /* Remove default margin */
     }
-    #about {
-        padding-bottom: -150px;
-    }
-    #services {
-        padding-top: 130px;
-    }
-    #team {
-        padding-top: 150px;
-    }
-    #contact {
-        padding-top: 100px;
-        padding-bottom: 75px;
-    }
 
     #headings {
         display: flex;
@@ -1096,9 +1091,7 @@ input:focus + .slider {
         margin-bottom: 25px;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
     }
-    .about-section {
-        padding: 0;
-    }
+
     .content-home {
         width: 100%; /* Full width */
         display: flex; /* Use flexbox */
@@ -1106,6 +1099,7 @@ input:focus + .slider {
         justify-content: center; /* Center children vertically */
         box-sizing: border-box; /* Include padding and border in element's total width and height */
         gap: 30px;
+        height: 500px;
     }
     
     .about-us-container {
@@ -1115,6 +1109,8 @@ input:focus + .slider {
         gap: 20px;
         max-width: 600px; /* Set maximum container width */
         width: 100%;
+        margin: 0;
+        padding: 0;
     }
     
     .about-us {
@@ -1204,6 +1200,7 @@ input:focus + .slider {
         transform: translate(-50%, -50%);
     }
     
+    /* Contact section (start) */
     form {
         display: flex;
         flex-direction: column;
@@ -1211,18 +1208,7 @@ input:focus + .slider {
     }
     
     input, textarea {
-        margin-bottom: 0.3em;
-    }
-    
-    .icon-link {
-        font-size: 2em;
-        margin-right: 0.5em;
-        transition: opacity 0.3s ease;
-        text-decoration: none;
-    }
-    
-    .icon-link:hover {
-        opacity: 0.8;
+        margin-bottom: 0.2em;
     }
     
     .fa-instagram {
@@ -1262,7 +1248,7 @@ input:focus + .slider {
         border-bottom: 1px solid #ccc;
         background-color: transparent;
         outline: none;
-        font-size: 16px;
+        font-size: 15px;
         transition: all 0.3s ease;
     }
     
@@ -1296,6 +1282,15 @@ input:focus + .slider {
         resize: vertical;
     }
     
+    .submit-btn {
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 15px;
+        transition: background-color 0.3s ease;
+    }
     
     .contact-info {
         flex: 1;
@@ -1310,12 +1305,12 @@ input:focus + .slider {
     }
     
     .icon-link {
-        font-size: 2em;
+        font-size: 1.8em;
         margin-right: 0.5em;
         transition: opacity 0.3s ease;
         text-decoration: none;
     }
-    
+
     .icon-link:hover {
         opacity: 0.8;
     }
@@ -1327,36 +1322,6 @@ input:focus + .slider {
     .contact-options {
         flex: 1;
     }
-    
-    h3 {
-        font-size: 20px;
-        line-height: 1.2;
-        font-weight: 400;
-        margin-bottom: 24px;
-        max-width: unset;
-    }
-    .team-member h3 {
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 14px;
-        max-width: unset;
-    }
-    h1 {
-        font-size: 45px;
-    }
-    h2 {
-        font-size: 45px;
-    }
-    .our-email {
-        font-size: 16px;
-        font-weight: 600;
-        color: var(--highlight);
-        margin-bottom: 20px;
-        max-width: unset;
-        margin-left: 0;
-        padding-left: 0;
-    }
-    
     /* Specific styles for the phone input */
     .form-group input[type="tel"] ~ label {
         top: 10px;
@@ -1434,8 +1399,12 @@ input:focus + .slider {
     }
     
     /* Styl dla pola prefix */
-    .prefix-input input:focus + label,
     .prefix-input input:valid + label {
+        top: 20px;
+        font-size: 15px;
+        color: #999;
+    }
+    .prefix-input input:focus + label {
         top: -20px;
         font-size: 12px;
         color: #333;
@@ -1454,6 +1423,9 @@ input:focus + .slider {
         border-bottom-color: #333;
     }
     
+    .prefix-input input:not(:focus) {
+        border-bottom-color: #ccc;
+    }
     /* Usunięcie zielonego podkreślenia dla pola phone number przed fokusem */
     .phone-input input:not(:focus) {
         border-bottom-color: #ccc;
@@ -1463,6 +1435,7 @@ input:focus + .slider {
     .contact-options {
         overflow: hidden; /* Contains the wider form */
     }
+    /* Contact section (end) */
     
      /* Our Services section (start) */
      .services-container {
@@ -1483,6 +1456,8 @@ input:focus + .slider {
 
     .service-card {
         perspective: 1000px;
+        width: 240px;
+        height: 320px;
         margin: 5px; /* Reduced from 10px */
     }
     
@@ -1593,38 +1568,24 @@ input:focus + .slider {
     }
     
     .team-member {
-        flex: 0 0 33.333%;
         transition: all 0.3s ease;
-        padding: 0 10px;
         text-align: center;
+        background-color: white;
+        color: var(--bg-color);
+        width: 300px;
+        height: 380px;
+        padding-top: 30px;
         display: inline-block;
         margin: 1em;
         text-align: center;
         cursor: pointer;
-    }
-    
-    .team-member:nth-child(2) {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    
-    .team-member:nth-child(1),
-    .team-member:nth-child(3) {
-        transform: scale(0.8);
-        opacity: 0.6;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-bottom: 10px solid var(--highlight);
     }
     
     .arrow {
         font-size: 37px;
-        font-weight: bold;
-        background: none;
-        border: none;
-        color: #1E3A8A;
-        cursor: pointer;
-    }
-
-    .arrow:hover {
-        color: #3B82F6;
     }
     
     .img-container {
@@ -1669,9 +1630,8 @@ input:focus + .slider {
         margin-top: 0;
     }
     .team-member p {
-        padding-left: 60px ;
-        padding-right: 60px ;
-        color: white;
+        padding-left: 30px ;
+        padding-right: 30px ;
         font-size: 14px;
     }
 }
@@ -1693,7 +1653,6 @@ input:focus + .slider {
         background: #3B82F6;
     }
     .content {
-        width: 100%; /* Full width */
         display: flex; /* Use flexbox */
         flex-direction: column; /* Stack children vertically */
         justify-content: center; /* Center children vertically */
@@ -1716,19 +1675,6 @@ input:focus + .slider {
         position: relative; /* Allow absolute positioning within this section */
         margin: 0; /* Remove default margin */
     }
-    #about {
-        padding-bottom: -150px;
-    }
-    #services {
-        padding-top: 130px;
-    }
-    #team {
-        padding-top: 150px;
-    }
-    #contact {
-        padding-top: 100px;
-        padding-bottom: 75px;
-    }
 
     #headings {
         display: flex;
@@ -1738,10 +1684,7 @@ input:focus + .slider {
         margin-bottom: 25px;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
     }
-    .about-section {
-        padding: 0;
-    }
-    
+
     .about-us-container {
         display: flex;
         align-items: flex-start;
@@ -1855,11 +1798,6 @@ input:focus + .slider {
     }
     .our-email {
         font-size: 16px;
-        font-weight: 600;
-        margin-bottom: 20px;
-        max-width: unset;
-        margin-left: 0;
-        padding-left: 0;
     }
     
     /* Our Services section (start) */
@@ -1968,6 +1906,8 @@ input:focus + .slider {
     .team-member {
         flex: 0 0 33.333%;
         transition: all 0.3s ease;
+        width: 250px;
+        height: 350px;
         padding: 0 10px;
         text-align: center;
         display: inline-block;
@@ -1975,30 +1915,11 @@ input:focus + .slider {
         margin-top: 0.9em; /* Prevents top of an img from being cropped */
         text-align: center;
         cursor: pointer;
-    }
-    
-    .team-member:nth-child(2) {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    
-    .team-member:nth-child(1),
-    .team-member:nth-child(3) {
-        transform: scale(0.8);
-        opacity: 0.6;
+        color: var(--bg-color);
     }
     
     .arrow {
         font-size: 32px;
-        font-weight: bold;
-        background: none;
-        border: none;
-        color: #1E3A8A;
-        cursor: pointer;
-    }
-
-    .arrow:hover {
-        color: #3B82F6;
     }
     
     .img-container {
@@ -2045,7 +1966,6 @@ input:focus + .slider {
     .team-member p {
         padding-left: 40px ;
         padding-right: 40px ;
-        color: white;
         font-size: 12px;
         padding-bottom: 20px; /* Prevents text from being cropped */
     }
@@ -2292,7 +2212,6 @@ input:focus + .slider {
     }
     
     .content {
-        width: 100%; /* Full width */
         display: relative; /* Use flexbox */
         flex-direction: column; /* Stack children vertically */
         justify-content: center; /* Center children vertically */
@@ -2303,16 +2222,6 @@ input:focus + .slider {
     #about, #services, #team, #contact {
         position: relative; /* Allow absolute positioning within this section */
         margin: 0; /* Remove default margin */
-    }
-    #services {
-        padding-top: 120px;
-    }
-    #team {
-        padding-top: 120px;
-    }
-    #contact {
-        padding-top: 100px;
-        padding-bottom: 40px;
     }
 
     #headings {
@@ -2495,7 +2404,6 @@ input:focus + .slider {
         justify-content: center;
         width: 100%;
         margin: 0 auto; /* Wyśrodkowuje kontener */
-        max-width: 750px; 
     }
     
     .team-carousel {
@@ -2508,7 +2416,6 @@ input:focus + .slider {
     }
     
     .team-member {
-        flex: 0 0 33.333%;
         transition: all 0.3s ease;
         padding: 0;
         text-align: center;
@@ -2537,30 +2444,10 @@ input:focus + .slider {
         margin-bottom: 13px;
     }
     
-    .team-member:nth-child(2) {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    
-    .team-member:nth-child(1),
-    .team-member:nth-child(3) {
-        transform: scale(0.8);
-        opacity: 0.6;
-    }
-    
     .arrow {
         font-size: 29px;
-        font-weight: bold;
-        background: none;
-        border: none;
-        color: #1E3A8A;
-        cursor: pointer;
     }
 
-    .arrow:hover {
-        color: #3B82F6;
-    }
-    
     .img-container {
         width: 140px;
         height: 140px;
@@ -2616,11 +2503,6 @@ input:focus + .slider {
     }
     .our-email {
         font-size: 16px;
-        font-weight: 600;
-        margin-bottom: 20px;
-        max-width: unset;
-        margin-left: 0;
-        padding-left: 0;
     }
     
     form {
@@ -2919,6 +2801,11 @@ input:focus + .slider {
         margin-bottom: -10px;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
     }
+
+    .team-container {
+        max-width: 450px; 
+    }
+
     .contact-container,
     .team-container {
         width: 100%;
@@ -2938,12 +2825,7 @@ input:focus + .slider {
         box-sizing: border-box; /* Ensures padding is included in the width */
         width: 90%; 
     }
-    #services {
-        margin-top: -40px;
-    }
-    #team {
-        margin-bottom: -50px;
-    }
+
     .team-member {
         flex: 0 0 100%;
         margin-top: 0;
@@ -3091,11 +2973,6 @@ input:focus + .slider {
     }
     .our-email {
         font-size: 16px;
-        font-weight: 600;
-        margin-bottom: 20px;
-        max-width: unset;
-        margin-left: 0;
-        padding-left: 0;
     }
     
     form {
@@ -3395,11 +3272,6 @@ input:focus + .slider {
     }
     .arrow {
         font-size: 29px;
-        font-weight: bold;
-        background: none;
-        border: none;
-        color: #1E3A8A;
-        cursor: pointer;
         position: absolute;
     }
 
@@ -3494,12 +3366,7 @@ input:focus + .slider {
         box-sizing: border-box; /* Ensures padding is included in the width */
         width: 90%; 
     }
-    #services {
-        margin-top: -40px;
-    }
-    #team {
-        margin-bottom: -50px;
-    }
+
     .team-member {
         flex: 0 0 100%;
         margin-top: 0;
@@ -3647,11 +3514,6 @@ input:focus + .slider {
     }
     .our-email {
         font-size: 16px;
-        font-weight: 600;
-        margin-bottom: 20px;
-        max-width: unset;
-        margin-left: 0;
-        padding-left: 0;
     }
     
     form {
@@ -3951,11 +3813,6 @@ input:focus + .slider {
     }
     .arrow {
         font-size: 29px;
-        font-weight: bold;
-        background: none;
-        border: none;
-        color: #1E3A8A;
-        cursor: pointer;
         position: absolute;
     }
 
