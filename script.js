@@ -304,15 +304,38 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Language switcher
-document.addEventListener('DOMContentLoaded', function() {
-    const currentLang = document.documentElement.lang;
-    const langLinks = document.querySelectorAll('.lang-link');
-    
-    langLinks.forEach(link => {
-        if (link.getAttribute('href').includes(currentLang)) {
-            link.classList.add('active');
+document.addEventListener("DOMContentLoaded", function () {
+    const langToggle = document.getElementById("language-toggle");
+    const langText = document.getElementById("lang-text");
+    const flagIcon = document.getElementById("flag-icon");
+
+    let currentLang = window.location.pathname.includes("-pl") ? "pl" : "en";
+
+    function updateLanguageButton() {
+        if (currentLang === "en") {
+            langText.textContent = "PL";
+            langToggle.href = "index-pl.html";
+            flagIcon.innerHTML = `
+                <!-- Flaga Polski -->
+                <rect width="60" height="15" fill="white"></rect>
+                <rect y="15" width="60" height="15" fill="#DC143C"></rect>
+            `;
+        } else {
+            langText.textContent = "EN";
+            langToggle.href = "index.html";
+            flagIcon.innerHTML = `
+                <!-- Flaga UK -->
+                <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
+                <use xlink:href="#s" fill="#012169"/>
+                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#s)" stroke="#C8102E" stroke-width="4"/>
+                <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+            `;
         }
-    });
+    }
+
+    updateLanguageButton();
 });
 
 // Theme switcher
