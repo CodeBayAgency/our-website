@@ -106,7 +106,7 @@ h8 {
 .language-switcher {
     position: absolute;
     top: 50%;
-    right: 90px;
+    right: 20px;
     transform: translateY(-50%);
     display: flex;
     gap: 10px;
@@ -442,6 +442,7 @@ input:focus + .slider {
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px; /* Reduced from 20px */
+    margin-top: 100px;
 }
 
 .services-p {
@@ -1027,6 +1028,62 @@ section {
         overflow: hidden; /* Contains the wider form */
     }
     /* Contact section (end) */
+
+    h1 {
+        font-size: 80px; /* Zwiększenie rozmiaru nagłówka */
+    }
+
+    #headings {
+        font-size: 50px; /* Zwiększenie rozmiaru tekstu w nagłówkach */
+    }
+
+    .content-home {
+        gap: 50px; /* Większy odstęp między elementami */
+        height: 600px; /* Dostosowanie wysokości */
+    }
+
+    .about-us-container {
+        max-width: 800px; /* Szerszy kontener */
+    }
+
+    .about-us {
+        font-size: 20px; /* Większa czcionka */
+        padding: 25px;
+    }
+
+    .home-video {
+        max-width: 800px; /* Większy obszar wideo */
+        height: 500px;
+    }
+
+    .contact-container {
+        max-width: 1200px; /* Większa szerokość sekcji kontaktowej */
+        gap: 5rem;
+    }
+
+    .caption {
+        font-size: 24px; /* Większa czcionka dla napisów */
+    }
+
+    .services-container {
+        gap: 25px; /* Większe odstępy */
+    }
+
+    .service-card {
+        width: 280px; /* Większe karty usług */
+        height: 360px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 18px; /* Większy tekst w polach formularza */
+        padding: 12px;
+    }
+
+    .social-icons .icon-link {
+        font-size: 2em; /* Większe ikony */
+        margin-right: 50px;
+    }
 }
 
 /* Desktop */
