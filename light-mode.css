@@ -144,7 +144,7 @@ h8 {
 .theme-switcher {
     position: absolute;
     top: 50%;
-    right: 240px;
+    right: 90px;
     transform: translateY(-50%);
     display: flex;
     gap: 10px;
