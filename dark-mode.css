@@ -443,6 +443,7 @@ input:focus + .slider {
     justify-content: center;
     gap: 15px; /* Reduced from 20px */
     margin-top: 100px;
+    max-width: 90vw;
 }
 
 .services-p {
@@ -1834,9 +1835,10 @@ section {
     /* Our Services section (start) */
     .services-container {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: center;
         gap: 15px;
+        margin: 0 auto;
     }
     
     .services-p {
@@ -1850,6 +1852,7 @@ section {
 
     .service-card {
         perspective: 1000px;
+        flex: 1;
     }
     
     .card-inner {
@@ -2003,6 +2006,9 @@ section {
     }
     /* Our Team section (end) */
 
+
+    
+    
     /* Contact section (start) */
     form {
         display: flex;
@@ -2202,8 +2208,11 @@ section {
     }
     
     /* Styl dla pola prefix */
-    .prefix-input input:focus + label,
     .prefix-input input:valid + label {
+        font-size: 15px;
+        color: #999;
+    }
+    .prefix-input input:focus + label {
         top: -20px;
         font-size: 12px;
         color: #333;
@@ -2222,6 +2231,9 @@ section {
         border-bottom-color: #333;
     }
     
+    .prefix-input input:not(:focus) {
+        border-bottom-color: #ccc;
+    }
     /* Usunięcie zielonego podkreślenia dla pola phone number przed fokusem */
     .phone-input input:not(:focus) {
         border-bottom-color: #ccc;
@@ -2232,7 +2244,6 @@ section {
         overflow: hidden; /* Contains the wider form */
     }
     /* Contact section (end) */
-    
 }
 
 /* Tablet */
@@ -2249,6 +2260,55 @@ section {
         scroll-snap-align: start; /* Align for scroll snapping */
     }
 
+
+    .content-home {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Rozdziela elementy */
+        box-sizing: border-box;
+        padding: 0 100px;
+        gap: 40px; /* Dystans między tekstem a wideo */
+    }
+
+    about-us-container {
+        display: flex;
+        flex-direction: column; /* Ustawiamy nagłówki jeden pod drugim */
+        max-width: 50%; /* Zapewnia, że tekst nie zajmuje całej szerokości */
+    }
+    
+    .about-us {
+        flex: 1; /* Allows paragraph to take all the available space */
+        font-size: 20px;
+        margin: 0;
+        background-color: white;
+        padding: 17px; /* Adds some space between the text and the border */
+        border-radius: 10px;
+        min-width: 580px;
+        align-self: stretch;
+    }
+
+    .home-video {
+        flex: 1;
+        max-width: 50%;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 500px;
+        height: 350px;
+        padding: 0;
+    }
+    
+    .home-video iframe {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin: 0;
+        display: block; /* Deleting default inline space */
+        height: 100%;
+        aspect-ratio: 16 / 9; /* Utrzymuje proporcje filmiku */
+    }
+
     #about, #services, #team, #contact {
         position: relative; /* Allow absolute positioning within this section */
         margin: 0; /* Remove default margin */
@@ -2263,31 +2323,6 @@ section {
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
     }
 
-    .about-us-container {
-        display: grid;
-        gap: 50px;
-        max-width: 750px; /* Set maximum container width */
-        margin: 0 auto; /* Center entire container */
-
-    }
-    
-    .about-us {
-        flex: 1; /* Allows paragraph to take all the available space */
-        text-align: center;
-        font-size: 18px;
-        margin: 0;
-    }
-    .home-video {
-        flex: 1;
-        background-color: #fff;
-        border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border: 5px solid #1E3A8A;
-        width: 100%;
-        max-width: 750px;
-        height: 420px ;
-    }
-    
     .home-video iframe {
         width: 100%;
         border-radius: 10px;
@@ -2343,9 +2378,8 @@ section {
         display: flex;
         margin: 0 auto; /* Center entire container */
         flex-wrap: wrap;
-        justify-content: center;
         gap: 20px;
-        max-width: 750px;
+        transform: translateY(10vh); /* Przesuwa element o 50px w dół */
     }
     
     .services-p {
@@ -2365,8 +2399,9 @@ section {
     }
 
     .service-card {
-        width: 175px;
-        height: 240px;
+        width: 20vw;
+        height: 45vh;
+        flex: 1;
     }
     
     .card-inner {
@@ -2397,11 +2432,6 @@ section {
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         box-sizing: border-box;
-    }
-    
-    .card-front {
-        background-color: white;
-        padding-top: 45px;
     }
     
     .card-back {
@@ -2473,6 +2503,12 @@ section {
         color: #151515;
         margin-bottom: 13px;
     }
+
+    .card-front img {
+        width: 140px;
+        height: auto;
+        margin-top: 0
+    }
     
     .arrow {
         font-size: 29px;
@@ -2522,19 +2558,7 @@ section {
     }
     /* Our Team section (end) */
 
-    /* Contact section (start) */
-    .contact-container {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        max-width: 750px;
-        margin: 0 auto;
-        gap: 3.5rem;
-    }
-    .our-email {
-        font-size: 16px;
-    }
-    
+  /* Contact section (start) */
     form {
         display: flex;
         flex-direction: column;
@@ -2617,6 +2641,7 @@ section {
     }
     
     .submit-btn {
+        color: white;
         padding: 12px 20px;
         border: none;
         border-radius: 4px;
@@ -2732,8 +2757,11 @@ section {
     }
     
     /* Styl dla pola prefix */
-    .prefix-input input:focus + label,
     .prefix-input input:valid + label {
+        font-size: 15px;
+        color: #999;
+    }
+    .prefix-input input:focus + label {
         top: -20px;
         font-size: 12px;
         color: #333;
@@ -2752,6 +2780,9 @@ section {
         border-bottom-color: #333;
     }
     
+    .prefix-input input:not(:focus) {
+        border-bottom-color: #ccc;
+    }
     /* Usunięcie zielonego podkreślenia dla pola phone number przed fokusem */
     .phone-input input:not(:focus) {
         border-bottom-color: #ccc;
