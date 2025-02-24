@@ -351,7 +351,7 @@ input:focus + .slider {
     width: 25px;
     height: 3px;
     margin: 5px auto;
-    background-color: #1E3A8A;
+    background-color: var(--highlight);
     transition: all 0.3s ease-in-out;
 }
 
@@ -444,12 +444,10 @@ input:focus + .slider {
     gap: 15px; /* Reduced from 20px */
     margin-top: 100px;
     max-width: 90vw;
+    margin: 0 auto;
+    margin-top: 3rem;
 }
 
-.services-p {
-    font-size: 22px;
-    color: var(--highlight);
-}
 .service-card {
     width: 220px;
     height: 290px;
@@ -716,19 +714,10 @@ section {
         font-size: 37px;
     }
 
-    .services-p {
-        margin-left: 240px;
-        margin-bottom: -30px;
-    }
     #hint-mobile {
         display: none;
     }
-    .services-arrow {
-        font-size: 55px;
-        margin-left: 350px;
-        margin-bottom: -55px;
-        margin-top: -15px;
-    }
+
     .logo2 {
         display: none;
     }
@@ -1047,11 +1036,6 @@ section {
         max-width: 800px; /* Szerszy kontener */
     }
 
-    .about-us {
-        font-size: 20px; /* Większa czcionka */
-        padding: 25px;
-    }
-
     .contact-container {
         max-width: 1200px; /* Większa szerokość sekcji kontaktowej */
         gap: 5rem;
@@ -1142,16 +1126,6 @@ section {
         width: 100%;
         margin: 0;
         padding: 0;
-    }
-    
-    .about-us {
-        flex: 1; /* Allows paragraph to take all the available space */
-        font-size: 17px;
-        margin: 0;
-        background-color: white;
-        padding: 17px; /* Adds some space between the text and the border */
-        border-radius: 10px;
-        align-self: stretch;
     }
 
     .home-video {
@@ -1474,17 +1448,7 @@ section {
         justify-content: center;
         gap: 15px; /* Reduced from 20px */
     }
-    
-    .services-p {
-        font-weight: 500;
-        margin-left: 140px;
-        margin-top: 30px;
-        background-color: var(--highlight);
-        color: white;
-        border-radius: 10px;
-        padding: 10px;
-        width: 220px;
-    }
+
     #hint-mobile {
         display: none;
     }
@@ -1722,17 +1686,6 @@ section {
         flex-direction: column; /* Ustawiamy nagłówki jeden pod drugim */
         max-width: 50%; /* Zapewnia, że tekst nie zajmuje całej szerokości */
     }
-    
-    .about-us {
-        flex: 1; /* Allows paragraph to take all the available space */
-        font-size: 20px;
-        margin: 0;
-        background-color: white;
-        padding: 17px; /* Adds some space between the text and the border */
-        border-radius: 10px;
-        min-width: 580px;
-        align-self: stretch;
-    }
 
     .home-video {
         flex: 1;
@@ -1841,11 +1794,6 @@ section {
         margin: 0 auto;
     }
     
-    .services-p {
-        font-size: 20px;
-        margin-left: 50px;
-        margin-bottom: -30px;
-    }
     #hint-mobile {
         display: none;
     }
@@ -2276,17 +2224,6 @@ section {
         flex-direction: column; /* Ustawiamy nagłówki jeden pod drugim */
         max-width: 50%; /* Zapewnia, że tekst nie zajmuje całej szerokości */
     }
-    
-    .about-us {
-        flex: 1; /* Allows paragraph to take all the available space */
-        font-size: 20px;
-        margin: 0;
-        background-color: white;
-        padding: 17px; /* Adds some space between the text and the border */
-        border-radius: 10px;
-        min-width: 580px;
-        align-self: stretch;
-    }
 
     .home-video {
         flex: 1;
@@ -2381,15 +2318,9 @@ section {
         gap: 20px;
         transform: translateY(10vh); /* Przesuwa element o 50px w dół */
     }
-    
-    .services-p {
-        font-size: 20px;
-        margin-left: 220px;
-    }
-    #hint-desktop {
-        display: none;
-    }
+
     #hint-mobile {
+        font-size: 20px;
         margin-left: 240px;
     }
     
@@ -2801,13 +2732,13 @@ section {
         margin-right: 20px;
     }
     .logo1 {
-        display: none;
-    }
-    .logo2 {
         display: block;
         margin-left: 20px;
         margin-top: -50px;
         width: 70px;
+    }
+    .logo2 {
+        display: none;
     }
 
     .language-switcher {
@@ -2817,12 +2748,23 @@ section {
         transform: none;
     }
 
-    .about-us {
-        flex: 1; /* Allows paragraph to take all the available space */
-        text-align: center;
-        font-size: 15px;
-        margin: 0 30px;
+    #home {
+        flex-direction: column;
+        align-items: center;
+        height: 80vh;
+        padding: 0;
+        gap: 0;
+        width: 80vw;
+        justify-content: center;
+        margin: 0 auto;
     }
+
+    .about-us-container, .home-video {
+        flex: 1 1 100%; /* Pełna szerokość */
+        max-width: 100%;
+        justify-content: center;
+    }
+
     .home-video {
         flex: 1;
         background-color: #fff;
@@ -2873,32 +2815,22 @@ section {
         margin-right: 10px;
         padding-left: 20px;
     }
-    
-    .contact-headers,
-    .contact-options,
-    #contact-form {
-        background-color: var(--lightgray); /* Light grey color */
-        border-radius: 10px; /* Optional: rounds the corners */
-        box-sizing: border-box; /* Ensures padding is included in the width */
-        width: 90%; 
+
+    #team {
+        height: 70vh;
     }
 
     .team-member {
         flex: 0 0 100%;
         margin-top: 0;
-    }
-    #team h2 {
-        margin-bottom: -80px;
+        height: 360px;
+        padding: 60px 15px;
     }
 
     .team-member p {
-        padding-left: 20px ;
-        padding-right: 20px ;
         color: #151515;
-        font-size: 18px;
-        padding-bottom: 20px; /* Prevents text from being cropped */
-        margin-left: 100px;
-        margin-right: 100px;
+        font-size: 1.3rem;
+        margin: 0 2rem;
     }
     .team-member:nth-child(2) {
         transform: scale(0.7);
@@ -2927,38 +2859,33 @@ section {
 
     /* Our Services section (start) */
     .services-container {
-        flex-direction: row; /* Align the cards vertically */
-        gap: 20px; /* Add space between the service cards */
-        padding: 10px; /* Adjust the padding */
-        height: 250px;
-        overflow-x: scroll;
-        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centrowanie kart */
+        gap: 20px; /* Odstęp między kartami */
+        max-width: 80vw; /* Ograniczenie szerokości */
+        margin: 0 auto; /* Wycentrowanie kontenera */
+    }
+    
+    .service-card {
+        flex: 1 1 calc(50% - 20px); /* Dynamiczna szerokość: 50% minus odstęp */
+        max-width: 440px; /* Zapobiega nadmiernemu powiększaniu */
+        height: 360px;
     }
     
     #services h2 {
         margin-bottom: 10px;
     }
 
-    .services-p {
-        font-size: 20px;
-        margin-left: 220px;
-    }
-    #hint-desktop {
-        display: none;
-    }
     #hint-mobile {
         margin-left: 120px;
+        font-size: 20px;
     }
     
     .services-arrow {
         font-size: 50px;
         margin-bottom: -40px;
         margin-left: 195px;
-    }
-
-    .service-card {
-        width: 175px;
-        height: 240px;
     }
     
     .card-inner {
@@ -3002,6 +2929,12 @@ section {
         transform: rotateY(180deg);
         justify-content: center;
     }
+
+    .card-front img {
+        width: 12rem;
+        height: auto;
+        margin-top: 0
+    }
     
     .card-front i {
         font-size: 2.2em;
@@ -3009,7 +2942,7 @@ section {
     }
     
     .card-front h3 {
-        font-size: 0.88em;
+        font-size: 1.2rem;
         margin-bottom: 10px;
     }
     
@@ -3023,8 +2956,8 @@ section {
     .contact-container {
         width: 100%;
         display: flex;
-        justify-content: space-between;
-        max-width: 700px;
+        align-items: center;
+        max-width: 90vw;
         margin: 0 30px auto;
         gap: 1rem;
     }
@@ -3114,7 +3047,6 @@ section {
     }
     
     .submit-btn {
-        background-color: #3B82F6;
         color: white;
         padding: 12px 20px;
         border: none;
@@ -3123,7 +3055,7 @@ section {
         font-size: 15px;
         transition: background-color 0.3s ease;
     }
-    
+
     .contact-info {
         flex: 1;
         max-width: 300px;
@@ -3233,8 +3165,11 @@ section {
     }
     
     /* Styl dla pola prefix */
-    .prefix-input input:focus + label,
     .prefix-input input:valid + label {
+        font-size: 15px;
+        color: #999;
+    }
+    .prefix-input input:focus + label {
         top: -20px;
         font-size: 12px;
         color: #333;
@@ -3253,6 +3188,9 @@ section {
         border-bottom-color: #333;
     }
     
+    .prefix-input input:not(:focus) {
+        border-bottom-color: #ccc;
+    }
     /* Usunięcie zielonego podkreślenia dla pola phone number przed fokusem */
     .phone-input input:not(:focus) {
         border-bottom-color: #ccc;
@@ -3267,7 +3205,7 @@ section {
     .hamburger {
         display: block;
         position: absolute;
-        bottom: -85vh;
+        bottom: -90vh;
         right: 5%;
         z-index: 1001;
     }
@@ -3359,13 +3297,7 @@ section {
         margin-top: -50px;
         width: 70px;
     }
- 
-    .about-us {
-        flex: 1; /* Allows paragraph to take all the available space */
-        text-align: center;
-        font-size: 15px;
-        margin: 0 30px;
-    }
+
     .home-video {
         flex: 1;
         background-color: #fff;
@@ -3410,15 +3342,6 @@ section {
         margin-left: 10px;
         margin-right: 10px;
         padding-left: 20px;
-    }
-    
-    .contact-headers,
-    .contact-options,
-    #contact-form {
-        background-color: var(--lightgray); /* Light grey color */
-        border-radius: 10px; /* Optional: rounds the corners */
-        box-sizing: border-box; /* Ensures padding is included in the width */
-        width: 90%; 
     }
 
     .team-member {
@@ -3476,17 +3399,6 @@ section {
     #services h2 {
         margin-bottom: 10px;
     }
-
-    .services-p {
-        font-size: 20px;
-        margin-left: 220px;
-    }
-    #hint-desktop {
-        display: none;
-    }
-    #hint-mobile {
-        margin-left: 120px;
-    }
     
     .services-arrow {
         font-size: 50px;
@@ -3543,11 +3455,6 @@ section {
     
     .card-front i {
         font-size: 2.2em;
-        margin-bottom: 10px;
-    }
-    
-    .card-front h3 {
-        font-size: 0.88em;
         margin-bottom: 10px;
     }
     
@@ -3771,9 +3678,11 @@ section {
     }
     
     /* Styl dla pola prefix */
-    .prefix-input input:focus + label,
-    .prefix-input input:valid + label,
-    .prefix-input input:not(:placeholder-shown) + label {
+    .prefix-input input:valid + label {
+        font-size: 15px;
+        color: #999;
+    }
+    .prefix-input input:focus + label {
         top: -20px;
         font-size: 12px;
         color: #333;
@@ -3792,6 +3701,9 @@ section {
         border-bottom-color: #333;
     }
     
+    .prefix-input input:not(:focus) {
+        border-bottom-color: #ccc;
+    }
     /* Usunięcie zielonego podkreślenia dla pola phone number przed fokusem */
     .phone-input input:not(:focus) {
         border-bottom-color: #ccc;
