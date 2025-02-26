@@ -143,79 +143,39 @@ h8 {
     background-color: var(--highlight);
 }
 
-/* Theme switcher (start)*/
+/* Theme switcher (start) */
 .theme-switcher {
     position: absolute;
     top: 50%;
     right: 90px;
     transform: translateY(-50%);
-    display: flex;
-    gap: 10px;
 }
 
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;  /* Increased width */
-    height: 22px; /* Increased height */
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
+#theme-toggle {
+    background: none;
+    border: none;
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 22px; /* Adjusted for the new size */
+    font-size: 24px;
+    color: white;
+    outline: none; /* Usuwa domyślną ramkę */
 }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 18px;  /* Increased height */
-    width: 18px;   /* Increased width */
-    left: 2px;     /* Adjusted position */
-    bottom: 2px;   /* Adjusted position */
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
+#theme-toggle:focus,
+#theme-toggle:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
-input:checked + .slider {
-    background-color: #3B82F6; /* Change to desired color */
+/* Po przełączeniu na jasny motyw */
+.light-mode #theme-toggle .theme-icon {
+    color: black; /* W jasnym motywie zmień kolor ikony */
+}
+.material-icons:before {
+    color: var(--highlight) !important;
 }
 
-input:checked + .slider:before {
-    transform: translateX(18px); /* Adjusted for the new size */
-}
-  
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-.theme-switcher p {
-    font-size: 12px;
-    margin: 0;
-}
 /* Theme switcher (end) */
+
 
 .home-video {
     flex: 1;

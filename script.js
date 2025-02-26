@@ -339,40 +339,32 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Theme switcher
-const themeToggle = document.getElementById('theme-toggle');
-const themeStylesheet = document.getElementById('theme-stylesheet');
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = themeToggle.querySelector(".theme-icon");
+const themeStylesheet = document.getElementById("theme-stylesheet");
 
-// Load the user's theme preference on page load
-function loadTheme() {
-    const theme = localStorage.getItem('theme');
-    if (theme === 'light') {
-        themeStylesheet.setAttribute('href', 'light-mode.css');
-        themeToggle.checked = true; // Set the toggle to checked for light mode
+// Sprawdzenie zapisanych ustawień motywu w localStorage
+const currentTheme = localStorage.getItem("theme") || "dark"; // Domyślnie ciemny motyw
+setTheme(currentTheme);
+
+// Obsługa kliknięcia przycisku zmiany motywu
+themeToggle.addEventListener("click", () => {
+    const newTheme = themeStylesheet.getAttribute("href") === "dark-mode.css" ? "light" : "dark";
+    setTheme(newTheme);
+});
+
+// Funkcja do zmiany motywu
+function setTheme(theme) {
+    if (theme === "light") {
+        themeStylesheet.setAttribute("href", "light-mode.css");
+        themeIcon.textContent = "light_mode"; // Ikona słońca
     } else {
-        themeStylesheet.setAttribute('href', 'dark-mode.css'); // Default to dark mode
-        themeToggle.checked = false; // Ensure the toggle is off for dark mode
+        themeStylesheet.setAttribute("href", "dark-mode.css");
+        themeIcon.textContent = "dark_mode"; // Ikona księżyca
     }
+    localStorage.setItem("theme", theme); // Zapis motywu w localStorage
 }
 
-// Apply the theme when the page loads
-loadTheme();
-
-// Toggle the theme on checkbox change
-themeToggle.addEventListener('change', () => {
-    if (themeToggle.checked) {
-        themeStylesheet.setAttribute('href', 'light-mode.css');
-        localStorage.setItem('theme', 'light');
-    } else {
-        themeStylesheet.setAttribute('href', 'dark-mode.css');
-        localStorage.setItem('theme', 'dark');
-    }
-});
-
-// Settings reveal
-document.getElementById('cog-icon').addEventListener('click', function () {
-    const settings = document.querySelector('.settings');
-    settings.classList.toggle('hidden');
-});
 
 // Copy email to clipboard functionality
 document.addEventListener('DOMContentLoaded', function() {
