@@ -98,8 +98,8 @@ h8 {
     font-size: 24.5px;
     margin: 0;
     padding: 17px; /* Adds some space between the text and the border */
-    color: var(--highlight);
-    align-self: stretch;
+    color: white;
+    text-align: center;
 }
 
 .logo2 {
@@ -746,6 +746,10 @@ section {
 
 
     /* Contact section (start) */
+    #lets-talk {
+        font-size: 3rem;
+    }
+
     form {
         display: flex;
         flex-direction: column;

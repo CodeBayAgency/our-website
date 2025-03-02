@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Moon and sun icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <nav id="main-nav">
@@ -30,17 +33,15 @@
         <div class="logo-placeholder">
             <span class="logo1"><img src=".\images\white_on_trans.png"alt="Logo"></span>
             <span class="logo2"><img src=".\images\black_on_trans.png"alt="Logo"></span>
-        </div> <!-- Logo placeholder -->
+        </div>
         <!-- Theme switcher-->
         <div class="theme-switcher">
-            <label class="switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider round">
-                    <i class="fas fa-moon moon-icon"></i> <!-- Ikona księżyca -->
-                    <i class="fas fa-sun sun-icon"></i>   <!-- Ikona słońca -->
-                </span>
-            </label>
+            <button id="theme-toggle">
+                <i class="material-icons theme-icon">dark_mode</i>
+            </button>
         </div>
+
+
        <!-- Language switcher -->
        <div class="language-switcher">
             <a href="#" id="language-toggle" class="lang-link">
@@ -59,12 +60,12 @@
        </div>
     </nav>
     <main>
-        <h1 id="greeting" class="greetings">Witamy w CodeBay!</h1>
         <section id="home" class="content-home">
-            
-            <div class="about-us-container">
-                <p class="about-us" >W CodeBay specjalizujemy się w dostarczaniu wysokiej jakości oprogramowania dostosowanego do potrzeb Twojego biznesu. Realizując nasze usługi skupiamy się na jak najlepszym doświadczeniu użytkownika docelowego. Zajmujemy się także tworzeniem aplikacji chmurowych w AWS i bezproblemową migracją aplikacji i baz danych z infrastruktury lokalnej do chmury, skupiając się jednocześnie na optymalizacji kosztów i poprawie bezpieczeństwa. Dzięki zaangażowaniu w innowacyjność i precyzję gwarantujemy, że Twoja technologia będzie działać bez zarzutu.</p>
-                <p id="incentive">Obejrzyj film wprowadzający, aby poznać nas lepiej!</p>
+            <div class="about-us-container">    
+                <h1>Unique software solutions</h1>
+                <h2>for modern businesses</h2>
+                <h2>Have a problem? We can help!</h2>
+                <a href="#contact"><button class="contact-btn">Contact us!</button></a>
                 <!-- YouTube video -->
             </div>
             <div class="home-video" class = "video-container">
@@ -75,53 +76,48 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen>
                 </iframe>
+                <p id="incentive">Obejrzyj to wideo, żeby lepiej nas poznać!</p>
             </div>
         </section>
 
         <section id="services" class="content">
-            <h2 id="headings">Nasze Usługi</h2>
+            <div class="team-headings">
+                <h8>Czym się zajmujemy?</h8>
+                <h2 id="headings">Nasze Usługi</h2>
+            </div>
             <div class="services-container">
                 <div class="service-card">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="./images/development.jpeg" alt="Website Building">
-                            <h3>Programowanie stron internetowych</h3>
+                            <img src="./images/AI.png" alt="Website Building">
+                            <h3>AI Solutions Architecture</h3>
                         </div>
                         <div class="card-back">
-                            <p>Przekształcimy Twoją wizję w responsywną, wydajną stronę internetową, która angażuje użytkowników i zapewnia wyniki.</p>
+                            <p>TO DO</p>
                         </div>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <img src="./images/testing.jpeg" alt="Software Testing">
-                            <h3>Testowanie stron i aplikacji</h3>
-                        </div>
-                        <div class="card-back">                                                                                                    
-                            <p>Zapewnimy bezbłędne działanie Twojej aplikacji dzięki kompleksowym testom aplikacji, baz danych i wydajności. Znajdujemy błędy, zanim zrobią to Twoi użytkownicy!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="service-card">
+
+                <!-- Building apps for restaurants -->
+                <!-- <div class="service-card">
                     <div class="card-inner">
                         <div class="card-front">
                             <img src="./images/testing&fixing.jpeg" alt="Testing & Fixing">
-                            <h3>Testowanie z naprawą błędów</h3>
+                            <h3>Cross-platform apps for restaurants</h3>
                         </div>
                         <div class="card-back">
-                            <p>Wyjdź poza podstawowe testowanie - pozwól nam zidentyfikować i poprawić wszelkie błędy, dostarczając w pełni zoptymalizowane, bezproblemowe oprogramowanie.</p>
+                            <p>TO DO</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="service-card">
                     <div class="card-inner">
                         <div class="card-front">
                             <img src="./images/cloud.jpeg" alt="AWS Development">
-                            <h3>Tworzenie aplikacji w AWS</h3>
+                            <h3>AWS Solutions Architecture</h3>
                         </div>
                         <div class="card-back">
-                            <p>Wykorzystaj potęgę Amazon Web Services dzięki naszym dostosowanym rozwiązaniom chmurowym, stworzonym z myślą o skalowalności, wydajności i innowacyjności.</p>
+                            <p>Harness the power of Amazon Web Services with our tailored cloud solutions, built for scalability, efficiency, innovation and cost-efficiency.</p>
                         </div>
                     </div>
                 </div>
@@ -129,19 +125,27 @@
                     <div class="card-inner">
                         <div class="card-front">
                             <img src="./images/migration.jpeg" alt="Migration to AWS">
-                            <h3>Migracja do AWS</h3>
+                            <h3>On-Premises to AWS Migration</h3>
                         </div>
                         <div class="card-back">
-                            <p>Zmigrujemy Twoje aplikacje i bazy danych do AWS, zapewniając efektywność kosztową, minimalne przestoje i maksymalną wydajność.</p>
+                            <p>Seamlessly migrate your applications and databases to AWS, ensuring cost efficiency, minimal downtime and maximum performance.</p>
                         </div>
                     </div>
                 </div>
-                <!-- Repeat for other services -->
+                <div class="service-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="./images/testing.jpeg" alt="Software Testing">
+                            <h3>Complex Software Testing</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Ensure flawless performance with our comprehensive application, database, and performance testing. We catch issues before your users do.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <span class="services-arrow">&#10548;</span>
-            <p id="hint-mobile">Kliknij na karty!</p>
         </section>
-        
+
         <section id="team" class="content">
             <div class="team-headings">
                 <h8>Poznaj naszych specjalistów!</h8>
@@ -155,21 +159,21 @@
                             <img src="https://via.placeholder.com/150" alt="Team Member 2">
                         </div>
                         <h3>Mateusz Grygalon</h3>
-                        <p>Tester oprogramowania, programista Python i AWS. Pasjonujący się rozwiązaniami opartymi na sztucznej inteligencji. Specjalizuje się w testowaniu i budowaniu aplikacji chmurowych na platformie AWS.</p>
+                        <p>Software Tester, Python and AWS Developer. Knowledgeable and passionate about generative AI.</p>
                     </div>
                     <div class="team-member">
                         <div class="img-container">
-                            <img src=".\images\1X9A8003.JPG" alt="Team Member 1">
+                            <img src=".\images\1X9A8003.webp" alt="Team Member 1">
                         </div>
                         <h3>Łukasz Jaroszewski</h3>
-                        <p>Tester oprogramowania, programista Python i AWS. Pasjonujący się rozwiązaniami opartymi na sztucznej inteligencji. Specjalizuje się w testowaniu i budowaniu aplikacji chmurowych na platformie AWS.</p>
+                        <p>CEO, Software Tester, Python and AWS Developer. Knowledgeable and passionate about generative AI.</p>
                     </div>
                     <div class="team-member">
                         <div class="img-container">
                             <img src="https://via.placeholder.com/150" alt="Team Member 3">
                         </div>
                         <h3>Mike Johnson</h3>
-                        <p>Tester oprogramowania, programista Python i AWS. Pasjonujący się rozwiązaniami opartymi na sztucznej inteligencji. Specjalizuje się w testowaniu i budowaniu aplikacji chmurowych na platformie AWS.</p>
+                        <p>Software Tester, Python and AWS Developer. Knowledgeable and passionate about generative AI.</p>
                     </div>
                 </div>
                 <button class="arrow right-arrow">&#11166;</button>
@@ -179,7 +183,7 @@
         <section id="contact" class="content">
             <div class="contact-container">
                 <div class="contact-headers">
-                    <h2>Porozmawiajmy!</h2>
+                    <h2 id="lets-talk">Porozmawiajmy!</h2>
                     <h3>Chcesz omówić swoje projekty lub dowiedzieć się więcej o naszych usługach?</h3>
                     <h3>Skontaktuj się z nami przez formularz, e-mail, lub wyślij nam wiadomość na nasze media społecznościowe!</h3>
                     <div class="our-email">
