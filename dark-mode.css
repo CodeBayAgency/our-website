@@ -97,7 +97,7 @@ h8 {
     flex: 1; /* Allows paragraph to take all the available space */
     font-size: 24.5px;
     margin: 0;
-    padding: 17px; /* Adds some space between the text and the border */
+    padding-top: 17px; /* Adds some space between the text and the border */
     color: white;
     text-align: center;
 }
@@ -2689,23 +2689,37 @@ section {
         margin-right: 20px;
     }
     .logo1 {
-        display: block;
-        margin-left: 20px;
-        margin-top: -50px;
-        width: 70px;
+        width: 60px;
+        position: fixed;
+        top: 5px;
+        left: 5px;
+        justify-content: center;
+        transform: none;
+    }
+    
+    .language-switcher {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        margin-top: 0;
+        justify-content: center;
+        transform: none;
     }
 
-    .language-switcher {
-        position: static;
-        margin-top: 10px;
+    .theme-switcher {
+        position: fixed;
+        top: 10px;
+        right: 70px;
+        margin-top: 0;
         justify-content: center;
         transform: none;
     }
 
     #home {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        height: 80vh;
+        min-height: 80vh;
         padding: 0;
         gap: 0;
         width: 80vw;
@@ -2720,14 +2734,12 @@ section {
     }
 
     .home-video {
-        flex: 1;
         background-color: #fff;
         border-radius: 15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border: 5px solid #1E3A8A;
-        margin: 0 30px;
         width: auto;
-        max-width: 700px;
+        max-width: 800px;
         height: 420px ;
         padding: 0;
     }
@@ -3230,9 +3242,6 @@ section {
     .right-arrow {
         right: 60px; /* Position the right arrow to the right */
     }
-    .arrow:hover {
-        color: #3B82F6;
-    }
 }
 
 
@@ -3241,27 +3250,93 @@ section {
     
     /* Home section (start) */
     #home {
-        flex-direction: column;
-        align-items: center;
         height: 150vh;
         padding: 0;
-        gap: 0;
+        gap: 3rem;
         width: 80vw;
-        justify-content: center;
         margin: 0 auto;
+        margin-bottom: 600px;
+        margin-top: 3rem;
+        height: 50vh;
     }
 
     .about-us-container, .home-video {
         max-height: 50%; /* Oba elementy zajmują połowę szerokości */
     }
+
+    .home-video {
+        max-width: 1000px;
+    }
+    #incentive {
+        font-size: 1rem;
+    }
+    
     /* Home section (end) */
 
-    /* Our services (start) */
+    /* Services section (start) */
+    .services-container {
+        margin-top: 3rem;
+        margin-bottom: 500px;
+        transform: none;
+    }
+    .card-front, .card-back {
+        padding: 20px;
+    }
+    
+    .card-front {
+        padding-top: 25px;
+    }
+
+    .card-front img {
+        width: 10rem;
+    }
+    
+    .card-front i {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .card-front h3 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .card-back p {
+        font-size: 0.88em;
+    }
+
     .service-card {
         flex: 1 1 100%;
         max-width: 65vw; /* Zapobiega nadmiernemu powiększaniu */
-        height: 300px;
+        height: 30vh;
     }
     /* Our services (end) */
+
+    /* Our Team (start) */
+    .team-member p {
+        color: #151515;
+        font-size: 1.1rem;
+        margin: 0 1rem;
+    }
+    .team-member:nth-child(2) {
+        transform: scale(0.65);
+    }
+    
+    .arrow {
+        font-size: 29px;
+    }
+
+    .left-arrow {
+        left: 20px; /* Position the left arrow to the left */
+    }
+    
+    .right-arrow {
+        right: 20px; /* Position the right arrow to the right */
+    }
+    /* Our Team (end) */
+
+    /* Contact section (start) */
+
+    /* Contact section (end) */
 }
 /* Responsive design (end)*/
