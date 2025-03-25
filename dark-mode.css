@@ -3323,11 +3323,11 @@ section {
     }
 
     .left-arrow {
-        left: 10px; /* Position the left arrow to the left */
+        left: 1px; /* Position the left arrow to the left */
     }
     
     .right-arrow {
-        right: 10px; /* Position the right arrow to the right */
+        right: 1px; /* Position the right arrow to the right */
     }
     /* Our Team (end) */
 
