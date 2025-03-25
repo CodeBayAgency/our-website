@@ -3240,6 +3240,9 @@ section {
     .desktop-arrow {
         display: none;
     }
+    .mobile-arrow {
+        display: block;
+    }
 
     .arrow {
         font-size: 29px;
