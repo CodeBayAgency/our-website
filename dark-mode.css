@@ -1134,7 +1134,6 @@ section {
     }
     
     #main-nav {
-        position: sticky;
         top: 0;
         width: 100%;
         z-index: 1000;
@@ -1692,8 +1691,6 @@ section {
     }
     
     #main-nav {
-        position: sticky;
-        top: 0;
         width: 100%;
         z-index: 1000;
     }
@@ -2233,8 +2230,6 @@ section {
     
 
     #main-nav {
-        position: sticky;
-        top: 0;
         width: 100%;
         z-index: 1000;
     }
@@ -2698,7 +2693,6 @@ section {
     }
     
     .language-switcher {
-        position: fixed;
         top: 10px;
         right: 10px;
         margin-top: 0;
@@ -2707,7 +2701,6 @@ section {
     }
 
     .theme-switcher {
-        position: fixed;
         top: 10px;
         right: 70px;
         margin-top: 0;
@@ -2959,12 +2952,6 @@ section {
         -webkit-text-fill-color: transparent;
     }
     
-    #contact-form {
-        flex: 1;
-        max-width: 500px;
-        margin-right: 2em;
-    }
-    
     .form-group {
         position: relative;
         margin-bottom: 30px;
@@ -3077,11 +3064,15 @@ section {
         margin-right: 0; /* Remove margin from the last icon */
     }
     #contact-form {
+        flex: 1;
+        max-width: 500px;
+        margin-right: 2em;
         padding: 35px 40px 30px 20px; /* Increased padding, especially on the right */
         border-radius: 10px; /* Optional: rounds the corners */
         width: 100%; /* Makes the form wider than its container */
         box-sizing: border-box; /* Ensures padding is included in the width */
     }
+
     .form-group input:focus,
     .form-group textarea:focus {
         border-bottom-color: black;
@@ -3265,7 +3256,7 @@ section {
     }
 
     .home-video {
-        max-width: 1000px;
+        max-width: 62.5rem;
     }
     #incentive {
         font-size: 1rem;
@@ -3276,7 +3267,7 @@ section {
     /* Services section (start) */
     .services-container {
         margin-top: 3rem;
-        margin-bottom: 500px;
+        margin-bottom: 31.25rem;
         transform: none;
     }
     .card-front, .card-back {
@@ -3307,15 +3298,19 @@ section {
 
     .service-card {
         flex: 1 1 100%;
-        max-width: 65vw; /* Zapobiega nadmiernemu powiększaniu */
-        height: 30vh;
+        max-width: 60vw; /* Zapobiega nadmiernemu powiększaniu */
+        height: 32vh;
     }
     /* Our services (end) */
 
     /* Our Team (start) */
+    .team-member h3 {
+        font-size: 1.5rem;
+    }
+
     .team-member p {
         color: #151515;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         margin: 0 1rem;
     }
     .team-member:nth-child(2) {
@@ -3336,7 +3331,13 @@ section {
     /* Our Team (end) */
 
     /* Contact section (start) */
-
+    .contact-container {
+        max-width: 90vw;
+        height: 140vh;
+    }
+    #contact-form {
+        padding: 35px 40px 20px 20px;
+    }
     /* Contact section (end) */
 }
-/* Responsive design (end)*/
+/* Responsive design (end) */
