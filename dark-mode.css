@@ -1488,30 +1488,7 @@ section {
         margin-bottom: -55px;
         margin-top: -15px;
     }
-    .home-arrow {
-        font-size: 55px;
-        margin-left: 360px;
-        margin-bottom: 430px;
-        margin-top: -400px;
-    }   
-    .home-p {
-        font-size: 22px;
-        margin-left: 180px;
-        margin-bottom: 400px;
-        margin-top: -500px;
-    }
-    .home-arrow-2 {
-        font-size: 55px;
-        margin-left: 1480px;
-        margin-bottom: 430px;
-        margin-top: -580px;
-    }   
-    .home-p-2 {
-        font-size: 22px;
-        margin-left: 1510px;
-        margin-bottom: 350px;
-        margin-top: -450px;
-    }
+
     /* Our Services section (end) */
     
     /* Our Team section (start) */
@@ -3346,11 +3323,11 @@ section {
     }
 
     .left-arrow {
-        left: 20px; /* Position the left arrow to the left */
+        left: 10px; /* Position the left arrow to the left */
     }
     
     .right-arrow {
-        right: 20px; /* Position the right arrow to the right */
+        right: 10px; /* Position the right arrow to the right */
     }
     /* Our Team (end) */
 

@@ -180,6 +180,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const carousel = document.querySelector('.team-carousel');
     const leftArrow = document.querySelector('.left-arrow');
     const rightArrow = document.querySelector('.right-arrow');
+    const leftArrowMobile = document.querySelector('.left-arrow.mobile-arrow');
+    const rightArrowMobile = document.querySelector('.right-arrow.mobile-arrow');
     const teamMembers = document.querySelectorAll('.team-member');
 
     // Funkcja przesuwająca członka zespołu na początek karuzeli
@@ -234,6 +236,18 @@ document.addEventListener('DOMContentLoaded', function() {
             } 
         });
     });
+
+    // Team carousel - Mobile
+    function moveLeftMobile() {
+        carousel.appendChild(carousel.firstElementChild);
+    }
+
+    function moveRightMobile() {
+        carousel.prepend(carousel.lastElementChild);
+    }
+
+    leftArrowMobile.addEventListener('click', moveRightMobile);
+    rightArrowMobile.addEventListener('click', moveLeftMobile);
 
     // Hamburger menu
     const hamburger = document.querySelector('.hamburger');
