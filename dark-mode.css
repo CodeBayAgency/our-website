@@ -2153,7 +2153,7 @@ section {
 }
 
 /* Tablet */
-@media (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     .content {
         display: relative; /* Use flexbox */
         flex-direction: column; /* Stack children vertically */
@@ -2173,7 +2173,7 @@ section {
         gap: 40px; /* Dystans między tekstem a wideo */
     }
 
-    about-us-container {
+    .about-us-container {
         display: flex;
         flex-direction: column; /* Ustawiamy nagłówki jeden pod drugim */
         max-width: 50%; /* Zapewnia, że tekst nie zajmuje całej szerokości */
@@ -3333,7 +3333,7 @@ section {
     /* Contact section (start) */
     .contact-container {
         max-width: 90vw;
-        height: 140vh;
+        height: 110vh;
     }
     #contact-form {
         padding: 35px 40px 20px 20px;
