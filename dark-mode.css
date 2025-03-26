@@ -3306,6 +3306,7 @@ section {
     .team-carousel {
         margin: 0;
         height: 25rem;
+        margin-bottom: 5rem;
     }
 
     .team-member h3 {
