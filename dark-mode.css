@@ -3303,6 +3303,12 @@ section {
     /* Our services (end) */
 
     /* Our Team (start) */
+    .team-container {
+        margin: 0;
+    }
+    .team-carousel {
+        margin-top: -3rem;
+    }
     .team-member h3 {
         font-size: 1.5rem;
     }
