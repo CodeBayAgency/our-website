@@ -3266,7 +3266,7 @@ section {
     /* Services section (start) */
     .services-container {
         margin-top: 3rem;
-        margin-bottom: 42rem;
+        margin-bottom: 38rem;
         transform: none;
     }
     .card-front, .card-back {
@@ -3303,6 +3303,9 @@ section {
     /* Our services (end) */
 
     /* Our Team (start) */
+    #team {
+        margin-top: 4rem;
+    }
     .team-container {
         margin: 0;
     }
