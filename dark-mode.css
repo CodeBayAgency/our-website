@@ -3337,9 +3337,8 @@ section {
     /* Contact section (start) */
     .contact-container {
         max-width: 90vw;
-        height: 110rem;
+        height: 110vh;
         margin-bottom: 2rem;
-        margin-top: 110rem;
     }
     #contact-form {
         padding: 35px 40px 20px 20px;
