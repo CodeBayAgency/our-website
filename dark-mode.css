@@ -3340,7 +3340,7 @@ section {
     /* Contact section (start) */
     .contact-container {
         max-width: 90vw;
-        height: 110rem;
+        height: 110vh;
         margin-bottom: 2rem;
     }
     #contact-form {
