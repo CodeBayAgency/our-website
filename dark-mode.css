@@ -528,7 +528,6 @@ h8 {
 }
 
 section {
-    height: 100vh; /* 100% of the viewport height */
     margin: 0;
     padding: 0;
 }
@@ -2157,7 +2156,7 @@ section {
         align-items: center;
         justify-content: space-between; /* Rozdziela elementy */
         box-sizing: border-box;
-        padding: 0 100px;
+        padding: 0 50px;
         gap: 40px; /* Dystans między tekstem a wideo */
     }
 
@@ -2256,7 +2255,15 @@ section {
         margin: 0 auto; /* Center entire container */
         flex-wrap: wrap;
         gap: 20px;
-        transform: translateY(10vh); /* Przesuwa element o 50px w dół */
+        margin-top: 50px;
+        justify-content: center; /* Centrowanie kart */
+        max-width: 80vw; /* Ograniczenie szerokości */
+    }
+
+    .service-card {
+        flex: 1 1 calc(50% - 20px); /* Dynamiczna szerokość: 50% minus odstęp */
+        max-width: 440px; /* Zapobiega nadmiernemu powiększaniu */
+        height: 360px;
     }
 
     #hint-mobile {
@@ -2267,12 +2274,6 @@ section {
     .services-arrow {
         font-size: 50px;
         margin-left: 315px;
-    }
-
-    .service-card {
-        width: 20vw;
-        height: 45vh;
-        flex: 1;
     }
     
     .card-inner {
@@ -2376,7 +2377,7 @@ section {
     }
 
     .card-front img {
-        width: 140px;
+        width: 240px;
         height: auto;
         margin-top: 0
     }
@@ -3241,8 +3242,8 @@ section {
         gap: 3rem;
         width: 80vw;
         margin: 0 auto;
-        margin-bottom: 45rem;
         margin-top: 6rem;
+        margin-bottom: 8rem;
         height: 45rem;
     }
 
@@ -3266,7 +3267,7 @@ section {
     /* Services section (start) */
     .services-container {
         margin-top: 3rem;
-        margin-bottom: 38rem;
+        margin-bottom: 3rem;
         transform: none;
     }
     .card-front, .card-back {
@@ -3278,7 +3279,7 @@ section {
     }
 
     .card-front img {
-        width: 10rem;
+        width: 11rem;
     }
     
     .card-front i {
@@ -3303,9 +3304,6 @@ section {
     /* Our services (end) */
 
     /* Our Team (start) */
-    #team {
-        margin-top: 4rem;
-    }
     .team-container {
         margin: 0;
     }
@@ -3341,7 +3339,7 @@ section {
     /* Contact section (start) */
     .contact-container {
         max-width: 90vw;
-        height: 110vh;
+        height: 55rem;
         margin-bottom: 2rem;
     }
     #contact-form {
