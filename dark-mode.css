@@ -3307,6 +3307,9 @@ section {
         margin: 0;
         height: 25rem;
     }
+    #team {
+        margin-bottom: 30rem;
+    }
 
     .team-member h3 {
         font-size: 1.5rem;
