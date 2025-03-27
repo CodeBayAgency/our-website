@@ -197,12 +197,6 @@ h8 {
     display: block; /* Usuń domyślną przestrzeń inline */
     height: 100%;
 }
-.about-img {
-    width: 150px;                 /* Set width of the logo container */
-    height: 150px;                /* Set height of the logo container */
-    margin: 0;
-
-}
 
 .contact-btn {
     background-color: var(--highlight);
@@ -560,7 +554,6 @@ section {
         overflow-y: auto;
     }
     main {
-        height: 100vh;
         margin-top: 0;
     }
 
@@ -1813,7 +1806,7 @@ section {
         align-items: center;
         justify-content: center;
         width: 100%;
-        margin: 20px auto; /* Wyśrodkowuje kontener */
+        margin: 0 auto; /* Wyśrodkowuje kontener */
         max-width: 900px; 
     }
     
@@ -2158,6 +2151,7 @@ section {
         box-sizing: border-box;
         padding: 0 50px;
         gap: 40px; /* Dystans między tekstem a wideo */
+        height: 40rem;
     }
 
     .about-us-container {
@@ -2330,6 +2324,10 @@ section {
     /* Our Services section (end) */
     
     /* Our Team section (start) */
+    #team {
+        height: 50rem;
+    }
+
     .team-container {
         display: flex;
         align-items: center;
@@ -2368,6 +2366,27 @@ section {
         top: 50%;
         transform: translate(-50%, -50%);
     }
+
+    /* Dodajemy specjalne style dla środkowego elementu, aby zapobiec ucinaniu zdjęcia */
+    .team-member:nth-child(2) .img-container {
+        width: 140px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 140px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+    .team-member:nth-child(1) .img-container {
+        width: 140px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 140px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+    .team-member:nth-child(3) .img-container {
+        width: 140px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 140px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+
     .team-member h3 {
         font-size: 17px;
         line-height: 1.2;
@@ -2426,15 +2445,18 @@ section {
         margin-top: 0;
     }
     .team-member p {
-        padding-left: 20px ;
-        padding-right: 20px ;
+        padding-left: 15px ;
+        padding-right: 15px ;
         color: #151515;
         font-size: 12px;
-        padding-bottom: 20px; /* Prevents text from being cropped */
+        padding-bottom: 0px; 
     }
     /* Our Team section (end) */
 
   /* Contact section (start) */
+    .contact-container {
+        height: 30rem;
+    }
     form {
         display: flex;
         flex-direction: column;
@@ -2769,7 +2791,7 @@ section {
     }
 
     #team {
-        height: 70vh;
+        height: 40rem;
     }
 
     .team-member {
@@ -2778,11 +2800,36 @@ section {
         height: 360px;
         padding: 60px 15px;
     }
+    
+    /* Dodajemy specjalne style dla środkowego elementu, aby zapobiec ucinaniu zdjęcia */
+    .team-member:nth-child(2) .img-container {
+        width: 190px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 190px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 0px;
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+    .team-member:nth-child(1) .img-container {
+        width: 190px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 190px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 0px;
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+    .team-member:nth-child(3) .img-container {
+        width: 190px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 190px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 0px;
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+
+    .team-member h3 {
+        font-size: 1.8rem;
+        margin-bottom: 13px;
+    }
 
     .team-member p {
         color: #151515;
         font-size: 1.3rem;
-        margin: 0 2rem;
+        margin: 0;
     }
     .team-member:nth-child(2) {
         transform: scale(0.7);
