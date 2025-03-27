@@ -65,7 +65,7 @@ h2 {
     font-style: normal;
 }
 .content-home h2 {
-    font-size: 30px;
+    font-size: 35px;
     margin: 0;
     margin-top: 16px;
     margin-bottom: 16px;
@@ -562,10 +562,6 @@ section {
         margin-bottom: -20px;
     }
 
-    .content-home h2 {
-        font-size: 35px;
-    }
-
     .team-member img {
         display: inline;
         margin: 0 auto;
@@ -684,6 +680,8 @@ section {
         justify-content: center; /* Center children vertically */
         box-sizing: border-box; /* Include padding and border in element's total width and height */
         gap: 30px;
+        height: 40rem; /* Dostosowanie wysokości */
+        margin: 5rem 0;
     }
     .content {
         display: relative; /* Use flexbox */
@@ -985,12 +983,6 @@ section {
         font-size: 50px; /* Zwiększenie rozmiaru tekstu w nagłówkach */
     }
 
-    .content-home {
-        margin-top: 80px;
-        gap: 50px; /* Większy odstęp między elementami */
-        height: 600px; /* Dostosowanie wysokości */
-    }
-
     .about-us-container {
         max-width: 800px; /* Szerszy kontener */
     }
@@ -1074,7 +1066,7 @@ section {
         justify-content: center; /* Center children vertically */
         box-sizing: border-box; /* Include padding and border in element's total width and height */
         gap: 0px;
-        height: 500px;
+        height: 36rem;
     }
     
     .about-us-container {
@@ -1115,6 +1107,7 @@ section {
         max-width: 1000px;
         margin: 0 auto;
         gap: 4rem;
+        height: 30rem;
     }
     
     .caption {
@@ -1163,6 +1156,184 @@ section {
         top: 50%;
         transform: translate(-50%, -50%);
     }
+
+    /* Our Services section (start) */
+    .services-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px; /* Reduced from 20px */
+        height: 25rem;
+    }
+
+    #hint-mobile {
+        display: none;
+    }
+
+    .service-card {
+        perspective: 1000px;
+        width: 240px;
+        height: 320px;
+        margin: 5px; /* Reduced from 10px */
+    }
+    
+    .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        cursor: pointer;
+    }
+    
+    .service-card:hover .card-inner {
+        transform: rotateY(180deg);
+    }
+    
+    .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-sizing: border-box;
+    }
+    
+    .card-front {
+        background-color: white;
+    }
+    
+    .card-back {
+        background-color: #3B82F6;
+        color: white;
+        transform: rotateY(180deg);
+        justify-content: center;
+    }
+    
+    .card-front i {
+        font-size: 2.5em;
+        margin-bottom: 15px; /* Increased from 10px */
+    }
+    
+    /* Adjust text sizes for larger cards */
+    .card-front h3 {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+    
+    .card-back p {
+        font-size: 1em;
+    }
+
+    .services-arrow {
+        font-size: 55px;
+        margin-left: 230px;
+        margin-bottom: -55px;
+        margin-top: -15px;
+    }
+
+    /* Our Services section (end) */
+    
+    /* Our Team section (start) */
+    .team-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%; /* Zmniejsza szerokość całego kontenera o 20% */
+        margin: 0 auto; /* Wyśrodkowuje kontener */
+        max-width: 90vw;
+        height: 30rem;
+        margin-bottom: 5rem;
+    }
+    
+    .team-carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%; /* Zajmuje pełną szerokość zmniejszonego kontenera */
+        overflow: hidden;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .team-member {
+        transition: all 0.3s ease;
+        text-align: center;
+        background-color: white;
+        color: var(--bg-color);
+        width: 300px;
+        height: 380px;
+        padding-top: 30px;
+        display: inline-block;
+        margin: 1em;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-bottom: 10px solid var(--highlight);
+    }
+    .mobile-arrow {
+        display: none;
+    }
+
+    .arrow {
+        font-size: 37px;
+    }
+    
+    .img-container {
+        width: 220px;
+        height: 220px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+    }
+    
+    .img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Dodajemy specjalne style dla środkowego elementu, aby zapobiec ucinaniu zdjęcia */
+    .team-member:nth-child(2) .img-container {
+        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+    .team-member:nth-child(1) .img-container {
+        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+    .team-member:nth-child(3) .img-container {
+        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+    
+    /* Margins for text under a middle element */
+    .team-member:nth-child(2) h3,
+    .team-member:nth-child(2) p {
+        margin-top: 0;
+    }
+    .team-member p {
+        padding-left: 30px ;
+        padding-right: 30px ;
+        font-size: 14px;
+    }
+}
+    /* Our Team section (end) */
     
     /* Contact section (start) */
     form {
@@ -1400,181 +1571,6 @@ section {
     }
     /* Contact section (end) */
     
-     /* Our Services section (start) */
-     .services-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px; /* Reduced from 20px */
-    }
-
-    #hint-mobile {
-        display: none;
-    }
-
-    .service-card {
-        perspective: 1000px;
-        width: 240px;
-        height: 320px;
-        margin: 5px; /* Reduced from 10px */
-    }
-    
-    .card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-        cursor: pointer;
-    }
-    
-    .service-card:hover .card-inner {
-        transform: rotateY(180deg);
-    }
-    
-    .card-front, .card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        box-sizing: border-box;
-    }
-    
-    .card-front {
-        background-color: white;
-    }
-    
-    .card-back {
-        background-color: #3B82F6;
-        color: white;
-        transform: rotateY(180deg);
-        justify-content: center;
-    }
-    
-    .card-front i {
-        font-size: 2.5em;
-        margin-bottom: 15px; /* Increased from 10px */
-    }
-    
-    /* Adjust text sizes for larger cards */
-    .card-front h3 {
-        font-size: 1em;
-        margin-bottom: 10px;
-    }
-    
-    .card-back p {
-        font-size: 1em;
-    }
-
-    .services-arrow {
-        font-size: 55px;
-        margin-left: 230px;
-        margin-bottom: -55px;
-        margin-top: -15px;
-    }
-
-    /* Our Services section (end) */
-    
-    /* Our Team section (start) */
-    .team-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%; /* Zmniejsza szerokość całego kontenera o 20% */
-        margin: 20px auto; /* Wyśrodkowuje kontener */
-        max-width: 1200px; /* or any other suitable max-width */
-        margin-top: 70px;
-    }
-    
-    .team-carousel {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%; /* Zajmuje pełną szerokość zmniejszonego kontenera */
-        overflow: hidden;
-        transition: transform 0.5s ease-in-out;
-    }
-    
-    .team-member {
-        transition: all 0.3s ease;
-        text-align: center;
-        background-color: white;
-        color: var(--bg-color);
-        width: 300px;
-        height: 380px;
-        padding-top: 30px;
-        display: inline-block;
-        margin: 1em;
-        text-align: center;
-        cursor: pointer;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        border-bottom: 10px solid var(--highlight);
-    }
-    .mobile-arrow {
-        display: none;
-    }
-
-    .arrow {
-        font-size: 37px;
-    }
-    
-    .img-container {
-        width: 220px;
-        height: 220px;
-        overflow: hidden;
-        border-radius: 50%;
-        margin: 0 auto;
-        position: relative;
-        text-align: center;
-    }
-    
-    .img-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    /* Dodajemy specjalne style dla środkowego elementu, aby zapobiec ucinaniu zdjęcia */
-    .team-member:nth-child(2) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
-        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
-        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
-    }
-    .team-member:nth-child(1) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
-        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
-        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
-    }
-    .team-member:nth-child(3) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
-        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
-        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
-    }
-    
-    /* Margins for text under a middle element */
-    .team-member:nth-child(2) h3,
-    .team-member:nth-child(2) p {
-        margin-top: 0;
-    }
-    .team-member p {
-        padding-left: 30px ;
-        padding-right: 30px ;
-        font-size: 14px;
-    }
-}
-    /* Our Team section (end) */
 /* Small desktop */
 @media (max-width: 1209px) {
     main {
@@ -2142,6 +2138,9 @@ section {
         scroll-snap-align: start; /* Align for scroll snapping */
     }
 
+    #main-nav .nav-links li {
+        margin: 0 1rem;
+    }
 
     .content-home {
         width: 100%;
@@ -2151,7 +2150,8 @@ section {
         box-sizing: border-box;
         padding: 0 50px;
         gap: 40px; /* Dystans między tekstem a wideo */
-        height: 40rem;
+        height: 30rem;
+        margin-bottom: 5rem;
     }
 
     .about-us-container {
@@ -2223,12 +2223,6 @@ section {
         justify-content: center;
     }
     
-    #main-nav ul li a {
-        color: white;
-        text-decoration: none;
-        display: block;
-    }
-    
     h3 {
         font-size: 18px;
         line-height: 1.2;
@@ -2251,7 +2245,7 @@ section {
         gap: 20px;
         margin-top: 50px;
         justify-content: center; /* Centrowanie kart */
-        max-width: 80vw; /* Ograniczenie szerokości */
+        max-width: 70vw; /* Ograniczenie szerokości */
     }
 
     .service-card {
@@ -2313,12 +2307,12 @@ section {
     }
     
     .card-front h3 {
-        font-size: 0.88em;
+        font-size: 1.2rem;
         margin-bottom: 10px;
     }
     
     .card-back p {
-        font-size: 0.88em;
+        font-size: 1.1rem;
     }
 
     /* Our Services section (end) */
@@ -2456,6 +2450,7 @@ section {
   /* Contact section (start) */
     .contact-container {
         height: 30rem;
+        width: 90vw;
     }
     form {
         display: flex;
@@ -2727,12 +2722,13 @@ section {
         display: flex;
         flex-direction: column;
         align-items: center;
-        min-height: 80vh;
+        height: 50rem;
         padding: 0;
         gap: 0;
         width: 80vw;
         justify-content: center;
         margin: 0 auto;
+        margin-bottom: 8rem;
     }
 
     .about-us-container, .home-video {
@@ -2784,14 +2780,16 @@ section {
         width: 100%;
         flex-direction: column;
     }
-    .contact-container h2, .contact-container h3, .contact-container h4 {
-        margin-left: 10px;
-        margin-right: 10px;
-        padding-left: 20px;
+
+    .contact-headers {
+        max-width: 500px;
     }
 
     #team {
         height: 40rem;
+    }
+    .team-carousel {
+        margin-top: 0;
     }
 
     .team-member {
@@ -2864,6 +2862,8 @@ section {
         gap: 20px; /* Odstęp między kartami */
         max-width: 80vw; /* Ograniczenie szerokości */
         margin: 0 auto; /* Wycentrowanie kontenera */
+        margin-bottom: 5rem;
+        margin-top: 2.5rem;
     }
     
     .service-card {
@@ -2926,7 +2926,7 @@ section {
     }
 
     .card-front img {
-        width: 12rem;
+        width: 31vw;
         height: auto;
         margin-top: 0
     }
@@ -2942,7 +2942,7 @@ section {
     }
     
     .card-back p {
-        font-size: 0.88em;
+        font-size: 1rem;
     }
 
     /* Our Services section (end) */
@@ -2953,8 +2953,9 @@ section {
         display: flex;
         align-items: center;
         max-width: 90vw;
-        height: 90vh;
+        height: 55rem;
         gap: 0;
+        margin-bottom: 4rem;
     }
     .our-email {
         font-size: 1.1rem;
@@ -3055,7 +3056,6 @@ section {
         display: flex;
         justify-content: start;
         margin-top: 10px;
-        margin-left: 40px;
         margin-bottom: 0;
     }
     
@@ -3357,6 +3357,11 @@ section {
     .team-carousel {
         margin-top: -3rem;
     }
+    .team-member {
+        padding: 30px 0;
+        padding-bottom: 60px;
+    }
+
     .team-member h3 {
         font-size: 1.5rem;
     }
@@ -3364,7 +3369,8 @@ section {
     .team-member p {
         color: #151515;
         font-size: 1.2rem;
-        margin: 0 1rem;
+        margin: 0;
+        padding: 10px;
     }
     .team-member:nth-child(2) {
         transform: scale(0.65);
@@ -3389,6 +3395,14 @@ section {
         height: 55rem;
         margin-bottom: 2rem;
     }
+    .contact-headers {
+        width: 80vw;
+    }
+
+    .our-email {
+        font-size: 1rem;
+    }
+
     #contact-form {
         padding: 35px 40px 20px 20px;
     }
