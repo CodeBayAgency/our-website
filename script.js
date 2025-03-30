@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if ((phoneInput.value && !prefixInput.value) || (!phoneInput.value && prefixInput.value)) {
             e.preventDefault();
-            errorMessage.textContent = 'Please enter both prefix and phone number, or leave both empty.';
+            errorMessage.textContent = 'Please enter both country code and phone number, or leave both empty.';
             errorMessage.style.display = 'block';
         } else {
             errorMessage.style.display = 'none'; // Hide the error message if inputs are valid
