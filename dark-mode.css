@@ -3270,10 +3270,6 @@ section {
         background-color: white;
     }
 
-    .desktop-arrow, .mobile-arrow {
-        display: none; /* Ukrywamy wszystkie strzałki domyślnie na mobilnych */
-    }
-
     .arrow {
         font-size: 29px;
         position: absolute;

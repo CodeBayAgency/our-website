@@ -405,26 +405,3 @@ document.addEventListener('DOMContentLoaded', function() {
         copyToClipboard(emailElement.innerText);
     });
 });
-
-// OS detection and arrow icons update
-document.addEventListener("DOMContentLoaded", function () {
-    function updateArrows() {
-        const isMobile = window.matchMedia("(max-width: 768px)").matches;
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-        if (isMobile) {
-            if (isIOS) {
-                document.querySelectorAll('.desktop-arrow').forEach(el => el.style.display = 'none');
-                document.querySelectorAll('.mobile-arrow').forEach(el => el.style.display = 'block');
-            } else {
-                document.querySelectorAll('.mobile-arrow').forEach(el => el.style.display = 'none');
-                document.querySelectorAll('.desktop-arrow').forEach(el => el.style.display = 'block');
-            }
-        }
-    }
-
-    updateArrows(); // Uruchomienie przy załadowaniu strony
-
-    // Opcjonalnie: sprawdzanie zmiany rozmiaru ekranu
-    window.addEventListener("resize", updateArrows);
-});
