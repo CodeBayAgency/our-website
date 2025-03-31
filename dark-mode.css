@@ -4,6 +4,7 @@
     --highlight: #3B82F6;
     --darkblue: #1E3A8A;
     --lightgray: #F0F0F0; /* Contact form's color */
+    --fontcolor: white;
   }
 /* Scrollbar */
 /* For Webkit browsers (Chrome, Safari, Edge) */
@@ -90,7 +91,7 @@ h8 {
     text-align: center;
     margin: 0;
     padding-top: 15px;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
 }
 #incentive {
     font-weight: bold;
@@ -1343,7 +1344,7 @@ section {
         padding-right: 15px ;
         font-size: 14px;
     }
-}
+
     /* Our Team section (end) */
     
     /* Contact section (start) */
@@ -1581,7 +1582,7 @@ section {
         overflow: hidden; /* Contains the wider form */
     }
     /* Contact section (end) */
-    
+} 
 /* Small desktop */
 @media (max-width: 1209px) {
     main {
@@ -2772,6 +2773,7 @@ section {
     h2 {
         font-size: 2rem;
     }
+    
     #headings {
         display: flex;
         justify-content: center;
@@ -2779,6 +2781,11 @@ section {
         margin: 0;
         margin-bottom: 0.5rem;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
+    }
+
+    .team-headings {
+        padding-top: 15px;
+        padding-bottom: 5px;
     }
 
     .team-container {

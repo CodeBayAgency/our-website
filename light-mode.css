@@ -4,6 +4,7 @@
     --highlight: #3B82F6;
     --darkblue: #1E3A8A;
     --lightgray: #F0F0F0; /* Contact form's color */
+    --fontcolor: #242434;
 }
 
 /* Scrollbar */
@@ -40,7 +41,7 @@ html, body {
     font-family: "Inter", sans-serif; /* Optionally: "Montserrat" */
     font-weight: 400;
     overflow-x: hidden;
-    color: white;
+    color: var(--fontcolor);
     letter-spacing: 0;
     line-height: 1.4;
 }
@@ -64,12 +65,14 @@ h1 {
 h2 {
     font-weight: 700;
     font-style: normal;
+    color: white;
 }
 .content-home h2 {
-    font-size: 30px;
+    font-size: 35px;
     margin: 0;
     margin-top: 16px;
     margin-bottom: 16px;
+    color: var(--fontcolor);
 }
 #contact h2 {
     color: var(--highlight);
@@ -85,22 +88,23 @@ h2 {
 }
 h8 {
     font-size: 14px;
+    color: white;
 }
 .team-headings {
     background: linear-gradient(135deg, #242434, #3b82f6 150%);
     text-align: center;
     margin: 0;
     padding-top: 15px;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
 }
 #incentive {
     font-weight: bold;
     flex: 1; /* Allows paragraph to take all the available space */
     font-size: 24.5px;
     margin: 0;
-    padding: 17px; /* Adds some space between the text and the border */
-    color: var(--highlight);
-    align-self: stretch;
+    padding-top: 17px; /* Adds some space between the text and the border */
+    color: var(--fontcolor);
+    text-align: center;
 }
 
 .logo2 {
@@ -118,7 +122,7 @@ h8 {
 
 .lang-link {
     text-decoration: none;
-    color: white; /* Adjust color to match your design */
+    color: var(--fontcolor); /* Adjust color to match your design */
     font-weight: bold;
     font-size: 14px;
     padding: 5px 10px;
@@ -132,7 +136,7 @@ h8 {
     align-items: center;
     gap: 5px;
     text-decoration: none;
-    color: white;
+    color: var(--fontcolor);
     font-weight: bold;
     font-size: 14px;
     padding: 5px 10px;
@@ -157,7 +161,7 @@ h8 {
     border: none;
     cursor: pointer;
     font-size: 24px;
-    color: white;
+    color: var(--fontcolor);
     outline: none; /* Usuwa domyślną ramkę */
 }
 
@@ -169,7 +173,7 @@ h8 {
 
 /* Po przełączeniu na jasny motyw */
 .light-mode #theme-toggle .theme-icon {
-    color: black; /* W jasnym motywie zmień kolor ikony */
+    color: var(--fontcolor); /* W jasnym motywie zmień kolor ikony */
 }
 .material-icons:before {
     color: var(--highlight) !important;
@@ -197,12 +201,6 @@ h8 {
     margin: 0; /* Usuń marginesy */
     display: block; /* Usuń domyślną przestrzeń inline */
     height: 100%;
-}
-.about-img {
-    width: 150px;                 /* Set width of the logo container */
-    height: 150px;                /* Set height of the logo container */
-    margin: 0;
-
 }
 
 .contact-btn {
@@ -299,7 +297,7 @@ h8 {
     text-decoration: none;
     padding: 6px 15px;
     display: block;
-    color: white;
+    color: var(--fontcolor);
     border-radius: 20px;
     transition: background-color 0.3s;
 }
@@ -406,10 +404,8 @@ h8 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px; /* Reduced from 20px */
-    margin-top: 100px;
     max-width: 90vw;
     margin: 0 auto;
-    margin-top: 3rem;
 }
 
 .service-card {
@@ -478,6 +474,7 @@ h8 {
     font-size: 1em;
     margin-bottom: 10px;
     color: #151515;
+    font-weight: 600;
 }
 
 .card-back p {
@@ -493,6 +490,7 @@ h8 {
 
 #contact-form {
     background-color: var(--lightgray); /* Light grey color */
+    border: 2px solid var(--fontcolor); /* Ciemnoniebieska ramka */
 }
 .submit-btn {
     background-color: var(--highlight);
@@ -529,7 +527,6 @@ h8 {
 }
 
 section {
-    height: 100vh; /* 100% of the viewport height */
     margin: 0;
     padding: 0;
 }
@@ -562,17 +559,12 @@ section {
         overflow-y: auto;
     }
     main {
-        height: 100vh;
         margin-top: 0;
     }
 
     h1 {
         font-size: 85px;
         margin-bottom: -20px;
-    }
-
-    .content-home h2 {
-        font-size: 35px;
     }
 
     .team-member img {
@@ -607,7 +599,7 @@ section {
         transition: all 0.3s ease;
         text-align: center;
         background-color: white;
-        color: var(--bg-color);
+        color: var(--fontcolor);
         width: 400px;
         height: 480px;
         padding-top: 30px;
@@ -638,21 +630,21 @@ section {
     
     /* Dodajemy specjalne style dla środkowego elementu, aby zapobiec ucinaniu zdjęcia */
     .team-member:nth-child(2) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
-        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        width: 210px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 210px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 5px; /* Przesuwamy kontener nieco w górę */
         margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
     }
     .team-member:nth-child(1) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
-        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        width: 210px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 210px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 5px; /* Przesuwamy kontener nieco w górę */
         margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
     }
     .team-member:nth-child(3) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
-        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        width: 210px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 210px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 5px; /* Przesuwamy kontener nieco w górę */
         margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
     }
     
@@ -662,16 +654,19 @@ section {
         margin-top: 0;
     }
     .team-member p {
-        padding-left: 30px ;
-        padding-right: 30px ;
-        color: var(--bg-color);
-        font-size: 22px;
+        padding-left: 15px ;
+        padding-right: 15px ;
+        font-size: 21px;
     }
 
     .team-member h3 {
         font-size: 28px;
         margin-bottom: 14px;
         max-width: unset;
+    }
+
+    .mobile-arrow {
+        display: none;
     }
 
     .arrow {
@@ -689,6 +684,8 @@ section {
         justify-content: center; /* Center children vertically */
         box-sizing: border-box; /* Include padding and border in element's total width and height */
         gap: 30px;
+        height: 40rem; /* Dostosowanie wysokości */
+        margin: 5rem 0;
     }
     .content {
         display: relative; /* Use flexbox */
@@ -747,6 +744,10 @@ section {
 
 
     /* Contact section (start) */
+    #lets-talk {
+        font-size: 3rem;
+    }
+
     form {
         display: flex;
         flex-direction: column;
@@ -899,12 +900,12 @@ section {
     }
     .form-group input:focus,
     .form-group textarea:focus {
-        border-bottom-color: black;
+        border-bottom-color: var(--fontcolor);
     }
     
     .form-group input:focus + label,
     .form-group textarea:focus + label {
-        color: black;
+        color: var(--fontcolor);
     }
     
     
@@ -986,12 +987,6 @@ section {
         font-size: 50px; /* Zwiększenie rozmiaru tekstu w nagłówkach */
     }
 
-    .content-home {
-        margin-top: 80px;
-        gap: 50px; /* Większy odstęp między elementami */
-        height: 600px; /* Dostosowanie wysokości */
-    }
-
     .about-us-container {
         max-width: 800px; /* Szerszy kontener */
     }
@@ -1007,11 +1002,23 @@ section {
 
     .services-container {
         gap: 25px; /* Większe odstępy */
+        height: 30rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
     }
 
     .service-card {
-        width: 280px; /* Większe karty usług */
-        height: 360px;
+        width: 20rem; /* Większe karty usług */
+        height: 25rem;
+    }
+
+    .card-front img {
+        width: 240px;
+        height: auto;
+    }
+
+    .card-front h3 {
+        font-size: 1.3rem;
     }
 
     .form-group input,
@@ -1032,7 +1039,6 @@ section {
         overflow-y: auto;
     }
     main {
-        height: 100vh;
         margin-top: 0;
     }
 
@@ -1075,7 +1081,7 @@ section {
         justify-content: center; /* Center children vertically */
         box-sizing: border-box; /* Include padding and border in element's total width and height */
         gap: 0px;
-        height: 500px;
+        height: 36rem;
     }
     
     .about-us-container {
@@ -1116,6 +1122,7 @@ section {
         max-width: 1000px;
         margin: 0 auto;
         gap: 4rem;
+        height: 30rem;
     }
     
     .caption {
@@ -1127,11 +1134,10 @@ section {
     
     
     .caption a:hover {
-        color: black;
+        color: var(--fontcolor);
     }
     
     #main-nav {
-        position: sticky;
         top: 0;
         width: 100%;
         z-index: 1000;
@@ -1146,7 +1152,7 @@ section {
     }
     
     #main-nav ul li a {
-        color: white;
+        color: var(--fontcolor);
         text-decoration: none;
         display: block;
     }
@@ -1165,6 +1171,184 @@ section {
         top: 50%;
         transform: translate(-50%, -50%);
     }
+
+    /* Our Services section (start) */
+    .services-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px; /* Reduced from 20px */
+        height: 25rem;
+        margin-top: 3rem;
+    }
+
+    #hint-mobile {
+        display: none;
+    }
+
+    .service-card {
+        perspective: 1000px;
+        width: 240px;
+        height: 320px;
+        margin: 5px; /* Reduced from 10px */
+    }
+    
+    .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        cursor: pointer;
+    }
+    
+    .service-card:hover .card-inner {
+        transform: rotateY(180deg);
+    }
+    
+    .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-sizing: border-box;
+    }
+    
+    .card-front {
+        background-color: white;
+    }
+    
+    .card-back {
+        background-color: #3B82F6;
+        color: white;
+        transform: rotateY(180deg);
+        justify-content: center;
+    }
+    
+    .card-front i {
+        font-size: 2.5em;
+        margin-bottom: 15px; /* Increased from 10px */
+    }
+    
+    /* Adjust text sizes for larger cards */
+    .card-front h3 {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+    
+    .card-back p {
+        font-size: 1em;
+    }
+
+    .services-arrow {
+        font-size: 55px;
+        margin-left: 230px;
+        margin-bottom: -55px;
+        margin-top: -15px;
+    }
+
+    /* Our Services section (end) */
+    
+    /* Our Team section (start) */
+    .team-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%; /* Zmniejsza szerokość całego kontenera o 20% */
+        margin: 0 auto; /* Wyśrodkowuje kontener */
+        max-width: 90vw;
+        height: 30rem;
+        margin-bottom: 5rem;
+    }
+    
+    .team-carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%; /* Zajmuje pełną szerokość zmniejszonego kontenera */
+        overflow: hidden;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .team-member {
+        transition: all 0.3s ease;
+        text-align: center;
+        background-color: white;
+        width: 300px;
+        height: 380px;
+        padding-top: 30px;
+        display: inline-block;
+        margin: 1em;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-bottom: 10px solid var(--highlight);
+    }
+    .mobile-arrow {
+        display: none;
+    }
+
+    .arrow {
+        font-size: 37px;
+    }
+    
+    .img-container {
+        width: 220px;
+        height: 220px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+    }
+    
+    .img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Dodajemy specjalne style dla środkowego elementu, aby zapobiec ucinaniu zdjęcia */
+    .team-member:nth-child(2) .img-container {
+        width: 190px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 190px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 5px; /* Przesuwamy kontener nieco w górę */
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+    .team-member:nth-child(1) .img-container {
+        width: 190px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 190px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 5px; /* Przesuwamy kontener nieco w górę */
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+    .team-member:nth-child(3) .img-container {
+        width: 190px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 190px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 5px; /* Przesuwamy kontener nieco w górę */
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+    
+    /* Margins for text under a middle element */
+    .team-member:nth-child(2) h3,
+    .team-member:nth-child(2) p {
+        margin-top: 0;
+    }
+    .team-member p {
+        padding-left: 15px ;
+        padding-right: 15px ;
+        font-size: 14px;
+    }
+
+    /* Our Team section (end) */
     
     /* Contact section (start) */
     form {
@@ -1319,12 +1503,12 @@ section {
     }
     .form-group input:focus,
     .form-group textarea:focus {
-        border-bottom-color: black;
+        border-bottom-color: var(--fontcolor);
     }
     
     .form-group input:focus + label,
     .form-group textarea:focus + label {
-        color: black;
+        color: var(--fontcolor);
     }
     
     
@@ -1401,206 +1585,10 @@ section {
         overflow: hidden; /* Contains the wider form */
     }
     /* Contact section (end) */
-    
-     /* Our Services section (start) */
-     .services-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px; /* Reduced from 20px */
-    }
-
-    #hint-mobile {
-        display: none;
-    }
-
-    .service-card {
-        perspective: 1000px;
-        width: 240px;
-        height: 320px;
-        margin: 5px; /* Reduced from 10px */
-    }
-    
-    .card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-        cursor: pointer;
-    }
-    
-    .service-card:hover .card-inner {
-        transform: rotateY(180deg);
-    }
-    
-    .card-front, .card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        box-sizing: border-box;
-    }
-    
-    .card-front {
-        background-color: white;
-    }
-    
-    .card-back {
-        background-color: #3B82F6;
-        color: white;
-        transform: rotateY(180deg);
-        justify-content: center;
-    }
-    
-    .card-front i {
-        font-size: 2.5em;
-        margin-bottom: 15px; /* Increased from 10px */
-    }
-    
-    /* Adjust text sizes for larger cards */
-    .card-front h3 {
-        font-size: 1em;
-        margin-bottom: 10px;
-    }
-    
-    .card-back p {
-        font-size: 1em;
-    }
-
-    .services-arrow {
-        font-size: 55px;
-        margin-left: 230px;
-        margin-bottom: -55px;
-        margin-top: -15px;
-    }
-    .home-arrow {
-        font-size: 55px;
-        margin-left: 360px;
-        margin-bottom: 430px;
-        margin-top: -400px;
-    }   
-    .home-p {
-        font-size: 22px;
-        margin-left: 180px;
-        margin-bottom: 400px;
-        margin-top: -500px;
-    }
-    .home-arrow-2 {
-        font-size: 55px;
-        margin-left: 1480px;
-        margin-bottom: 430px;
-        margin-top: -580px;
-    }   
-    .home-p-2 {
-        font-size: 22px;
-        margin-left: 1510px;
-        margin-bottom: 350px;
-        margin-top: -450px;
-    }
-    /* Our Services section (end) */
-    
-    /* Our Team section (start) */
-    .team-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%; /* Zmniejsza szerokość całego kontenera o 20% */
-        margin: 20px auto; /* Wyśrodkowuje kontener */
-        max-width: 1200px; /* or any other suitable max-width */
-        margin-top: 70px;
-    }
-    
-    .team-carousel {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%; /* Zajmuje pełną szerokość zmniejszonego kontenera */
-        overflow: hidden;
-        transition: transform 0.5s ease-in-out;
-    }
-    
-    .team-member {
-        transition: all 0.3s ease;
-        text-align: center;
-        background-color: white;
-        color: var(--bg-color);
-        width: 300px;
-        height: 380px;
-        padding-top: 30px;
-        display: inline-block;
-        margin: 1em;
-        text-align: center;
-        cursor: pointer;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        border-bottom: 10px solid var(--highlight);
-    }
-    
-    .arrow {
-        font-size: 37px;
-    }
-    
-    .img-container {
-        width: 220px;
-        height: 220px;
-        overflow: hidden;
-        border-radius: 50%;
-        margin: 0 auto;
-        position: relative;
-        text-align: center;
-    }
-    
-    .img-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    /* Dodajemy specjalne style dla środkowego elementu, aby zapobiec ucinaniu zdjęcia */
-    .team-member:nth-child(2) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
-        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
-        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
-    }
-    .team-member:nth-child(1) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
-        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
-        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
-    }
-    .team-member:nth-child(3) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
-        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
-        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
-    }
-    
-    /* Margins for text under a middle element */
-    .team-member:nth-child(2) h3,
-    .team-member:nth-child(2) p {
-        margin-top: 0;
-    }
-    .team-member p {
-        padding-left: 30px ;
-        padding-right: 30px ;
-        font-size: 14px;
-    }
 }
-    /* Our Team section (end) */
 /* Small desktop */
 @media (max-width: 1209px) {
     main {
-        height: 100vh;
         margin-top: 0;
     }
 
@@ -1685,12 +1673,10 @@ section {
     .caption a:hover {
         background: #3B82F6;
         border-radius: 20px;
-        color: black;
+        color: var(--fontcolor);
     }
     
     #main-nav {
-        position: sticky;
-        top: 0;
         width: 100%;
         z-index: 1000;
     }
@@ -1704,7 +1690,7 @@ section {
     }
     
     #main-nav ul li a {
-        color: white;
+        color: var(--fontcolor);
         text-decoration: none;
         display: block;
     }
@@ -1830,7 +1816,7 @@ section {
         align-items: center;
         justify-content: center;
         width: 100%;
-        margin: 20px auto; /* Wyśrodkowuje kontener */
+        margin: 0 auto; /* Wyśrodkowuje kontener */
         max-width: 900px; 
     }
     
@@ -1841,7 +1827,6 @@ section {
         width: 100%; /* Zajmuje pełną szerokość zmniejszonego kontenera */
         overflow: hidden;
         transition: transform 0.5s ease-in-out;
-        margin-top: 30px;
     }
     
     .team-member {
@@ -1856,7 +1841,11 @@ section {
         margin-top: 0.9em; /* Prevents top of an img from being cropped */
         text-align: center;
         cursor: pointer;
-        color: var(--bg-color);
+        color: var(--fontcolor);
+    }
+
+    .mobile-arrow {
+        display: none;
     }
     
     .arrow {
@@ -1881,20 +1870,20 @@ section {
     
     /* Dodajemy specjalne style dla środkowego elementu, aby zapobiec ucinaniu zdjęcia */
     .team-member:nth-child(2) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        width: 150px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 150px; /* Zwiększamy wysokość kontenera na zdjęcie */
         margin-top: 20px; /* Przesuwamy kontener nieco w górę */
         margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
     }
     .team-member:nth-child(1) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        width: 150px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 150px; /* Zwiększamy wysokość kontenera na zdjęcie */
         margin-top: 20px; /* Przesuwamy kontener nieco w górę */
         margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
     }
     .team-member:nth-child(3) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        width: 150px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 150px; /* Zwiększamy wysokość kontenera na zdjęcie */
         margin-top: 20px; /* Przesuwamy kontener nieco w górę */
         margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
     }
@@ -1905,10 +1894,10 @@ section {
         margin-top: 0;
     }
     .team-member p {
-        padding-left: 40px ;
-        padding-right: 40px ;
+        padding-left: 15px ;
+        padding-right: 15px ;
         font-size: 12px;
-        padding-bottom: 20px; /* Prevents text from being cropped */
+        padding-bottom: 0;
     }
     /* Our Team section (end) */
 
@@ -2068,12 +2057,12 @@ section {
     }
     .form-group input:focus,
     .form-group textarea:focus {
-        border-bottom-color: black;
+        border-bottom-color: var(--fontcolor);
     }
     
     .form-group input:focus + label,
     .form-group textarea:focus + label {
-        color: black;
+        color: var(--fontcolor);
     }
     
     
@@ -2153,7 +2142,7 @@ section {
 }
 
 /* Tablet */
-@media (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     .content {
         display: relative; /* Use flexbox */
         flex-direction: column; /* Stack children vertically */
@@ -2162,6 +2151,9 @@ section {
         scroll-snap-align: start; /* Align for scroll snapping */
     }
 
+    #main-nav .nav-links li {
+        margin: 0 1rem;
+    }
 
     .content-home {
         width: 100%;
@@ -2169,11 +2161,13 @@ section {
         align-items: center;
         justify-content: space-between; /* Rozdziela elementy */
         box-sizing: border-box;
-        padding: 0 100px;
+        padding: 0 50px;
         gap: 40px; /* Dystans między tekstem a wideo */
+        height: 30rem;
+        margin-bottom: 5rem;
     }
 
-    about-us-container {
+    .about-us-container {
         display: flex;
         flex-direction: column; /* Ustawiamy nagłówki jeden pod drugim */
         max-width: 50%; /* Zapewnia, że tekst nie zajmuje całej szerokości */
@@ -2230,8 +2224,6 @@ section {
     
 
     #main-nav {
-        position: sticky;
-        top: 0;
         width: 100%;
         z-index: 1000;
     }
@@ -2242,12 +2234,6 @@ section {
         margin: 0;
         display: flex;
         justify-content: center;
-    }
-    
-    #main-nav ul li a {
-        color: white;
-        text-decoration: none;
-        display: block;
     }
     
     h3 {
@@ -2270,7 +2256,16 @@ section {
         margin: 0 auto; /* Center entire container */
         flex-wrap: wrap;
         gap: 20px;
-        transform: translateY(10vh); /* Przesuwa element o 50px w dół */
+        justify-content: center; /* Centrowanie kart */
+        max-width: 70vw; /* Ograniczenie szerokości */
+        height: 46rem;
+        margin-top: 3rem;
+    }
+
+    .service-card {
+        flex: 1 1 calc(50% - 20px); /* Dynamiczna szerokość: 50% minus odstęp */
+        max-width: 440px; /* Zapobiega nadmiernemu powiększaniu */
+        height: 360px;
     }
 
     #hint-mobile {
@@ -2281,12 +2276,6 @@ section {
     .services-arrow {
         font-size: 50px;
         margin-left: 315px;
-    }
-
-    .service-card {
-        width: 20vw;
-        height: 45vh;
-        flex: 1;
     }
     
     .card-inner {
@@ -2332,17 +2321,21 @@ section {
     }
     
     .card-front h3 {
-        font-size: 0.88em;
+        font-size: 1.2rem;
         margin-bottom: 10px;
     }
     
     .card-back p {
-        font-size: 0.88em;
+        font-size: 1.1rem;
     }
 
     /* Our Services section (end) */
     
     /* Our Team section (start) */
+    #team {
+        height: 50rem;
+    }
+
     .team-container {
         display: flex;
         align-items: center;
@@ -2381,6 +2374,27 @@ section {
         top: 50%;
         transform: translate(-50%, -50%);
     }
+
+    /* Dodajemy specjalne style dla środkowego elementu, aby zapobiec ucinaniu zdjęcia */
+    .team-member:nth-child(2) .img-container {
+        width: 140px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 140px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+    .team-member:nth-child(1) .img-container {
+        width: 140px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 140px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+    .team-member:nth-child(3) .img-container {
+        width: 140px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 140px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+
     .team-member h3 {
         font-size: 17px;
         line-height: 1.2;
@@ -2390,9 +2404,13 @@ section {
     }
 
     .card-front img {
-        width: 140px;
+        width: 240px;
         height: auto;
         margin-top: 0
+    }
+
+    .mobile-arrow {
+        display: none;
     }
     
     .arrow {
@@ -2435,15 +2453,19 @@ section {
         margin-top: 0;
     }
     .team-member p {
-        padding-left: 20px ;
-        padding-right: 20px ;
+        padding-left: 15px ;
+        padding-right: 15px ;
         color: #151515;
         font-size: 12px;
-        padding-bottom: 20px; /* Prevents text from being cropped */
+        padding-bottom: 0px; 
     }
     /* Our Team section (end) */
 
   /* Contact section (start) */
+    .contact-container {
+        height: 30rem;
+        width: 90vw;
+    }
     form {
         display: flex;
         flex-direction: column;
@@ -2596,12 +2618,12 @@ section {
     }
     .form-group input:focus,
     .form-group textarea:focus {
-        border-bottom-color: black;
+        border-bottom-color: var(--fontcolor);
     }
     
     .form-group input:focus + label,
     .form-group textarea:focus + label {
-        color: black;
+        color: var(--fontcolor);
     }
     
     
@@ -2686,28 +2708,41 @@ section {
         margin-right: 20px;
     }
     .logo1 {
-        display: block;
-        margin-left: 20px;
-        margin-top: -50px;
-        width: 70px;
+        width: 60px;
+        position: fixed;
+        top: 5px;
+        left: 5px;
+        justify-content: center;
+        transform: none;
+    }
+    
+    .language-switcher {
+        top: 1rem;
+        right: 10px;
+        margin-top: 0;
+        justify-content: center;
+        transform: none;
     }
 
-    .language-switcher {
-        position: static;
-        margin-top: 10px;
+    .theme-switcher {
+        top: 1rem;
+        right: 62px;
+        margin-top: 0;
         justify-content: center;
         transform: none;
     }
 
     #home {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        height: 80vh;
+        height: 50rem;
         padding: 0;
         gap: 0;
         width: 80vw;
         justify-content: center;
         margin: 0 auto;
+        margin-bottom: 8rem;
     }
 
     .about-us-container, .home-video {
@@ -2717,14 +2752,12 @@ section {
     }
 
     .home-video {
-        flex: 1;
         background-color: #fff;
         border-radius: 15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border: 5px solid #1E3A8A;
-        margin: 0 30px;
         width: auto;
-        max-width: 700px;
+        max-width: 800px;
         height: 420px ;
         padding: 0;
     }
@@ -2748,8 +2781,13 @@ section {
         justify-content: center;
         align-items: center;
         margin: 0;
-        margin-bottom: -10px;
+        margin-bottom: 0.5rem;
         text-shadow: 0 2px 0 #22262e7a; /* Shadow that looks like an underline */
+    }
+
+    .team-headings {
+        padding-top: 15px;
+        padding-bottom: 5px;
     }
 
     .team-container {
@@ -2761,14 +2799,16 @@ section {
         width: 100%;
         flex-direction: column;
     }
-    .contact-container h2, .contact-container h3, .contact-container h4 {
-        margin-left: 10px;
-        margin-right: 10px;
-        padding-left: 20px;
+
+    .contact-headers {
+        max-width: 500px;
     }
 
     #team {
-        height: 70vh;
+        height: 40rem;
+    }
+    .team-carousel {
+        margin-top: 0;
     }
 
     .team-member {
@@ -2777,11 +2817,36 @@ section {
         height: 360px;
         padding: 60px 15px;
     }
+    
+    /* Dodajemy specjalne style dla środkowego elementu, aby zapobiec ucinaniu zdjęcia */
+    .team-member:nth-child(2) .img-container {
+        width: 190px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 190px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 0px;
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+    .team-member:nth-child(1) .img-container {
+        width: 190px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 190px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 0px;
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+    .team-member:nth-child(3) .img-container {
+        width: 190px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 190px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 0px;
+        margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
+    }
+
+    .team-member h3 {
+        font-size: 1.8rem;
+        margin-bottom: 13px;
+    }
 
     .team-member p {
         color: #151515;
         font-size: 1.3rem;
-        margin: 0 2rem;
+        margin: 0;
     }
     .team-member:nth-child(2) {
         transform: scale(0.7);
@@ -2816,16 +2881,15 @@ section {
         gap: 20px; /* Odstęp między kartami */
         max-width: 80vw; /* Ograniczenie szerokości */
         margin: 0 auto; /* Wycentrowanie kontenera */
+        height: 45rem;
+        margin-bottom: 5rem;
+        margin-top: 2.5rem;
     }
     
     .service-card {
         flex: 1 1 calc(50% - 20px); /* Dynamiczna szerokość: 50% minus odstęp */
         max-width: 440px; /* Zapobiega nadmiernemu powiększaniu */
         height: 360px;
-    }
-    
-    #services h2 {
-        margin-bottom: 10px;
     }
 
     #hint-mobile {
@@ -2882,7 +2946,7 @@ section {
     }
 
     .card-front img {
-        width: 12rem;
+        width: 31vw;
         height: auto;
         margin-top: 0
     }
@@ -2898,7 +2962,7 @@ section {
     }
     
     .card-back p {
-        font-size: 0.88em;
+        font-size: 1rem;
     }
 
     /* Our Services section (end) */
@@ -2909,8 +2973,9 @@ section {
         display: flex;
         align-items: center;
         max-width: 90vw;
-        height: 90vh;
+        height: 55rem;
         gap: 0;
+        margin-bottom: 4rem;
     }
     .our-email {
         font-size: 1.1rem;
@@ -2942,12 +3007,6 @@ section {
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-    }
-    
-    #contact-form {
-        flex: 1;
-        max-width: 500px;
-        margin-right: 2em;
     }
     
     .form-group {
@@ -3017,7 +3076,6 @@ section {
         display: flex;
         justify-content: start;
         margin-top: 10px;
-        margin-left: 40px;
         margin-bottom: 0;
     }
     
@@ -3062,19 +3120,23 @@ section {
         margin-right: 0; /* Remove margin from the last icon */
     }
     #contact-form {
+        flex: 1;
+        max-width: 500px;
+        margin-right: 2em;
         padding: 35px 40px 30px 20px; /* Increased padding, especially on the right */
         border-radius: 10px; /* Optional: rounds the corners */
         width: 100%; /* Makes the form wider than its container */
         box-sizing: border-box; /* Ensures padding is included in the width */
     }
+
     .form-group input:focus,
     .form-group textarea:focus {
-        border-bottom-color: black;
+        border-bottom-color: var(--fontcolor);
     }
     
     .form-group input:focus + label,
     .form-group textarea:focus + label {
-        color: black;
+        color: var(--fontcolor);
     }
     
     
@@ -3153,7 +3215,8 @@ section {
     /* Contact section (end) */
 
     .hamburger {
-        display: block;
+        /* display: block;  Commenting out to hide it from mobile devices*/
+        display: none;
         position: absolute;
         bottom: -90vh;
         right: 5%;
@@ -3215,6 +3278,7 @@ section {
         transform: translateY(-8px) rotate(-45deg);
         background-color: white;
     }
+
     .arrow {
         font-size: 29px;
         position: absolute;
@@ -3227,9 +3291,6 @@ section {
     .right-arrow {
         right: 60px; /* Position the right arrow to the right */
     }
-    .arrow:hover {
-        color: #3B82F6;
-    }
 }
 
 
@@ -3238,27 +3299,133 @@ section {
     
     /* Home section (start) */
     #home {
-        flex-direction: column;
-        align-items: center;
-        height: 150vh;
         padding: 0;
-        gap: 0;
+        gap: 3rem;
         width: 80vw;
-        justify-content: center;
         margin: 0 auto;
+        margin-top: 6rem;
+        margin-bottom: 8rem;
+        height: 45rem;
     }
 
     .about-us-container, .home-video {
         max-height: 50%; /* Oba elementy zajmują połowę szerokości */
     }
+
+    .home-video {
+        max-width: 62.5rem;
+    }
+    .contact-btn {
+        padding: 16px 26px;
+        font-size: 18px;
+    }
+    #incentive {
+        font-size: 1rem;
+    }
+    
     /* Home section (end) */
 
-    /* Our services (start) */
+    /* Services section (start) */
+    .services-container {
+        height: 76rem;
+        margin-top: 2.5rem;
+        margin-bottom: 5rem;
+        transform: none;
+    }
+    .card-front, .card-back {
+        padding: 20px;
+    }
+    
+    .card-front {
+        padding-top: 25px;
+    }
+
+    .card-front img {
+        width: 11rem;
+    }
+    
+    .card-front i {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .card-front h3 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .card-back p {
+        font-size: 0.88em;
+    }
+
     .service-card {
         flex: 1 1 100%;
-        max-width: 65vw; /* Zapobiega nadmiernemu powiększaniu */
-        height: 300px;
+        max-width: 60vw; /* Zapobiega nadmiernemu powiększaniu */
+        height: 18rem;
     }
     /* Our services (end) */
+
+    /* Our Team (start) */
+    .team-container {
+        margin: 0;
+    }
+    .team-carousel {
+        margin-top: -3rem;
+    }
+    .team-member {
+        padding: 30px 0;
+        padding-bottom: 60px;
+    }
+
+    .team-member h3 {
+        font-size: 1.5rem;
+    }
+
+    .team-member p {
+        color: #151515;
+        font-size: 1.2rem;
+        margin: 0;
+        padding: 10px;
+    }
+    .team-member:nth-child(2) {
+        transform: scale(0.65);
+    }
+    
+    .arrow {
+        font-size: 29px;
+    }
+    .left-arrow {
+        left: 5px; /* Position the left arrow to the left */
+    }
+    
+    .right-arrow {
+        right: 5px; /* Position the right arrow to the right */
+    }
+    /* Our Team (end) */
+
+    /* Contact section (start) */
+    .contact-container {
+        max-width: 90vw;
+        height: 55rem;
+        margin-bottom: 2rem;
+    }
+    .contact-headers {
+        width: 80vw;
+    }
+
+    .our-email {
+        font-size: 1rem;
+    }
+
+    #contact-form {
+        padding: 35px 40px 20px 20px;
+    }
+    label,
+    .submit-btn,
+    .form-group input[type="tel"] ~ label {
+        font-size: 13px;
+    }
+
+    /* Contact section (end) */
 }
-/* Responsive design (end)*/
+/* Responsive design (end) */
