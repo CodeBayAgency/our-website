@@ -3425,3 +3425,8 @@ section {
     /* Contact section (end) */
 }
 /* Responsive design (end) */
+
+#test-arrows {
+    font-size: 30px;
+    color: var(--darkblue);
+}
