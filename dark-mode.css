@@ -624,21 +624,21 @@ section {
     
     /* Dodajemy specjalne style dla środkowego elementu, aby zapobiec ucinaniu zdjęcia */
     .team-member:nth-child(2) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
-        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        width: 210px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 210px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 5px; /* Przesuwamy kontener nieco w górę */
         margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
     }
     .team-member:nth-child(1) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
-        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        width: 210px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 210px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 5px; /* Przesuwamy kontener nieco w górę */
         margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
     }
     .team-member:nth-child(3) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
-        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        width: 210px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 210px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 5px; /* Przesuwamy kontener nieco w górę */
         margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
     }
     
@@ -648,10 +648,10 @@ section {
         margin-top: 0;
     }
     .team-member p {
-        padding-left: 30px ;
-        padding-right: 30px ;
+        padding-left: 15px ;
+        padding-right: 15px ;
         color: var(--bg-color);
-        font-size: 22px;
+        font-size: 21px;
     }
 
     .team-member h3 {
@@ -997,11 +997,23 @@ section {
 
     .services-container {
         gap: 25px; /* Większe odstępy */
+        height: 30rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
     }
 
     .service-card {
-        width: 280px; /* Większe karty usług */
-        height: 360px;
+        width: 20rem; /* Większe karty usług */
+        height: 25rem;
+    }
+
+    .card-front img {
+        width: 240px;
+        height: auto;
+    }
+
+    .card-front h3 {
+        font-size: 1.3rem;
     }
 
     .form-group input,
@@ -1162,6 +1174,7 @@ section {
         justify-content: center;
         gap: 15px; /* Reduced from 20px */
         height: 25rem;
+        margin-top: 3rem;
     }
 
     #hint-mobile {
@@ -1302,21 +1315,21 @@ section {
     
     /* Dodajemy specjalne style dla środkowego elementu, aby zapobiec ucinaniu zdjęcia */
     .team-member:nth-child(2) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
-        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        width: 190px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 190px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 5px; /* Przesuwamy kontener nieco w górę */
         margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
     }
     .team-member:nth-child(1) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
-        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        width: 190px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 190px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 5px; /* Przesuwamy kontener nieco w górę */
         margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
     }
     .team-member:nth-child(3) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
-        margin-top: 20px; /* Przesuwamy kontener nieco w górę */
+        width: 190px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 190px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        margin-top: 5px; /* Przesuwamy kontener nieco w górę */
         margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
     }
     
@@ -1326,8 +1339,8 @@ section {
         margin-top: 0;
     }
     .team-member p {
-        padding-left: 30px ;
-        padding-right: 30px ;
+        padding-left: 15px ;
+        padding-right: 15px ;
         font-size: 14px;
     }
 }
@@ -1810,7 +1823,6 @@ section {
         width: 100%; /* Zajmuje pełną szerokość zmniejszonego kontenera */
         overflow: hidden;
         transition: transform 0.5s ease-in-out;
-        margin-top: 30px;
     }
     
     .team-member {
@@ -1854,20 +1866,20 @@ section {
     
     /* Dodajemy specjalne style dla środkowego elementu, aby zapobiec ucinaniu zdjęcia */
     .team-member:nth-child(2) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        width: 150px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 150px; /* Zwiększamy wysokość kontenera na zdjęcie */
         margin-top: 20px; /* Przesuwamy kontener nieco w górę */
         margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
     }
     .team-member:nth-child(1) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        width: 150px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 150px; /* Zwiększamy wysokość kontenera na zdjęcie */
         margin-top: 20px; /* Przesuwamy kontener nieco w górę */
         margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
     }
     .team-member:nth-child(3) .img-container {
-        width: 180px; /* Zwiększamy szerokość kontenera na zdjęcie */
-        height: 180px; /* Zwiększamy wysokość kontenera na zdjęcie */
+        width: 150px; /* Zwiększamy szerokość kontenera na zdjęcie */
+        height: 150px; /* Zwiększamy wysokość kontenera na zdjęcie */
         margin-top: 20px; /* Przesuwamy kontener nieco w górę */
         margin-bottom: 15px; /* Kompensujemy przesunięcie w dół */
     }
@@ -1878,10 +1890,10 @@ section {
         margin-top: 0;
     }
     .team-member p {
-        padding-left: 40px ;
-        padding-right: 40px ;
+        padding-left: 15px ;
+        padding-right: 15px ;
         font-size: 12px;
-        padding-bottom: 20px; /* Prevents text from being cropped */
+        padding-bottom: 0;
     }
     /* Our Team section (end) */
 
@@ -2837,14 +2849,6 @@ section {
         transform: scale(0.5);
         opacity: 0.6;
     }
-
-    .left-arrow {
-        left: 0px; /* Position the left arrow to the left */
-    }
-    
-    .right-arrow {
-        right: 0px; /* Position the right arrow to the right */
-    }
     
     .contact-container {
         flex-direction: column;
@@ -3202,7 +3206,8 @@ section {
     /* Contact section (end) */
 
     .hamburger {
-        display: block;
+        /* display: block;  Commenting out to hide it from mobile devices*/
+        display: none;
         position: absolute;
         bottom: -90vh;
         right: 5%;
