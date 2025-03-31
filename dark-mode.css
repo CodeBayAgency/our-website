@@ -3385,13 +3385,12 @@ section {
     .arrow {
         font-size: 29px;
     }
-
     .left-arrow {
-        left: -8px; /* Position the left arrow to the left */
+        left: 5px; /* Position the left arrow to the left */
     }
     
     .right-arrow {
-        right: -8px; /* Position the right arrow to the right */
+        right: 5px; /* Position the right arrow to the right */
     }
     /* Our Team (end) */
 
@@ -3421,8 +3420,3 @@ section {
     /* Contact section (end) */
 }
 /* Responsive design (end) */
-
-#test-arrows {
-    font-size: 30px;
-    color: var(--darkblue);
-}
