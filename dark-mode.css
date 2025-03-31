@@ -3270,11 +3270,8 @@ section {
         background-color: white;
     }
 
-    .desktop-arrow {
-        display: none;
-    }
-    .mobile-arrow {
-        display: block;
+    .desktop-arrow, .mobile-arrow {
+        display: none; /* Ukrywamy wszystkie strzałki domyślnie na mobilnych */
     }
 
     .arrow {
