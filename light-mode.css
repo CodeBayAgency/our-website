@@ -107,7 +107,7 @@ h8 {
     text-align: center;
 }
 
-.logo2 {
+.logo1 {
     display: none;
 }
 
@@ -118,15 +118,17 @@ h8 {
     transform: translateY(-50%);
     display: flex;
     gap: 10px;
+    background-color: var(--fontcolor);
+    border-radius: 20px;
 }
 
 .lang-link {
     text-decoration: none;
-    color: var(--fontcolor); /* Adjust color to match your design */
+    color: white;
     font-weight: bold;
     font-size: 14px;
     padding: 5px 10px;
-    border-radius: 4px;
+    border-radius: 20px;
     transition: background-color 0.3s ease;
 }
 
@@ -136,11 +138,10 @@ h8 {
     align-items: center;
     gap: 5px;
     text-decoration: none;
-    color: var(--fontcolor);
     font-weight: bold;
     font-size: 14px;
     padding: 5px 10px;
-    border-radius: 4px;
+    border-radius: 20px;
     transition: background-color 0.3s ease;
 }
 
@@ -2707,7 +2708,7 @@ section {
     .logo-placeholder {
         margin-right: 20px;
     }
-    .logo1 {
+    .logo2 {
         width: 60px;
         position: fixed;
         top: 5px;
@@ -2722,11 +2723,12 @@ section {
         margin-top: 0;
         justify-content: center;
         transform: none;
+        border-radius: 20px;
     }
 
     .theme-switcher {
         top: 1rem;
-        right: 62px;
+        right: 72px;
         margin-top: 0;
         justify-content: center;
         transform: none;
@@ -3356,6 +3358,11 @@ section {
     
     .card-back p {
         font-size: 0.88em;
+        padding: 0;
+    }
+
+    .card-back {
+        padding: 10px;
     }
 
     .service-card {

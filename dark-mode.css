@@ -2723,7 +2723,7 @@ section {
 
     .theme-switcher {
         top: 1rem;
-        right: 62px;
+        right: 72px;
         margin-top: 0;
         justify-content: center;
         transform: none;
@@ -3354,6 +3354,11 @@ section {
     
     .card-back p {
         font-size: 0.88em;
+        padding: 0;
+    }
+
+    .card-back {
+        padding: 10px;
     }
 
     .service-card {

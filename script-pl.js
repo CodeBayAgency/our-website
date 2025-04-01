@@ -180,6 +180,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const carousel = document.querySelector('.team-carousel');
     const leftArrow = document.querySelector('.left-arrow');
     const rightArrow = document.querySelector('.right-arrow');
+    const leftArrowMobile = document.querySelector('.left-arrow.mobile-arrow');
+    const rightArrowMobile = document.querySelector('.right-arrow.mobile-arrow');
     const teamMembers = document.querySelectorAll('.team-member');
 
     // Funkcja przesuwająca członka zespołu na początek karuzeli
@@ -234,6 +236,18 @@ document.addEventListener('DOMContentLoaded', function() {
             } 
         });
     });
+
+    // Team carousel - Mobile
+    function moveLeftMobile() {
+        carousel.appendChild(carousel.firstElementChild);
+    }
+
+    function moveRightMobile() {
+        carousel.prepend(carousel.lastElementChild);
+    }
+
+    leftArrowMobile.addEventListener('click', moveRightMobile);
+    rightArrowMobile.addEventListener('click', moveLeftMobile);
 
     // Hamburger menu
     const hamburger = document.querySelector('.hamburger');
@@ -303,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Lanuage switcher
+// Language switcher
 document.addEventListener("DOMContentLoaded", function () {
     const langToggle = document.getElementById("language-toggle");
     const langText = document.getElementById("lang-text");
@@ -315,7 +329,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (currentLang === "en") {
             langText.textContent = "EN";
             langToggle.href = "index-pl.html";
-            flagIcon.innerHTML =  `
+            flagIcon.innerHTML = `
             <!-- Flaga UK -->
             <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
             <use xlink:href="#s" fill="#012169"/>
@@ -341,37 +355,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // Theme switcher
-const themeToggle = document.getElementById('theme-toggle');
-const themeStylesheet = document.getElementById('theme-stylesheet');
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = themeToggle.querySelector(".theme-icon");
+const themeStylesheet = document.getElementById("theme-stylesheet");
 
-// Load the user's theme preference on page load
-function loadTheme() {
-    const theme = localStorage.getItem('theme');
-    if (theme === 'light') {
-        themeStylesheet.setAttribute('href', 'light-mode.css');
-        themeToggle.checked = true; // Set the toggle to checked for light mode
-    } else {
-        themeStylesheet.setAttribute('href', 'dark-mode.css'); // Default to dark mode
-        themeToggle.checked = false; // Ensure the toggle is off for dark mode
-    }
-}
+// Sprawdzenie zapisanych ustawień motywu w localStorage
+const currentTheme = localStorage.getItem("theme") || "dark"; // Domyślnie ciemny motyw
+setTheme(currentTheme);
 
-// Apply the theme when the page loads
-loadTheme();
-
-// Toggle the theme on checkbox change
-themeToggle.addEventListener('change', () => {
-    if (themeToggle.checked) {
-        themeStylesheet.setAttribute('href', 'light-mode.css');
-        localStorage.setItem('theme', 'light');
-    } else {
-        themeStylesheet.setAttribute('href', 'dark-mode.css');
-        localStorage.setItem('theme', 'dark');
-    }
+// Obsługa kliknięcia przycisku zmiany motywu
+themeToggle.addEventListener("click", () => {
+    const newTheme = themeStylesheet.getAttribute("href") === "dark-mode.css" ? "light" : "dark";
+    setTheme(newTheme);
 });
 
-// Settings reveal
-document.getElementById('cog-icon').addEventListener('click', function () {
-    const settings = document.querySelector('.settings');
-    settings.classList.toggle('hidden');
+// Funkcja do zmiany motywu
+function setTheme(theme) {
+    if (theme === "light") {
+        themeStylesheet.setAttribute("href", "light-mode.css");
+        themeIcon.textContent = "light_mode"; // Ikona słońca
+    } else {
+        themeStylesheet.setAttribute("href", "dark-mode.css");
+        themeIcon.textContent = "dark_mode"; // Ikona księżyca
+    }
+    localStorage.setItem("theme", theme); // Zapis motywu w localStorage
+}
+
+
+// Copy email to clipboard functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the email address and copy icon
+    const emailElement = document.getElementById('email-address');
+    const copyIcon = document.getElementById('copy-icon');
+    
+    // Function to copy the email to clipboard
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Email copied to clipboard!");  // Optional: feedback to user
+        }).catch(err => {
+            console.error("Error copying text to clipboard: ", err);
+        });
+    }
+
+    // Event listener for clicking on the email address
+    emailElement.addEventListener('click', function() {
+        copyToClipboard(emailElement.innerText);
+    });
+
+    // Event listener for clicking on the copy icon
+    copyIcon.addEventListener('click', function() {
+        copyToClipboard(emailElement.innerText);
+    });
 });
