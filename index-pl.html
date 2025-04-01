@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
     <title>CodeBay</title>
     <link rel="icon" type="image/x-icon" href=".\images\black_on_trans.png">
     <link id="theme-stylesheet" rel="stylesheet" href="dark-mode.css">
@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <!-- Moon and sun icons -->
@@ -64,7 +65,7 @@
                 <a href="#contact"><button class="contact-btn">Napisz do nas!</button></a>
                 <!-- YouTube video -->
             </div>
-            <div class="home-video" class = "video-container">
+            <div class="home-video">
                 <iframe
                     src="https://www.youtube.com/embed/taPfaW_2jqQ" 
                     title="YouTube video player" 
@@ -140,6 +141,7 @@
                     </div>
                 </div>
             </div>
+            <!-- <p id="hint-mobile">Click to reveal what's inside!</p> Click on the cards! -->
         </section>
 
         <section id="team" class="content">
@@ -148,7 +150,7 @@
                 <h2 id="headings">Nasz zespół</h2>
             </div>
             <div class="team-container">
-                <button class="arrow left-arrow">&#11164;</button>
+                <button class="arrow left-arrow"><i class="fas fa-arrow-circle-left icon"></i></button> <!-- Left arrow -->
                 <div class="team-carousel">
                     <div class="team-member">
                         <div class="img-container">
@@ -173,7 +175,7 @@
                         <p>Software Tester, Python and AWS Developer. Knowledgeable and passionate about generative AI.</p>
                     </div>
                 </div>
-                <button class="arrow right-arrow">&#11166;</button>
+                <button class="arrow right-arrow"><i class="fas fa-arrow-circle-right icon"></i></button> <!-- Right arrow -->
             </div>
         </section>
 
@@ -184,7 +186,7 @@
                     <h3>Chcesz omówić swoje projekty lub dowiedzieć się więcej o naszych usługach?</h3>
                     <h3>Skontaktuj się z nami przez formularz, e-mail, lub wyślij nam wiadomość na nasze media społecznościowe!</h3>
                     <div class="our-email">
-                        <h4 id="email-address">codebay.agency@gmail.com</h4>
+                        <h4>codebay.agency@gmail.com</h4>
                         <i id="copy-icon" class="fa fa-clone" aria-hidden="true"></i>
                     </div>
                     <div class="contact-info">
@@ -213,7 +215,7 @@
                         </div>
                         <div class="form-group phone-group">
                             <div class="prefix-input">
-                                <input type="text" name="prefix" id="prefix" required>
+                                <input type="tel" name="prefix" id="prefix" required>
                                 <label for="prefix">CC</label>
                             </div>
                             <div class="phone-input">
@@ -225,6 +227,7 @@
                             <textarea name="message" id="message" required></textarea>
                             <label for="message">TREŚĆ WIADOMOŚCI</label>
                         </div>
+                        <div id="error-message" class="error-message" style="display: none;"></div> <!-- Error message container -->
                         <button type="submit" class="submit-btn"><i class="fa fa-paper-plane" aria-hidden="true"></i> WYŚLIJ</button>
                     </form>
             </div>
