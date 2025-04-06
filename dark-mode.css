@@ -421,10 +421,6 @@ h8 {
     cursor: pointer;
 }
 
-.service-card:hover .card-inner {
-    transform: rotateY(180deg);
-}
-
 .card-front, .card-back {
     position: absolute;
     width: 100%;
@@ -1199,10 +1195,6 @@ section {
         cursor: pointer;
     }
     
-    .service-card:hover .card-inner {
-        transform: rotateY(180deg);
-    }
-    
     .card-front, .card-back {
         position: absolute;
         width: 100%;
@@ -1754,10 +1746,6 @@ section {
         cursor: pointer;
     }
     
-    .service-card:hover .card-inner {
-        transform: rotateY(180deg);
-    }
-    
     .card-front, .card-back {
         position: absolute;
         width: 100%;
@@ -2285,10 +2273,6 @@ section {
         cursor: pointer;
     }
     
-    .service-card:hover .card-inner {
-        transform: rotateY(180deg);
-    }
-    
     .card-front, .card-back {
         position: absolute;
         width: 100%;
@@ -2699,6 +2683,12 @@ section {
     /* Contact section (end) */
 }
 
+@media (min-width: 769px) {
+    .service-card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+  }
+
 /* Mobile (landscape) */
 @media (max-width: 768px) {
     .logo-placeholder {
@@ -2911,9 +2901,9 @@ section {
         cursor: pointer;
     }
     
-    .service-card:hover .card-inner {
+    .service-card.flipped .card-inner {
         transform: rotateY(180deg);
-    }
+      }
     
     .card-front, .card-back {
         position: absolute;

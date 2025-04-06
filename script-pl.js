@@ -407,3 +407,37 @@ document.addEventListener('DOMContentLoaded', function() {
         copyToClipboard(emailElement.innerText);
     });
 });
+
+// Service card flip
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".service-card");
+
+    // Mobile: toggle flip on click
+    cards.forEach(card => {
+      card.addEventListener("click", (e) => {
+        // Only activate on mobile (max-width: 768px)
+        if (window.innerWidth <= 768) {
+          e.stopPropagation();
+          card.classList.toggle("flipped");
+
+          // Remove 'flipped' from all other cards
+          cards.forEach(otherCard => {
+            if (otherCard !== card) {
+              otherCard.classList.remove("flipped");
+            }
+          });
+        }
+      });
+    });
+
+    // Close any flipped card if clicked outside
+    document.addEventListener("click", (e) => {
+      if (window.innerWidth <= 768) {
+        cards.forEach(card => {
+          if (!card.contains(e.target)) {
+            card.classList.remove("flipped");
+          }
+        });
+      }
+    });
+  });
