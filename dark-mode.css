@@ -1148,6 +1148,7 @@ section {
         text-decoration: none;
         display: block;
     }
+
     #main-nav .nav-links li a.active {
         background: var(--highlight);
     }
@@ -1581,9 +1582,6 @@ section {
         margin-top: 0;
     }
 
-    #main-nav .nav-links li a.hover {
-        background: #3B82F6;
-    }
     .content {
         display: flex; /* Use flexbox */
         flex-direction: column; /* Stack children vertically */
@@ -1664,25 +1662,9 @@ section {
         border-radius: 20px;
         color: black;
     }
+
     
-    #main-nav {
-        width: 100%;
-        z-index: 1000;
-    }
-    
-    #main-nav ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-    }
-    
-    #main-nav ul li a {
-        color: white;
-        text-decoration: none;
-        display: block;
-    }
+
 
     .team-member img {
         display: inline;
