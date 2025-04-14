@@ -1582,6 +1582,32 @@ section {
         margin-top: 0;
     }
 
+    /* Navigation */
+    #main-nav {
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+    
+    #main-nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+    
+    #main-nav ul li a {
+        color: white;
+        text-decoration: none;
+        display: block;
+    }
+
+    #main-nav .nav-links li a.active {
+        background: var(--highlight);
+    }
+    /* Navigation (ends) */
+
     .content {
         display: flex; /* Use flexbox */
         flex-direction: column; /* Stack children vertically */
@@ -1655,16 +1681,7 @@ section {
         text-align: center;
         display: inline-block; /* Allow captions to line up horizontally */
         overflow: hidden; /* Hide overflow content */
-    }
-    
-    .caption a:hover {
-        background: #3B82F6;
-        border-radius: 20px;
-        color: black;
-    }
-
-    
-
+    }    
 
     .team-member img {
         display: inline;
@@ -2118,10 +2135,6 @@ section {
         scroll-snap-align: start; /* Align for scroll snapping */
     }
 
-    #main-nav .nav-links li {
-        margin: 0 1rem;
-    }
-
     .content-home {
         width: 100%;
         display: flex;
@@ -2190,7 +2203,13 @@ section {
     }
     
 
+    /* Navigation */
+    #main-nav .nav-links li {
+        margin: 0 1rem;
+    }
+
     #main-nav {
+        top: 0;
         width: 100%;
         z-index: 1000;
     }
@@ -2202,6 +2221,17 @@ section {
         display: flex;
         justify-content: center;
     }
+    
+    #main-nav ul li a {
+        color: white;
+        text-decoration: none;
+        display: block;
+    }
+
+    #main-nav .nav-links li a.active {
+        background: var(--highlight);
+    }
+    /* Navigation (ends) */
     
     h3 {
         font-size: 18px;
